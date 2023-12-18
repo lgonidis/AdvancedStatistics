@@ -1,5 +1,12 @@
 project:
   type: website
+  output-dir: docs
+  preview:
+    browser: false
+    watch-inputs: true
+
+
+
 
 website:
   title: "AdvancedStatistics"
