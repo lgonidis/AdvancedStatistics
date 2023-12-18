@@ -1,0 +1,46 @@
+/*-- scss:defaults --*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Georgia');
+
+
+/*-- Define Colours --*/
+$white:   #fff;
+$black:   #000;
+
+$grey5: #888888;	
+$grey4: #808080;	
+$grey3:	#909090;	
+$grey2: #B8B8B8;
+$grey1:	#DCDCDC;	
+
+
+
+
+$primary: #BB4430;
+$secondary: #F3DFA2;
+$tertiary: #0D5C63;
+
+
+/*-- Bootstrap Colour Variables --*/
+
+
+// Page Text Colour.
+$body-color: $black;
+
+// Code Block background.
+$code-block-bg: $secondary;
+
+
+// Inline Code background Colour
+$code-bg: $secondary;
+
+//Inline Code Colour.
+$code-color: $tertiary;
+
+
+
+/*-- Bootstrap Font Variables --*/
+
+// Sans-serif font.
+$font-sans-serif: "Open Sans", "Cambria", "Georgia", "serif";
+
+/*-- scss:rules --*/
