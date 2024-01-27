@@ -12,9 +12,19 @@ image: "image1.jpg"
 
 ## Who I am
 
-|     |           |
-|-----|-----------|
-|     | test text |
+::: columns
+::: {.column width="20%"}
+![](image1.jpg){width="160"}
+:::
+
+::: {.column width="80%"}
+1.  This is me
+2.  And me
+3.  And me
+4.  And me
+5.  Me too
+:::
+:::
 
 ## Today's Aims
 
