@@ -1,0 +1,25 @@
+---
+title: "Introduction to Advanced Statistics"
+format: 
+  revealjs:
+    theme: league
+    transition: slide
+    background-transition: zoom
+author: "Dr Lazaros Gonidis"
+date: "2024-01-27"
+image: "image1.jpg"
+---
+
+## Who I am
+
+|     |           |
+|-----|-----------|
+|     | test text |
+
+## Today's Aims
+
+1.  Canvas
+2.  Assessment
+3.  Quizzes
+4.  Rstudio/Posit
+5.  Github
