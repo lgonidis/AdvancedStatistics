@@ -30,11 +30,78 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
@@ -342,27 +409,517 @@ Dr Lazaros Gonidis
 <h2>Who I am</h2>
 <div class="columns">
 <div class="column" style="width:20%;">
-<p><img data-src="image1.jpg" width="160"></p>
+<p><img data-src="images/me.jpg" width="156"></p>
+<p><img data-src="images/photo2.jpg" width="152"></p>
+<p><img data-src="images/photo3.jpg" width="151"></p>
 </div><div class="column" style="width:80%;">
 <ol type="1">
-<li>This is me</li>
-<li>And me</li>
-<li>And me</li>
-<li>And me</li>
-<li>Me too</li>
+<li>This is me (used to be)</li>
+<li>I love my two boys</li>
+<li>I also love computer games, motorbikes, music, food</li>
+<li>Funnily enough I love maths and statistics, and even more teaching these</li>
+<li>I am also dyslexic so please do tell me when you spot typing mistakes, usually whole words missing.</li>
 </ol>
 </div>
 </div>
 </section>
-<section id="todays-aims" class="slide level2">
-<h2>Today’s Aims</h2>
+<section id="who-you-are" class="slide level2">
+<h2>Who you are</h2>
+<p>I have no idea who you are but I hope by the end of this module you will love statistics a bit more and you will appreciate even more why they are paramount for Psychological research.</p>
+</section>
+<section id="todays-aims-in-terms-of-the-module" class="slide level2">
+<h2>Today’s Aims in Terms of the Module</h2>
 <ol type="1">
 <li>Canvas</li>
-<li>Assessment</li>
-<li>Quizzes</li>
 <li>Rstudio/Posit</li>
+<li>discord</li>
+<li>Assessment</li>
+<li>Quizzes (Badges to be confirmed)</li>
 <li>Github</li>
 </ol>
+</section>
+<section id="canvas" class="slide level2">
+<h2>Canvas</h2>
+<p>Hopefully you should know where to find our Canvas website, but just in case:</p>
+<p><a href="https://canvas.sussex.ac.uk/courses/26315/pages/module-home-page" class="uri">https://canvas.sussex.ac.uk/courses/26315/pages/module-home-page</a></p>
+</section>
+<section id="rstudioposit-cloud" class="slide level2">
+<h2>RStudio/Posit Cloud</h2>
+<p>For our analysis we will be using exclusively R and mainly Posit Cloud. However, I strongly believe that as future scientists you should also have locally installed RStudio/Posit, have it up to date and use that for your everyday work. I would also advise you to attend our workshops bringing your own laptops/tablets/mobile phones.</p>
+<p>You can join our Posit Cloud Workspace by following this link:</p>
+<p><a href="https://posit.cloud/spaces/469376/join?access_code=4YBUfhrNPGU2oWWw5Zym6bepaVV6izQ8O1KE6THK" class="uri">https://posit.cloud/spaces/469376/join?access_code=4YBUfhrNPGU2oWWw5Zym6bepaVV6izQ8O1KE6THK</a></p>
+
+<img data-src="../..\qr-code.png" width="336" class="r-stretch quarto-figure-center"></section>
+<section id="discord-as-our-mean-of-day-to-day-communication" class="slide level2">
+<h2>Discord as our mean of day to day communication</h2>
+<p>We will be using discord as our main communication channel, please use it for any stats related questions. If you have any more sensitive questions please do not hesitate to email me at: L.Gonidis@Sussex.ac.uk</p>
+<p>You can join us by following this link: <a href="https://discord.gg/9TV3xzMZ" class="uri">https://discord.gg/9TV3xzMZ</a></p>
+
+<img data-src="../..\wr-code2.png" width="345" class="r-stretch quarto-figure-center"></section>
+<section id="assessment" class="slide level2">
+<h2>Assessment</h2>
+<p>The module will be assessed exclusively by coursework. This will be in the form of three 1,000 words results sections. The deadlines are:</p>
+<ol type="1">
+<li>Report 1, February 13th 16:00</li>
+<li>Report 2, March 14th 16:00</li>
+<li>Report 3, April 23rd 16:00</li>
+</ol>
+<p>All submissions will be via Canvas submission points in the Assignments, Contributory E-Submission subsection. Each report topic will be released in our workshop the week prior to the submission deadline. Specifically, for Report 1 the topic will be Mediation/Moderation analysis using lavaan. You will receive detailed instructions on that next Monday.</p>
+</section>
+<section id="quizzes-and-badgeshopefully" class="slide level2">
+<h2>Quizzes and Badges(hopefully)</h2>
+<p>Every week there will be a Canvas quiz provided so you can practice and enhance your understanding. These are absolutely non-compulsory but do spend some time trying to complete them. You will also be collecting points while you complete these (and other Canvas activities) and at the end of the module the two students with the highest scores will receive a surprise present.</p>
+</section>
+<section id="github" class="slide level2">
+<h2>Github</h2>
+<p>Github has been increasingly becoming a standard in the world of coding and statistical analysis as it can serve both as a repository and a host of websites related to projects. We will have a very brief demonstration today and we will return next week and start using it as a standard in our module.</p>
+</section>
+<section id="essential-and-supplamentary-materials" class="slide level2">
+<h2>Essential and Supplamentary Materials</h2>
+<div class="columns">
+<div class="column" style="width:20%;">
+<p><img data-src="../..\kline.JPG" width="130"></p>
+<p><img data-src="../..\Newsom.JPG" width="129"></p>
+</div><div class="column" style="width:80%;">
+<ol type="1">
+<li><p><a href="https://ebookcentral.proquest.com/lib/suss/reader.action?docID=4000663">Principles and Practice of Structural Equation Modeling</a></p></li>
+<li><p><a href="Longitudinal Structural Equation Modeling: A comprehensive Introduction">Longitudinal Structural Equation Modeling: A comprehensive Introduction</a></p></li>
+<li><p><a href="https://lavaan.ugent.be/tutorial/">Official lavaan tutorial from lavaan.org</a></p></li>
+<li><p><a href="https://bookdown.org/annabrown/psychometricsR/">Psychometrics in Exercises using R and Rstudio</a> by Prof Anna Brown</p></li>
+<li><p><a href="https://stats.oarc.ucla.edu/r/seminars/rsem/#s1a">Introduction to Structural Equation Modeling (SEM) in R with lavaan</a> by Dr Johnny Lin</p>
+<p>** And many other online resources that will be revealed in due time</p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="todays-aims-in-terms-of-structural-equation-modeling-sem" class="slide level2">
+<h2>Today’s Aims in Terms of Structural Equation Modeling (SEM)</h2>
+<ol type="1">
+<li>Introduce key terminology that we will be using this term</li>
+<li>Discuss examples of <strong>simple and multiple regression</strong></li>
+<li>Revisit the same examples using <strong>lavaan</strong></li>
+<li>Discuss <strong>baximum likelihood</strong> vs.&nbsp;<strong>least squares</strong></li>
+</ol>
+</section>
+<section id="key-terminology" class="slide level2">
+<h2>Key Terminology</h2>
+<p>We will be using quite a few terms in our module so it is important to define them in advance and try to use them consistently. Most of the them are used as in the field but you could come across some slight variations in terminology. This should not put you off or scare you, as long as you understand the substance of each term. It is also a good idea to try to learn the visual equivalents of these terms</p>
+</section>
+<section id="key-terminology-2" class="slide level2">
+<h2>Key Terminology 2</h2>
+<div class="columns">
+<div class="column" style="width:20%;">
+<p><img data-src="../..\path.JPG" width="164" height="438"></p>
+</div><div class="column" style="width:80%;">
+<ol type="1">
+<li><strong>latent variable:</strong> a variable that is constructed/inferred indirectly by the data and does not exist in the data.</li>
+<li><strong>observed variable:</strong> a variable that has been measured and exists in our data.</li>
+<li><strong>exogenous variable:</strong> an independent variable that explains an endogenous variable. Can be either observed <span class="math inline">\((x)\)</span> or latent <span class="math inline">\((ξ)\)</span>.</li>
+<li><strong>endogenous variable:</strong> a dependent variable that has a causal path leading to it. Can be either observed <span class="math inline">\((y)\)</span> or latent <span class="math inline">\((η)\)</span>.</li>
+<li><strong>measurement model:</strong> a model that links observed variables with latent variables</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="key-terminology-3" class="slide level2">
+<h2>Key Terminology 3</h2>
+<div class="columns">
+<div class="column" style="width:20%;">
+<p><img data-src="../..\path.JPG" width="164" height="438"></p>
+</div><div class="column" style="width:80%;">
+<ol start="6" type="1">
+<li><strong>indicator:</strong> an observed variable in a measurement model (can be exogenous or endogenous).</li>
+<li><strong>factor</strong>: a latent variable defined by its indicators (can be exogenous or endogenous).</li>
+<li><strong>loading:</strong> a path between an indicator and a factor.</li>
+<li><strong>structural model:</strong> a model that specifies causal relationships among exogenous variables to endogenous variables (can be observed or latent).</li>
+<li><strong>regression path:</strong> a path between exogenous and endogenous variables (can be observed or latent).</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="are-you-ready-for-the-first-headache-question" class="slide level2">
+<h2>Are you ready for the first headache question?</h2>
+<p>So far, in linear regression we have learnt that <span class="math inline">\(x\)</span> is an <strong>independent</strong> variable and <span class="math inline">\(y\)</span> the <strong>dependent</strong> variable or outcome. However, in measurement models, the use of <span class="math inline">\(x\)</span> or <span class="math inline">\(y\)</span> depends on the type of factor we are referring to. If an indicator depends on an <strong>exogenous</strong> factor, the we refer to it as <span class="math inline">\(x\)</span>-side. If an indicator depends on an <strong>endogenous</strong> factor then we refer to it as <span class="math inline">\(y\)</span>-side.</p>
+</section>
+<section id="let-us-expand-on-this-headache-a-bit-more" class="slide level2">
+<h2>Let us expand on this headache a bit more</h2>
+
+<img data-src="../..\path2.JPG" class="r-stretch"></section>
+<section id="simple-regression" class="slide level2">
+<h2>Simple Regression</h2>
+<p>So far we have learnt that a simple regression is the linear relation between a predictor (or an independent variable, or an observed exogenous variable) and an outcome (or observed endogenous variable).</p>
+<p><span class="math display">\[
+y_1 = b_0 +b_1x_1 + ε_1
+\]</span></p>
+<p>where&nbsp;<span class="math inline">\(b_0\)</span> is the intercept and <span class="math inline">\(b_1\)</span> is the coefficient of&nbsp;<span class="math inline">\(x_1\)</span> (observed predictor) and&nbsp;<span class="math inline">\(ε_1\)</span> is the residual with <span class="math inline">\(y_1\)</span> being the outcome.</p>
+</section>
+<section id="simple-regression-cont." class="slide level2">
+<h2>Simple Regression cont.</h2>
+<p><strong>I strongly recommend reading Kline chapter 2, pages 25-30 at minimum, Regression Fundamentals.</strong></p>
+<p><span class="math display">\[
+\hat{Y} = B_XX + A_X
+\]</span></p>
+<p>The above equation represents <strong>predicting Y from X</strong></p>
+<p>Also referred to as <strong>regressing Y on X</strong>, with <span class="math inline">\(\hat{Y}\)</span> representing <strong>predicted scores</strong>, <span class="math inline">\(B_X\)</span> unstandardised regression coefficient for predictor <span class="math inline">\(X\)</span>, also known as slope, and <span class="math inline">\(A_X\)</span> is the intercept.</p>
+<p>Generally, with linear models we would use <strong>ordinary least square</strong> (OLS) so that the <strong>least squares criterion</strong> is satisfied. In practice, we are trying to minimise the sum of squared residuals, <span class="math inline">\(\sum(Y-\hat{Y})\)</span></p>
+</section>
+<section id="let-us-see-an-example-with-data" class="slide level2">
+<h2>Let us see an example with data</h2>
+<p>We will work with the randomly generated data included in the <strong>random.csv</strong></p>
+<p>The datafile includes three variables:</p>
+<p><strong>reading: reading ability as assessed in school</strong></p>
+<p><strong>income: weekly family income in £</strong></p>
+<p><strong>books: number of books read in a month (on average)</strong></p>
+<p>We will create a simple regression model of <strong>reading</strong> &nbsp;regressing on <strong>income</strong> using <strong>lm()</strong></p>
+</section>
+<section id="loading-the-datafile" class="slide level2">
+<h2>Loading the datafile</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(lavaan)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"random.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="creating-the-model-and-getting-model-parameters" class="slide level2">
+<h2>Creating the model and getting model parameters</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>reading_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(reading <span class="sc">~</span> income, <span class="at">data =</span> df)</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="co"># the option below instructs R to give us the output in non-exponential notation</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>)</span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="fu">summary</span>(reading_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = reading ~ income, data = df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-50.590 -16.562  -0.178  13.429  48.207 
+
+Coefficients:
+             Estimate Std. Error t value             Pr(&gt;|t|)    
+(Intercept) 188.17787    6.68278  28.159 &lt; 0.0000000000000002 ***
+income        0.11800    0.01662   7.098       0.000000000201 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 21.44 on 98 degrees of freedom
+Multiple R-squared:  0.3395,    Adjusted R-squared:  0.3328 
+F-statistic: 50.38 on 1 and 98 DF,  p-value: 0.0000000002013</code></pre>
+</div>
+</div>
+</section>
+<section id="looking-at-the-output" class="slide level2">
+<h2>Looking at the output</h2>
+<p>Our intercept is 188.18 and our income coefficient is 0.002. This means that the reading ability of a student with a family income of £0 will be 188.18 and for every £1 of family income increase the reading ability will increase by 0.12.</p>
+<p>We also see <strong>residual standard error of 21.44</strong></p>
+<p>The <strong>square of that value is 459.67</strong></p>
+</section>
+<section id="let-us-recreate-the-same-model-using-lavaan" class="slide level2">
+<h2>Let us recreate the same model using Lavaan</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># lavaan uses a simple language when specifying the model</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="co">#simple regression using lavaan </span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>reading_lav <span class="ot">&lt;-</span>   <span class="st">'</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="st">  # regressions</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="st">    reading ~ 1 + income</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="st">  # variance (optional)</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="st">    income ~~ income</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="st">'</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a>reading_lav_sem <span class="ot">&lt;-</span> <span class="fu">sem</span>(reading_lav, <span class="at">data=</span>df)</span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="fu">summary</span>(reading_lav_sem)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>lavaan 0.6.17 ended normally after 11 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                         5
+
+  Number of observations                           100
+
+Model Test User Model:
+                                                      
+  Test statistic                                 0.000
+  Degrees of freedom                                 0
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Regressions:
+                   Estimate   Std.Err  z-value  P(&gt;|z|)
+  reading ~                                            
+    income             0.118    0.016    7.170    0.000
+
+Intercepts:
+                   Estimate   Std.Err  z-value  P(&gt;|z|)
+   .reading          188.178    6.616   28.445    0.000
+    income           380.752   12.896   29.525    0.000
+
+Variances:
+                   Estimate   Std.Err  z-value  P(&gt;|z|)
+    income         16630.573 2351.918    7.071    0.000
+   .reading          450.401   63.696    7.071    0.000</code></pre>
+</div>
+</div>
+</section>
+<section id="comparing-the-two-outputs" class="slide level2">
+<h2>Comparing the two outputs</h2>
+<p>We observe that the estimates of the regression coefficients are the same despite <strong>lm()</strong> using <strong>least squares (LS)</strong> and <strong>lavaan</strong> using <strong>maximum likelihood (ML)</strong>. However the variances are different with <strong>459.67</strong> for <strong>lm()</strong> and <strong>450.40</strong> for <strong>lavaan.</strong></p>
+<p>In we want to convert from <strong>LS variance to ML variance</strong> we can use the following formula</p>
+<p><span class="math display">\[
+\hat{σ}_{ML}^2 = \frac{(N-k)}{n}\hat{σ}_{LS}^2
+\]</span></p>
+<p>Where <span class="math inline">\(N\)</span> and <span class="math inline">\(n\)</span> are the sample sizes and <span class="math inline">\(k\)</span> is the number or parameters to estimate, in this case <span class="math inline">\(k\)</span>=2, one intercept and one regression coefficient</p>
+<p><span class="math display">\[
+\hat{σ}_{ML}^2 = \frac{(100-2)}{100}21.44^2=450.48
+\]</span></p>
+</section>
+<section id="visualising-with-sempaths-from-semplot" class="slide level2">
+<h2>Visualising with semPaths() from semPlot</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(semPlot)</span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">semPaths</span>(reading_lav_sem,</span>
+<span id="cb6-4"><a href="#cb6-4"></a>         <span class="at">whatLabels =</span> <span class="st">"est"</span>,</span>
+<span id="cb6-5"><a href="#cb6-5"></a>         <span class="at">sizeMan =</span> <span class="dv">10</span>,</span>
+<span id="cb6-6"><a href="#cb6-6"></a>         <span class="at">style =</span> <span class="st">"ram"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7"></a>         <span class="at">layout =</span> <span class="st">"circle"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<section id="ols-vs-ml" class="slide level2">
+<h2>OLS vs ML</h2>
+<p>Generally in SEM, we use the <strong>maximum likelihood estimator (MLE)</strong>. In this module we will be using the acronyms <strong>ML</strong> and <strong>MLE</strong>&nbsp;to denote the maximum likelihood estimator method. This method estimates model parameters by maximising the likelihood function. In other words, maximising the probability of observing our existing data points given specific parameter values. We will be discussing in details what these parameters are in SEM (e.g., coefficients, latent variable variances, etc.). It should also be noted that <strong>MLE</strong> is not the only estimation methods, other methods can also be successfully implemented, such as <strong>generalised least squares</strong>. We decided on the appropriate estimator based on our data characteristics and assumptions.</p>
+</section>
+<section id="multiple-regression-lm" class="slide level2">
+<h2>Multiple regression, lm()</h2>
+<p>We can expand the previous example to now include a second predictor, <strong>books</strong> which represents the number of books read in a month (on average)</p>
+<p><span class="math display">\[
+y_1 = b_0 +b_1x_1 + b_2x_2 + ε_1
+\]</span></p>
+<p>You may also come across the following notation:</p>
+<p><span class="math display">\[
+\hat{Y} = B_XX + +B_WW + A_{X,W}
+\]</span></p>
+<p>Important to note here that <span class="math inline">\(B_X\)</span> and <span class="math inline">\(B_W\)</span> are the <strong>unstandardized partial regression coefficients</strong>, <span class="math inline">\(A_{X,W}\)</span> is the intercept. For more information please read Kline page 30.</p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>Multiple regression, lm()</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>reading2_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(reading <span class="sc">~</span> income <span class="sc">+</span> books, <span class="at">data =</span> df)</span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">summary</span>(reading2_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = reading ~ income + books, data = df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-50.397 -13.633   0.547  13.698  51.585 
+
+Coefficients:
+             Estimate Std. Error t value             Pr(&gt;|t|)    
+(Intercept) 187.28030    6.14063  30.499 &lt; 0.0000000000000002 ***
+income        0.06160    0.01997   3.085              0.00265 ** 
+books         6.14601    1.40272   4.382            0.0000298 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 19.69 on 97 degrees of freedom
+Multiple R-squared:  0.4487,    Adjusted R-squared:  0.4373 
+F-statistic: 39.47 on 2 and 97 DF,  p-value: 0.0000000000002875</code></pre>
+</div>
+</div>
+</section>
+<section id="multiple-regression-lavaan" class="slide level2">
+<h2>Multiple regression, lavaan</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>reading2_lav <span class="ot">&lt;-</span>   <span class="st">'</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="st">  # regressions</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="st">    reading ~ 1 + income + books</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="st">  # covariance</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="st">    income ~~ books</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="st">'</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a>reading2_lav_sem <span class="ot">&lt;-</span> <span class="fu">sem</span>(reading2_lav, <span class="at">data=</span>df)</span>
+<span id="cb9-8"><a href="#cb9-8"></a><span class="fu">summary</span>(reading2_lav_sem)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>lavaan 0.6.17 ended normally after 38 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                         9
+
+  Number of observations                           100
+
+Model Test User Model:
+                                                      
+  Test statistic                                 0.000
+  Degrees of freedom                                 0
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Regressions:
+                   Estimate   Std.Err  z-value  P(&gt;|z|)
+  reading ~                                            
+    income             0.062    0.020    3.132    0.002
+    books              6.146    1.382    4.449    0.000
+
+Covariances:
+                   Estimate   Std.Err  z-value  P(&gt;|z|)
+  income ~~                                            
+    books            152.610   28.168    5.418    0.000
+
+Intercepts:
+                   Estimate   Std.Err  z-value  P(&gt;|z|)
+   .reading          187.280    6.048   30.967    0.000
+    income           380.752   12.896   29.525    0.000
+    books              3.640    0.184   19.827    0.000
+
+Variances:
+                   Estimate   Std.Err  z-value  P(&gt;|z|)
+   .reading          375.988   53.173    7.071    0.000
+    income         16630.574 2351.918    7.071    0.000
+    books              3.370    0.477    7.071    0.000</code></pre>
+</div>
+</div>
+</section>
+<section id="visualising-with-sempaths-from-semplot-1" class="slide level2">
+<h2>Visualising with semPaths() from semPlot</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">semPaths</span>(reading2_lav_sem,</span>
+<span id="cb11-2"><a href="#cb11-2"></a>         <span class="at">whatLabels =</span> <span class="st">"est"</span>,</span>
+<span id="cb11-3"><a href="#cb11-3"></a>         <span class="at">sizeMan =</span> <span class="dv">10</span>,</span>
+<span id="cb11-4"><a href="#cb11-4"></a>         <span class="at">style =</span> <span class="st">"ram"</span>,</span>
+<span id="cb11-5"><a href="#cb11-5"></a>         <span class="at">layout =</span> <span class="st">"spring"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
+<section id="visualising-with-sempaths-from-semplot-2" class="slide level2">
+<h2>Visualising with semPaths() from semPlot</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">semPaths</span>(reading2_lav_sem,</span>
+<span id="cb12-2"><a href="#cb12-2"></a>         <span class="at">whatLabels =</span> <span class="st">"est"</span>,</span>
+<span id="cb12-3"><a href="#cb12-3"></a>         <span class="at">sizeMan =</span> <span class="dv">10</span>,          </span>
+<span id="cb12-4"><a href="#cb12-4"></a>         <span class="at">style =</span> <span class="st">"ram"</span>,          </span>
+<span id="cb12-5"><a href="#cb12-5"></a>         <span class="at">layout =</span> <span class="st">"tree"</span>,</span>
+<span id="cb12-6"><a href="#cb12-6"></a>         <span class="at">intercepts =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<section id="a-prelude-to-next-week.-mediation-with-lavaan" class="slide level2">
+<h2>A prelude to next week. Mediation with Lavaan</h2>
+<p>We will explore whether the number of <strong>books</strong> read actually <strong>mediate</strong> the effect of <strong>income</strong> on <strong>reading</strong> ability. We will not go in depth today as we will discuss this topic next week in detail. We will just demonstrate how the code would change in lavaan.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>reading_med_model <span class="ot">&lt;-</span> <span class="st">' # direct effect</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="st">             reading ~ c*income</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="st">           # mediator</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a><span class="st">             books ~ a*income</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="st">             reading ~ b*books</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a><span class="st">           # indirect effect (a*b)</span></span>
+<span id="cb13-7"><a href="#cb13-7"></a><span class="st">             ab := a*b</span></span>
+<span id="cb13-8"><a href="#cb13-8"></a><span class="st">           # total effect</span></span>
+<span id="cb13-9"><a href="#cb13-9"></a><span class="st">             total := c + (a*b)</span></span>
+<span id="cb13-10"><a href="#cb13-10"></a><span class="st">         '</span></span>
+<span id="cb13-11"><a href="#cb13-11"></a>reading_med <span class="ot">&lt;-</span> <span class="fu">sem</span>(reading_med_model, <span class="at">data =</span> df)</span>
+<span id="cb13-12"><a href="#cb13-12"></a><span class="fu">summary</span>(reading_med )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>lavaan 0.6.17 ended normally after 1 iteration
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                         5
+
+  Number of observations                           100
+
+Model Test User Model:
+                                                      
+  Test statistic                                 0.000
+  Degrees of freedom                                 0
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Regressions:
+                   Estimate   Std.Err  z-value  P(&gt;|z|)
+  reading ~                                            
+    income     (c)     0.062    0.020    3.132    0.002
+  books ~                                              
+    income     (a)     0.009    0.001    8.431    0.000
+  reading ~                                            
+    books      (b)     6.146    1.382    4.449    0.000
+
+Variances:
+                   Estimate   Std.Err  z-value  P(&gt;|z|)
+   .reading          375.988   53.173    7.071    0.000
+   .books              1.970    0.279    7.071    0.000
+
+Defined Parameters:
+                   Estimate   Std.Err  z-value  P(&gt;|z|)
+    ab                 0.056    0.014    3.935    0.000
+    total              0.118    0.016    7.170    0.000</code></pre>
+</div>
+</div>
+</section>
+<section id="let-us-visualise-the-above-model" class="slide level2">
+<h2>Let us visualise the above model</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">semPaths</span>(reading_med,</span>
+<span id="cb15-2"><a href="#cb15-2"></a>         <span class="at">whatLabels =</span> <span class="st">"est"</span>,</span>
+<span id="cb15-3"><a href="#cb15-3"></a>         <span class="at">sizeMan =</span> <span class="dv">10</span>,          </span>
+<span id="cb15-4"><a href="#cb15-4"></a>         <span class="at">style =</span> <span class="st">"ram"</span>,          </span>
+<span id="cb15-5"><a href="#cb15-5"></a>         <span class="at">layout =</span> <span class="st">"tree"</span>,</span>
+<span id="cb15-6"><a href="#cb15-6"></a>         <span class="at">intercepts =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb15-7"><a href="#cb15-7"></a>         <span class="at">rotation =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
+<section id="to-conclude" class="slide level2">
+<h2>To conclude</h2>
+<p>Hopefully, this was a gentle introduction to the module and lavaan. We will be following a more formal approach in the coming weeks. In the meantime do spend some time this week to do the suggested reading and practice with R and lavaan in our Posit Cloud Workspace.</p>
 
 <div class="footer footer-default">
 
@@ -378,6 +935,7 @@ Dr Lazaros Gonidis
   <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -394,13 +952,14 @@ Dr Lazaros Gonidis
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
+'smaller': true,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'smaller': false,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,
@@ -420,7 +979,7 @@ Dr Lazaros Gonidis
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -570,7 +1129,7 @@ Dr Lazaros Gonidis
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
           RevealNotes,
@@ -579,6 +1138,44 @@ Dr Lazaros Gonidis
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

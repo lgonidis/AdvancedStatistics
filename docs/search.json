@@ -32,6 +32,265 @@
     "href": "posts/Introduction to Advanced Statistics/index.html#who-i-am",
     "title": "Introduction to Advanced Statistics",
     "section": "Who I am",
-    "text": "Who I am\n\n\n\n\n\nThis is me\nAnd me\nAnd me\nAnd me\nMe too"
+    "text": "Who I am\n\n\n\n\n\n\n\nThis is me (used to be)\nI love my two boys\nI also love computer games, motorbikes, music, food\nFunnily enough I love maths and statistics, and even more teaching these\nI am also dyslexic so please do tell me when you spot typing mistakes, usually whole words missing."
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#essential-and-supplamentary-materials",
+    "href": "posts/Introduction to Advanced Statistics/index.html#essential-and-supplamentary-materials",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Essential and Supplamentary Materials",
+    "text": "Essential and Supplamentary Materials\n\n\n\n\n\n\nPrinciples and Practice of Structural Equation Modeling\nLongitudinal Structural Equation Modeling: A comprehensive Introduction\nOfficial lavaan tutorial from lavaan.org\nPsychometrics in Exercises using R and Rstudio by Prof Anna Brown\nIntroduction to Structural Equation Modeling (SEM) in R with lavaan by Dr Johnny Lin\n** And many other online resources that will be revealed in due time"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#section",
+    "href": "posts/Introduction to Advanced Statistics/index.html#section",
+    "title": "Introduction to Advanced Statistics",
+    "section": "",
+    "text": "Multiple regression, lm()\n\n\nCode\nreading2_lm &lt;- lm(reading ~ income + books, data = df)\n\n\nsummary(reading2_lm)\n\n\n\nCall:\nlm(formula = reading ~ income + books, data = df)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-50.397 -13.633   0.547  13.698  51.585 \n\nCoefficients:\n             Estimate Std. Error t value             Pr(&gt;|t|)    \n(Intercept) 187.28030    6.14063  30.499 &lt; 0.0000000000000002 ***\nincome        0.06160    0.01997   3.085              0.00265 ** \nbooks         6.14601    1.40272   4.382            0.0000298 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 19.69 on 97 degrees of freedom\nMultiple R-squared:  0.4487,    Adjusted R-squared:  0.4373 \nF-statistic: 39.47 on 2 and 97 DF,  p-value: 0.0000000000002875"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#todays-aims-in-terms-of-the-module",
+    "href": "posts/Introduction to Advanced Statistics/index.html#todays-aims-in-terms-of-the-module",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Today’s Aims in Terms of the Module",
+    "text": "Today’s Aims in Terms of the Module\n\nCanvas\nRstudio/Posit\ndiscord\nAssessment\nQuizzes (Badges to be confirmed)\nGithub"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#todays-aims-in-terms-of-sem",
+    "href": "posts/Introduction to Advanced Statistics/index.html#todays-aims-in-terms-of-sem",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Today’s Aims in Terms of SEM",
+    "text": "Today’s Aims in Terms of SEM\n\nIntroduce key terminology that we will be using this term\nDiscuss an example of simple regression\nRevisit the same example using lavaan\nDiscuss baximum likelihood vs. least squares"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#key-terminology",
+    "href": "posts/Introduction to Advanced Statistics/index.html#key-terminology",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Key Terminology",
+    "text": "Key Terminology\nWe will be using quite a few terms in our module so it is important to define them in advance and try to use them consistently. Most of the them are used as in the field but you could come across some slight variations in terminology. This should not put you off or scare you, as long as you understand the substance of each term. It is also a good idea to try to learn the visual equivalents of these terms"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#key-terminology-2",
+    "href": "posts/Introduction to Advanced Statistics/index.html#key-terminology-2",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Key Terminology 2",
+    "text": "Key Terminology 2\n\n\n\n\n\nlatent variable: a variable that is constructed/inferred indirectly by the data and does not exist in the data.\nobserved variable: a variable that has been measured and exists in our data.\nexogenous variable: an independent variable that explains an endogenous variable. Can be either observed \\((x)\\) or latent \\((ξ)\\).\nendogenous variable: a dependent variable that has a causal path leading to it. Can be either observed \\((y)\\) or latent \\((η)\\).\nmeasurement model: a model that links observed variables with latent variables"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#key-terminology-3",
+    "href": "posts/Introduction to Advanced Statistics/index.html#key-terminology-3",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Key Terminology 3",
+    "text": "Key Terminology 3\n\n\n\n\n\nindicator: an observed variable in a measurement model (can be exogenous or endogenous).\nfactor: a latent variable defined by its indicators (can be exogenous or endogenous).\nloading: a path between an indicator and a factor.\nstructural model: a model that specifies causal relationships among exogenous variables to endogenous variables (can be observed or latent).\nregression path: a path between exogenous and endogenous variables (can be observed or latent)."
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#are-you-ready-for-the-first-headache-question",
+    "href": "posts/Introduction to Advanced Statistics/index.html#are-you-ready-for-the-first-headache-question",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Are you ready for the first headache question?",
+    "text": "Are you ready for the first headache question?\nSo far, in linear regression we have learnt that \\(x\\) is an independent variable and \\(y\\) the dependent variable or outcome. However, in measurement models, the use of \\(x\\) or \\(y\\) depends on the type of factor we are referring to. If an indicator depends on an exogenous factor, the we refer to it as \\(x\\)-side. If an indicator depends on an endogenous factor then we refer to it as \\(y\\)-side."
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#let-us-expand-on-this-headache-a-bit-more",
+    "href": "posts/Introduction to Advanced Statistics/index.html#let-us-expand-on-this-headache-a-bit-more",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Let us expand on this headache a bit more",
+    "text": "Let us expand on this headache a bit more"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#simple-regression",
+    "href": "posts/Introduction to Advanced Statistics/index.html#simple-regression",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Simple Regression",
+    "text": "Simple Regression\nSo far we have learnt that a simple regression is the linear relation between a predictor (or an independent variable, or an observed exogenous variable) and an outcome (or observed endogenous variable).\n\\[\ny_1 = b_0 +b_1x_1 + ε_1\n\\]\nwhere \\(b_0\\) is the intercept and \\(b_1\\) is the coefficient of \\(x_1\\) (observed predictor) and \\(ε_1\\) is the residual with \\(y_1\\) being the outcome."
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#simple-regression-cont.",
+    "href": "posts/Introduction to Advanced Statistics/index.html#simple-regression-cont.",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Simple Regression cont.",
+    "text": "Simple Regression cont.\nI strongly recommend reading Kline chapter 2, pages 25-30 at minimum, Regression Fundamentals.\n\\[\n\\hat{Y} = B_XX + A_X\n\\]\nThe above equation represents predicting Y from X\nAlso referred to as regressing Y on X, with \\(\\hat{Y}\\) representing predicted scores, \\(B_X\\) unstandardised regression coefficient for predictor \\(X\\), also known as slope, and \\(A_X\\) is the intercept.\nGenerally, with linear models we would use ordinary least square (OLS) so that the least squares criterion is satisfied. In practice, we are trying to minimise the sum of squared residuals, \\(\\sum(Y-\\hat{Y})\\)"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#let-us-see-an-example-with-data",
+    "href": "posts/Introduction to Advanced Statistics/index.html#let-us-see-an-example-with-data",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Let us see an example with data",
+    "text": "Let us see an example with data\nWe will work with the randomly generated data included in the random.csv\nThe datafile includes three variables:\nreading: reading ability as assessed in school\nincome: weekly family income in £\nbooks: number of books read in a month (on average)\nWe will create a simple regression model of reading  regressing on income using lm()"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#loading-the-datafile",
+    "href": "posts/Introduction to Advanced Statistics/index.html#loading-the-datafile",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Loading the datafile",
+    "text": "Loading the datafile\n\n\nCode\nlibrary(tidyverse)\nlibrary(lavaan)\ndf &lt;- read_csv(\"random.csv\")"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#creating-the-model-and-getting-model-parameters",
+    "href": "posts/Introduction to Advanced Statistics/index.html#creating-the-model-and-getting-model-parameters",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Creating the model and getting model parameters",
+    "text": "Creating the model and getting model parameters\n\n\nCode\nreading_lm &lt;- lm(reading ~ income, data = df)\n# the option below instructs R to give us the output in non-exponential notation\noptions(scipen=999)\n\nsummary(reading_lm)\n\n\n\nCall:\nlm(formula = reading ~ income, data = df)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-50.590 -16.562  -0.178  13.429  48.207 \n\nCoefficients:\n             Estimate Std. Error t value             Pr(&gt;|t|)    \n(Intercept) 188.17787    6.68278  28.159 &lt; 0.0000000000000002 ***\nincome        0.11800    0.01662   7.098       0.000000000201 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 21.44 on 98 degrees of freedom\nMultiple R-squared:  0.3395,    Adjusted R-squared:  0.3328 \nF-statistic: 50.38 on 1 and 98 DF,  p-value: 0.0000000002013"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#looking-at-the-output",
+    "href": "posts/Introduction to Advanced Statistics/index.html#looking-at-the-output",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Looking at the output",
+    "text": "Looking at the output\nOur intercept is 188.18 and our income coefficient is 0.002. This means that the reading ability of a student with a family income of £0 will be 188.18 and for every £1 of family income increase the reading ability will increase by 0.12.\nWe also see residual standard error of 21.44\nThe square of that value is 459.67"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#let-us-recreate-the-same-model-using-lavaan",
+    "href": "posts/Introduction to Advanced Statistics/index.html#let-us-recreate-the-same-model-using-lavaan",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Let us recreate the same model using Lavaan",
+    "text": "Let us recreate the same model using Lavaan\n\n\nCode\n# lavaan uses a simple language when specifying the model\n#simple regression using lavaan \nreading_lav &lt;-   '\n  # regressions\n    reading ~ 1 + income\n  # variance (optional)\n    income ~~ income\n'\nreading_lav_sem &lt;- sem(reading_lav, data=df)\nsummary(reading_lav_sem)\n\n\nlavaan 0.6.17 ended normally after 11 iterations\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                         5\n\n  Number of observations                           100\n\nModel Test User Model:\n                                                      \n  Test statistic                                 0.000\n  Degrees of freedom                                 0\n\nParameter Estimates:\n\n  Standard errors                             Standard\n  Information                                 Expected\n  Information saturated (h1) model          Structured\n\nRegressions:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n  reading ~                                            \n    income             0.118    0.016    7.170    0.000\n\nIntercepts:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n   .reading          188.178    6.616   28.445    0.000\n    income           380.752   12.896   29.525    0.000\n\nVariances:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n    income         16630.573 2351.918    7.071    0.000\n   .reading          450.401   63.696    7.071    0.000"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#let-us-recreate-the-same-model-using-lavaan-1",
+    "href": "posts/Introduction to Advanced Statistics/index.html#let-us-recreate-the-same-model-using-lavaan-1",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Let us recreate the same model using Lavaan",
+    "text": "Let us recreate the same model using Lavaan\n\n\nCode\n# lavaan uses a simple language when specifying the model\n#simple regression using lavaan \nreading_lav &lt;-   '\n  # regressions\n    reading ~ 1 + income\n  # variance (optional)\n    income ~~ income\n'\nreading_lav_sem &lt;- sem(reading_lav, data=df)\nsummary(reading_lav_sem)\n\n\nlavaan 0.6.17 ended normally after 11 iterations\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                         5\n\n  Number of observations                           100\n\nModel Test User Model:\n                                                      \n  Test statistic                                 0.000\n  Degrees of freedom                                 0\n\nParameter Estimates:\n\n  Standard errors                             Standard\n  Information                                 Expected\n  Information saturated (h1) model          Structured\n\nRegressions:\n                   Estimate      Std.Err  z-value  P(&gt;|z|)\n  reading ~                                               \n    income                0.002 NA                        \n\nIntercepts:\n                   Estimate      Std.Err  z-value  P(&gt;|z|)\n   .reading             188.180 NA                        \n    income            19037.628 NA                        \n\nVariances:\n                   Estimate      Std.Err  z-value  P(&gt;|z|)\n    income         41576275.335 NA                        \n   .reading             450.395 NA"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#comparing-the-two-outputs",
+    "href": "posts/Introduction to Advanced Statistics/index.html#comparing-the-two-outputs",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Comparing the two outputs",
+    "text": "Comparing the two outputs\nWe observe that the estimates of the regression coefficients are the same despite lm() using least squares (LS) and lavaan using maximum likelihood (ML). However the variances are different with 459.67 for lm() and 450.40 for lavaan.\nIn we want to convert from LS variance to ML variance we can use the following formula\n\\[\n\\hat{σ}_{ML}^2 = \\frac{(N-k)}{n}\\hat{σ}_{LS}^2\n\\]\nWhere \\(N\\) and \\(n\\) are the sample sizes and \\(k\\) is the number or parameters to estimate, in this case \\(k\\)=2, one intercept and one regression coefficient\n\\[\n\\hat{σ}_{ML}^2 = \\frac{(100-2)}{100}21.44^2=450.48\n\\]"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#visualising",
+    "href": "posts/Introduction to Advanced Statistics/index.html#visualising",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Visualising",
+    "text": "Visualising\n\n\nCode\nlibrary(semPlot)\n\nsemPaths(reading_lav_sem,\n         whatLabels = \"est\",\n         sizeMan = 10,\n         style = \"ram\",\n         layout = \"circle\")"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#multiple-regression",
+    "href": "posts/Introduction to Advanced Statistics/index.html#multiple-regression",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Multiple regression",
+    "text": "Multiple regression\nWe can expand the previous example to now include a second predictor, books which represents the number of books read"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#visualising-with-sempaths-from-semplot",
+    "href": "posts/Introduction to Advanced Statistics/index.html#visualising-with-sempaths-from-semplot",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Visualising with semPaths() from semPlot",
+    "text": "Visualising with semPaths() from semPlot\n\n\nCode\nlibrary(semPlot)\n\nsemPaths(reading_lav_sem,\n         whatLabels = \"est\",\n         sizeMan = 10,\n         style = \"ram\",\n         layout = \"circle\")"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#multiple-regression-lm",
+    "href": "posts/Introduction to Advanced Statistics/index.html#multiple-regression-lm",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Multiple regression, lm()",
+    "text": "Multiple regression, lm()\nWe can expand the previous example to now include a second predictor, books which represents the number of books read in a month (on average)\n\\[\ny_1 = b_0 +b_1x_1 + b_2x_2 + ε_1\n\\]\nYou may also come across the following notation:\n\\[\n\\hat{Y} = B_XX + +B_WW + A_{X,W}\n\\]\nImportant to note here that \\(B_X\\) and \\(B_W\\) are the unstandardized partial regression coefficients, \\(A_{X,W}\\) is the intercept. For more information please read Kline page 30."
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#multiple-regression-lavaan",
+    "href": "posts/Introduction to Advanced Statistics/index.html#multiple-regression-lavaan",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Multiple regression, lavaan",
+    "text": "Multiple regression, lavaan\n\n\nCode\nreading2_lav &lt;-   '\n  # regressions\n    reading ~ 1 + income + books\n  # covariance\n    income ~~ books\n'\nreading2_lav_sem &lt;- sem(reading2_lav, data=df)\nsummary(reading2_lav_sem)\n\n\nlavaan 0.6.17 ended normally after 38 iterations\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                         9\n\n  Number of observations                           100\n\nModel Test User Model:\n                                                      \n  Test statistic                                 0.000\n  Degrees of freedom                                 0\n\nParameter Estimates:\n\n  Standard errors                             Standard\n  Information                                 Expected\n  Information saturated (h1) model          Structured\n\nRegressions:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n  reading ~                                            \n    income             0.062    0.020    3.132    0.002\n    books              6.146    1.382    4.449    0.000\n\nCovariances:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n  income ~~                                            \n    books            152.610   28.168    5.418    0.000\n\nIntercepts:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n   .reading          187.280    6.048   30.967    0.000\n    income           380.752   12.896   29.525    0.000\n    books              3.640    0.184   19.827    0.000\n\nVariances:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n   .reading          375.988   53.173    7.071    0.000\n    income         16630.574 2351.918    7.071    0.000\n    books              3.370    0.477    7.071    0.000"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#visualising-with-sempaths-from-semplot-1",
+    "href": "posts/Introduction to Advanced Statistics/index.html#visualising-with-sempaths-from-semplot-1",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Visualising with semPaths() from semPlot",
+    "text": "Visualising with semPaths() from semPlot\n\n\nCode\nsemPaths(reading2_lav_sem,\n         whatLabels = \"est\",\n         sizeMan = 10,\n         style = \"ram\",\n         layout = \"spring\")"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#canvas",
+    "href": "posts/Introduction to Advanced Statistics/index.html#canvas",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Canvas",
+    "text": "Canvas\nHopefully you should know where to find our Canvas website, but just in case:\nhttps://canvas.sussex.ac.uk/courses/26315/pages/module-home-page"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#rstudioposit-cloud",
+    "href": "posts/Introduction to Advanced Statistics/index.html#rstudioposit-cloud",
+    "title": "Introduction to Advanced Statistics",
+    "section": "RStudio/Posit Cloud",
+    "text": "RStudio/Posit Cloud\nFor our analysis we will be using exclusively R and mainly Posit Cloud. However, I strongly believe that as future scientists you should also have locally installed RStudio/Posit, have it up to date and use that for your everyday work. I would also advise you to attend our workshops bringing your own laptops/tablets/mobile phones.\nYou can join our Posit Cloud Workspace by following this link:\nhttps://posit.cloud/spaces/469376/join?access_code=4YBUfhrNPGU2oWWw5Zym6bepaVV6izQ8O1KE6THK"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#discord-as-our-mean-of-day-to-day-communication",
+    "href": "posts/Introduction to Advanced Statistics/index.html#discord-as-our-mean-of-day-to-day-communication",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Discord as our mean of day to day communication",
+    "text": "Discord as our mean of day to day communication\nWe will be using discord as our main communication channel, please use it for any stats related questions. If you have any more sensitive questions please do not hesitate to email me at: L.Gonidis@Sussex.ac.uk\nYou can join us by following this link: https://discord.gg/9TV3xzMZ"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#visualising-with-sempaths-from-semplot-2",
+    "href": "posts/Introduction to Advanced Statistics/index.html#visualising-with-sempaths-from-semplot-2",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Visualising with semPaths() from semPlot",
+    "text": "Visualising with semPaths() from semPlot\n\n\nCode\nsemPaths(reading2_lav_sem,\n         whatLabels = \"est\",\n         sizeMan = 10,          \n         style = \"ram\",          \n         layout = \"tree\",\n         intercepts = FALSE)"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#a-prelude-to-next-week.-mediation-with-lavaan",
+    "href": "posts/Introduction to Advanced Statistics/index.html#a-prelude-to-next-week.-mediation-with-lavaan",
+    "title": "Introduction to Advanced Statistics",
+    "section": "A prelude to next week. Mediation with Lavaan",
+    "text": "A prelude to next week. Mediation with Lavaan\nWe will explore whether the number of books read actually mediate the effect of income on reading ability. We will not go in depth today as we will discuss this topic next week in detail. We will just demonstrate how the code would change in lavaan.\n\n\nCode\nreading_med_model &lt;- ' # direct effect\n             reading ~ c*income\n           # mediator\n             books ~ a*income\n             reading ~ b*books\n           # indirect effect (a*b)\n             ab := a*b\n           # total effect\n             total := c + (a*b)\n         '\nreading_med &lt;- sem(reading_med_model, data = df)\nsummary(reading_med )\n\n\nlavaan 0.6.17 ended normally after 1 iteration\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                         5\n\n  Number of observations                           100\n\nModel Test User Model:\n                                                      \n  Test statistic                                 0.000\n  Degrees of freedom                                 0\n\nParameter Estimates:\n\n  Standard errors                             Standard\n  Information                                 Expected\n  Information saturated (h1) model          Structured\n\nRegressions:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n  reading ~                                            \n    income     (c)     0.062    0.020    3.132    0.002\n  books ~                                              \n    income     (a)     0.009    0.001    8.431    0.000\n  reading ~                                            \n    books      (b)     6.146    1.382    4.449    0.000\n\nVariances:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n   .reading          375.988   53.173    7.071    0.000\n   .books              1.970    0.279    7.071    0.000\n\nDefined Parameters:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n    ab                 0.056    0.014    3.935    0.000\n    total              0.118    0.016    7.170    0.000"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#let-us-visualise-the-above-model",
+    "href": "posts/Introduction to Advanced Statistics/index.html#let-us-visualise-the-above-model",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Let us visualise the above model",
+    "text": "Let us visualise the above model\n\n\nCode\nsemPaths(reading_med,\n         whatLabels = \"est\",\n         sizeMan = 10,          \n         style = \"ram\",          \n         layout = \"tree\",\n         intercepts = FALSE,\n         rotation = 2)"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#to-conclude",
+    "href": "posts/Introduction to Advanced Statistics/index.html#to-conclude",
+    "title": "Introduction to Advanced Statistics",
+    "section": "To conclude",
+    "text": "To conclude\nHopefully, this was a gentle introduction to the module and lavaan. We will be following a more formal approach in the coming weeks. In the meantime do spend some time this week to do the suggested reading and practice with R and lavaan in our Posit Cloud Workspace."
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#who-you-are",
+    "href": "posts/Introduction to Advanced Statistics/index.html#who-you-are",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Who you are",
+    "text": "Who you are\nI have no idea who you are but I hope by the end of this module you will love statistics a bit more and you will appreciate even more why they are paramount for Psychological research."
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#assessment",
+    "href": "posts/Introduction to Advanced Statistics/index.html#assessment",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Assessment",
+    "text": "Assessment\nThe module will be assessed exclusively by coursework. This will be in the form of three 1,000 words results sections. The deadlines are:\n\nReport 1, February 13th 16:00\nReport 2, March 14th 16:00\nReport 3, April 23rd 16:00\n\nAll submissions will be via Canvas submission points in the Assignments, Contributory E-Submission subsection. Each report topic will be released in our workshop the week prior to the submission deadline. Specifically, for Report 1 the topic will be Mediation/Moderation analysis using lavaan. You will receive detailed instructions on that next Monday."
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#quizzes-and-badgeshopefully",
+    "href": "posts/Introduction to Advanced Statistics/index.html#quizzes-and-badgeshopefully",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Quizzes and Badges(hopefully)",
+    "text": "Quizzes and Badges(hopefully)\nEvery week there will be a Canvas quiz provided so you can practice and enhance your understanding. These are absolutely non-compulsory but do spend some time trying to complete them. You will also be collecting points while you complete these (and other Canvas activities) and at the end of the module the two students with the highest scores will receive a surprise present."
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#github",
+    "href": "posts/Introduction to Advanced Statistics/index.html#github",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Github",
+    "text": "Github\nGithub has been increasingly becoming a standard in the world of coding and statistical analysis as it can serve both as a repository and a host of websites related to projects. We will have a very brief demonstration today and we will return next week and start using it as a standard in our module."
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#todays-aims-in-terms-of-structural-equation-modeling-sem",
+    "href": "posts/Introduction to Advanced Statistics/index.html#todays-aims-in-terms-of-structural-equation-modeling-sem",
+    "title": "Introduction to Advanced Statistics",
+    "section": "Today’s Aims in Terms of Structural Equation Modeling (SEM)",
+    "text": "Today’s Aims in Terms of Structural Equation Modeling (SEM)\n\nIntroduce key terminology that we will be using this term\nDiscuss examples of simple and multiple regression\nRevisit the same examples using lavaan\nDiscuss baximum likelihood vs. least squares"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html#ols-vs-ml",
+    "href": "posts/Introduction to Advanced Statistics/index.html#ols-vs-ml",
+    "title": "Introduction to Advanced Statistics",
+    "section": "OLS vs ML",
+    "text": "OLS vs ML\nGenerally in SEM, we use the maximum likelihood estimator (MLE). In this module we will be using the acronyms ML and MLE to denote the maximum likelihood estimator method. This method estimates model parameters by maximising the likelihood function. In other words, maximising the probability of observing our existing data points given specific parameter values. We will be discussing in details what these parameters are in SEM (e.g., coefficients, latent variable variances, etc.). It should also be noted that MLE is not the only estimation methods, other methods can also be successfully implemented, such as generalised least squares. We decided on the appropriate estimator based on our data characteristics and assumptions."
   }
 ]
