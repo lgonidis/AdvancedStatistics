@@ -137,7 +137,7 @@
     "href": "posts/Introduction to Advanced Statistics/index.html#looking-at-the-output",
     "title": "Introduction to Advanced Statistics",
     "section": "Looking at the output",
-    "text": "Looking at the output\nOur intercept is 188.18 and our income coefficient is 0.002. This means that the reading ability of a student with a family income of £0 will be 188.18 and for every £1 of family income increase the reading ability will increase by 0.12.\nWe also see residual standard error of 21.44\nThe square of that value is 459.67"
+    "text": "Looking at the output\nOur intercept is 188.18 and our income coefficient is 0.118 (0.12). This means that the reading ability of a student with a family income of £0 will be 188.18 and for every £1 of family income increase the reading ability will increase by 0.12.\nWe also see residual standard error of 21.44\nThe square of that value is 459.67"
   },
   {
     "objectID": "posts/Introduction to Advanced Statistics/index.html#let-us-recreate-the-same-model-using-lavaan",

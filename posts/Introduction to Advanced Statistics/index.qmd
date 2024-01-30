@@ -57,7 +57,7 @@ Hopefully you should know where to find our Canvas website, but just in case:
 
 <https://canvas.sussex.ac.uk/courses/26315/pages/module-home-page>
 
-## RStudio/Posit Cloud 
+## RStudio/Posit Cloud
 
 For our analysis we will be using exclusively R and mainly Posit Cloud. However, I strongly believe that as future scientists you should also have locally installed RStudio/Posit, have it up to date and use that for your everyday work. I would also advise you to attend our workshops bringing your own laptops/tablets/mobile phones.
 
@@ -105,7 +105,7 @@ Github has been increasingly becoming a standard in the world of coding and stat
 ::: {.column width="80%"}
 1.  [Principles and Practice of Structural Equation Modeling](https://ebookcentral.proquest.com/lib/suss/reader.action?docID=4000663)
 
-2.  [Longitudinal Structural Equation Modeling: A comprehensive Introduction](Longitudinal Structural Equation Modeling: A comprehensive Introduction)
+2.  [Longitudinal Structural Equation Modeling: A comprehensive Introduction](Longitudinal%20Structural%20Equation%20Modeling:%20A%20comprehensive%20Introduction)
 
 3.  [Official lavaan tutorial from lavaan.org](https://lavaan.ugent.be/tutorial/)
 
@@ -228,7 +228,7 @@ summary(reading_lm)
 
 ## Looking at the output
 
-Our intercept is 188.18 and our income coefficient is 0.002. This means that the reading ability of a student with a family income of £0 will be 188.18 and for every £1 of family income increase the reading ability will increase by 0.12.
+Our intercept is 188.18 and our income coefficient is 0.118 (0.12). This means that the reading ability of a student with a family income of £0 will be 188.18 and for every £1 of family income increase the reading ability will increase by 0.12.
 
 We also see **residual standard error of 21.44**
 
@@ -299,6 +299,7 @@ $$
 Important to note here that $B_X$ and $B_W$ are the **unstandardized partial regression coefficients**, $A_{X,W}$ is the intercept. For more information please read Kline page 30.
 
 ## 
+
 Multiple regression, lm()
 
 ```{r}
