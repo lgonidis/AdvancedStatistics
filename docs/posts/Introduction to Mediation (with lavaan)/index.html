@@ -412,6 +412,7 @@ Dr Lazaros Gonidis
 <li>Discuss a Simple Mediation Model</li>
 <li>Use of basic path analysis for Mediation</li>
 <li>Use of lavaan for mediation</li>
+<li>Serial and parallel mediation</li>
 </ol>
 </section>
 <section id="linear-models" class="slide level2">
@@ -427,7 +428,8 @@ y = b_0 +b_1x_1 + b_2x_2 + ε_1
 </section>
 <section id="linear-models-1" class="slide level2">
 <h2>Linear models</h2>
-<p>These models allowed us to test hypotheses where exogenous observed variables <strong>X1, X2, …</strong> would have an effect on an endogenous observed variable <strong>Y</strong> However, in this approach we did examine the impact of <strong>X1 on X2, and consequently the impact of X2 on Y.</strong></p>
+<p>These models allowed us to test hypotheses where exogenous observed variables <strong>X1, X2, …</strong> would have an effect on an endogenous observed variable <strong>Y</strong></p>
+<p>However, in this approach we did not examine for potential impact of <strong>X1 on X2, and consequently the impact of X2 on Y.</strong></p>
 </section>
 <section id="the-simple-mediation-model" class="slide level2">
 <h2>The Simple Mediation Model</h2>
@@ -448,9 +450,10 @@ y = b_0 +b_1x_1 + b_2x_2 + ε_1
 <p><img data-src="paths.JPG" width="373" height="298"></p>
 </div><div class="column" style="width:80%;">
 <ol type="1">
-<li><p><strong>X</strong> should significantly predict <strong>Y</strong> (<strong>path c</strong>, although some authors argue this is not required)</p></li>
+<li><p><strong>X</strong> should significantly predict <strong>Y</strong> (<strong>path c</strong>, although some authors argue this is not required)*</p></li>
 <li><p><strong>X</strong> must significantly predict <strong>M (path a)</strong></p></li>
-<li><p><strong>M</strong> must significantly predict <strong>Y (path b)</strong></p></li>
+<li><p><strong>M</strong> must significantly predict <strong>Y (path b)</strong></p>
+<p>Note: Typically the path above is called <strong>c path</strong>, whereas the direct path in the mediation would be called <strong>c’ path.</strong> However, you will mostly be seeing the direct path in the mediation models also being called <strong>c path</strong> as well. Please be aware of this.</p></li>
 </ol>
 </div>
 </div>
@@ -458,7 +461,7 @@ y = b_0 +b_1x_1 + b_2x_2 + ε_1
 </section>
 <section id="let-us-explore-an-example-with-data" class="slide level2">
 <h2>Let us explore an example with data</h2>
-<p>First we will create some random data. As we mentioned last week, in this module we will be working exclusively with randomly generated data. <strong>Please note that will be required to generate random data for your assignments too.</strong></p>
+<p>First we will create some random data. As we mentioned last week, in this module we will be working exclusively with randomly generated data. <strong>Please note that it will also be required to generate random data for your assignments too.</strong></p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -471,8 +474,8 @@ y = b_0 +b_1x_1 + b_2x_2 + ε_1
 </details>
 </div>
 </section>
-<section id="first-we-will-investigate-path-c-regression" class="slide level2">
-<h2>First we will investigate path c regression</h2>
+<section id="first-we-will-investigate-the-c-path-in-regression" class="slide level2">
+<h2>First we will investigate the c path in regression</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -501,8 +504,8 @@ F-statistic: 5.553 on 1 and 248 DF,  p-value: 0.01923</code></pre>
 </div>
 </div>
 </section>
-<section id="path-a-regression" class="slide level2">
-<h2>Path a regression</h2>
+<section id="path-a-in-regression" class="slide level2">
+<h2>Path a in regression</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -531,8 +534,8 @@ F-statistic: 85.61 on 1 and 248 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 </section>
-<section id="path-b-regression" class="slide level2">
-<h2>Path b regression</h2>
+<section id="path-b-in-regression" class="slide level2">
+<h2>Path b in regression</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -561,8 +564,12 @@ F-statistic: 41.03 on 1 and 248 DF,  p-value: 7.458e-10</code></pre>
 </div>
 </div>
 </section>
-<section id="we-will-now-specify-and-fit-a-path-analysis-model" class="slide level2">
-<h2>We will now specify and fit a path analysis model</h2>
+<section id="the-simple-mediation-model-visually-1" class="slide level2">
+<h2>The Simple Mediation Model visually</h2>
+
+<img data-src="mediation.JPG" width="763" class="r-stretch"></section>
+<section id="we-will-now-specify-and-fit-a-path-analysis-mediaton-model" class="slide level2">
+<h2>We will now specify and fit a path analysis mediaton model</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -583,12 +590,33 @@ F-statistic: 41.03 on 1 and 248 DF,  p-value: 7.458e-10</code></pre>
 </details>
 </div>
 </section>
+<section id="guidelines-prior-to-carry-out-mediation-analysis-1" class="slide level2">
+<h2>Guidelines prior to carry out mediation analysis</h2>
+<div>
+<div class="columns">
+<div class="column" style="width:20%;">
+<p><img data-src="mediation.JPG"></p>
+</div><div class="column" style="width:80%;">
+<pre><code>model_med &lt;- ' # direct effect
+             Y ~ c*X
+           # mediator
+             M ~ a*X
+             Y ~ b*M
+           # indirect effect (a*b)
+             ab := a*b
+           # total effect
+             total := c + (a*b)
+         '</code></pre>
+</div>
+</div>
+</div>
+</section>
 <section id="exploring-the-model" class="slide level2">
 <h2>Exploring the model</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">summary</span>(model_med_fit, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>, <span class="at">rsquare =</span> <span class="cn">TRUE</span>, <span class="at">ci =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">summary</span>(model_med_fit, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>, <span class="at">rsquare =</span> <span class="cn">TRUE</span>, <span class="at">ci =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>lavaan 0.6.17 ended normally after 1 iteration
@@ -686,7 +714,7 @@ Defined Parameters:
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">parameterEstimates</span>(model_med_fit, <span class="at">level =</span> .<span class="dv">95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">parameterEstimates</span>(model_med_fit, <span class="at">level =</span> .<span class="dv">95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    lhs op     rhs label    est    se      z pvalue ci.lower ci.upper
@@ -706,7 +734,7 @@ Defined Parameters:
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>lavaan<span class="sc">::</span><span class="fu">standardizedsolution</span>(model_med_fit, <span class="at">level =</span> .<span class="dv">95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>lavaan<span class="sc">::</span><span class="fu">standardizedsolution</span>(model_med_fit, <span class="at">level =</span> .<span class="dv">95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    lhs op     rhs label est.std    se      z pvalue ci.lower ci.upper
@@ -726,13 +754,13 @@ Defined Parameters:
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">semPaths</span>(model_med_fit,</span>
-<span id="cb15-2"><a href="#cb15-2"></a>         <span class="at">whatLabels =</span> <span class="st">"est"</span>,</span>
-<span id="cb15-3"><a href="#cb15-3"></a>         <span class="at">sizeMan =</span> <span class="dv">10</span>,          </span>
-<span id="cb15-4"><a href="#cb15-4"></a>         <span class="at">style =</span> <span class="st">"ram"</span>,          </span>
-<span id="cb15-5"><a href="#cb15-5"></a>         <span class="at">layout =</span> <span class="st">"tree"</span>,</span>
-<span id="cb15-6"><a href="#cb15-6"></a>         <span class="at">intercepts =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb15-7"><a href="#cb15-7"></a>         <span class="at">rotation =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">semPaths</span>(model_med_fit,</span>
+<span id="cb16-2"><a href="#cb16-2"></a>         <span class="at">whatLabels =</span> <span class="st">"est"</span>,</span>
+<span id="cb16-3"><a href="#cb16-3"></a>         <span class="at">sizeMan =</span> <span class="dv">10</span>,          </span>
+<span id="cb16-4"><a href="#cb16-4"></a>         <span class="at">style =</span> <span class="st">"ram"</span>,          </span>
+<span id="cb16-5"><a href="#cb16-5"></a>         <span class="at">layout =</span> <span class="st">"tree"</span>,</span>
+<span id="cb16-6"><a href="#cb16-6"></a>         <span class="at">intercepts =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb16-7"><a href="#cb16-7"></a>         <span class="at">rotation =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
@@ -742,14 +770,14 @@ Defined Parameters:
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">library</span>(semptools)</span>
-<span id="cb16-2"><a href="#cb16-2"></a>plot_med <span class="ot">&lt;-</span> <span class="fu">semPaths</span>(model_med_fit,</span>
-<span id="cb16-3"><a href="#cb16-3"></a>         <span class="at">whatLabels =</span> <span class="st">"est"</span>,</span>
-<span id="cb16-4"><a href="#cb16-4"></a>         <span class="at">sizeMan =</span> <span class="dv">10</span>,          </span>
-<span id="cb16-5"><a href="#cb16-5"></a>         <span class="at">style =</span> <span class="st">"ram"</span>,          </span>
-<span id="cb16-6"><a href="#cb16-6"></a>         <span class="at">layout =</span> <span class="st">"tree"</span>,</span>
-<span id="cb16-7"><a href="#cb16-7"></a>         <span class="at">intercepts =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb16-8"><a href="#cb16-8"></a>         <span class="at">rotation =</span> <span class="dv">2</span>, <span class="at">edge.label.cex =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">library</span>(semptools)</span>
+<span id="cb17-2"><a href="#cb17-2"></a>plot_med <span class="ot">&lt;-</span> <span class="fu">semPaths</span>(model_med_fit,</span>
+<span id="cb17-3"><a href="#cb17-3"></a>         <span class="at">whatLabels =</span> <span class="st">"est"</span>,</span>
+<span id="cb17-4"><a href="#cb17-4"></a>         <span class="at">sizeMan =</span> <span class="dv">10</span>,          </span>
+<span id="cb17-5"><a href="#cb17-5"></a>         <span class="at">style =</span> <span class="st">"ram"</span>,          </span>
+<span id="cb17-6"><a href="#cb17-6"></a>         <span class="at">layout =</span> <span class="st">"tree"</span>,</span>
+<span id="cb17-7"><a href="#cb17-7"></a>         <span class="at">intercepts =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb17-8"><a href="#cb17-8"></a>         <span class="at">rotation =</span> <span class="dv">2</span>, <span class="at">edge.label.cex =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
@@ -759,8 +787,8 @@ Defined Parameters:
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>plot_med <span class="ot">&lt;-</span> <span class="fu">mark_sig</span>(plot_med,model_med_fit)</span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">plot</span>(plot_med)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>plot_med <span class="ot">&lt;-</span> <span class="fu">mark_sig</span>(plot_med,model_med_fit)</span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">plot</span>(plot_med)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
@@ -769,7 +797,7 @@ Defined Parameters:
 <h2>How can we interpret the above?</h2>
 <p>We see that the paths <strong>a</strong> and <strong>b</strong> are significant. The same cannot be said for the path <strong>c.</strong> We also have a significant <strong>indirect effect</strong> and a significant <strong>total effect</strong>.</p>
 <p>In this case our direct path <strong>c</strong> is no longer significant, hence this is a case of <strong>full mediation</strong></p>
-<p>If <strong>both</strong> the <strong>indirect path ab</strong> and the <strong>direct path c</strong> were significant this would have been a case of partial mediation.</p>
+<p>If <strong>both</strong> the <strong>indirect path ab</strong> and the <strong>direct path c</strong> were significant this would have been a case of <strong>partial mediation</strong>.</p>
 <p>If the <strong>indirect path</strong> was non-significant this would have been a case of <strong>no mediation.</strong></p>
 </section>
 <section id="how-do-we-report-it" class="slide level2">
@@ -790,36 +818,36 @@ Defined Parameters:
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">set.seed</span>(<span class="dv">13548</span>) <span class="co">#note that we set the seed to a specific value</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a>X <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">250</span>) <span class="co">#number of observations</span></span>
-<span id="cb18-3"><a href="#cb18-3"></a>M1 <span class="ot">&lt;-</span> <span class="fl">0.60</span><span class="sc">*</span>X <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">250</span>)<span class="co"># what does the 0.4 and rnorm represent here?</span></span>
-<span id="cb18-4"><a href="#cb18-4"></a>M2 <span class="ot">&lt;-</span> <span class="fl">0.50</span><span class="sc">*</span>X <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">250</span>)</span>
-<span id="cb18-5"><a href="#cb18-5"></a>Y <span class="ot">&lt;-</span> <span class="fl">0.35</span><span class="sc">*</span>M <span class="sc">+</span>  <span class="fu">rnorm</span>(<span class="dv">250</span>) <span class="co"># what does the 0.6 and rnorm represent here?</span></span>
-<span id="cb18-6"><a href="#cb18-6"></a></span>
-<span id="cb18-7"><a href="#cb18-7"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X=</span>X, <span class="at">Y=</span>Y, <span class="at">M1=</span>M1, <span class="at">M2=</span>M2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">set.seed</span>(<span class="dv">13548</span>) <span class="co">#note that we set the seed to a specific value</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>X <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">250</span>) <span class="co">#number of observations</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>M1 <span class="ot">&lt;-</span> <span class="fl">0.60</span><span class="sc">*</span>X <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">250</span>)<span class="co"># what does the 0.4 and rnorm represent here?</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>M2 <span class="ot">&lt;-</span> <span class="fl">0.50</span><span class="sc">*</span>X <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">250</span>)</span>
+<span id="cb19-5"><a href="#cb19-5"></a>Y <span class="ot">&lt;-</span> <span class="fl">0.35</span><span class="sc">*</span>M <span class="sc">+</span>  <span class="fu">rnorm</span>(<span class="dv">250</span>) <span class="co"># what does the 0.6 and rnorm represent here?</span></span>
+<span id="cb19-6"><a href="#cb19-6"></a></span>
+<span id="cb19-7"><a href="#cb19-7"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X=</span>X, <span class="at">Y=</span>Y, <span class="at">M1=</span>M1, <span class="at">M2=</span>M2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
-<section id="we-will-now-specify-and-fit-a-path-analysis-model-1" class="slide level2">
+<section id="we-will-now-specify-and-fit-a-path-analysis-model" class="slide level2">
 <h2>We will now specify and fit a path analysis model</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">library</span>(lavaan) </span>
-<span id="cb19-2"><a href="#cb19-2"></a><span class="fu">library</span>(semPlot)  </span>
-<span id="cb19-3"><a href="#cb19-3"></a>model2_med <span class="ot">&lt;-</span> <span class="st">' </span></span>
-<span id="cb19-4"><a href="#cb19-4"></a><span class="st"># alternative syntax of the model            </span></span>
-<span id="cb19-5"><a href="#cb19-5"></a><span class="st">Y ~ c*X + b1*M1 + b2*M2           </span></span>
-<span id="cb19-6"><a href="#cb19-6"></a><span class="st">M1 ~ a1*X              </span></span>
-<span id="cb19-7"><a href="#cb19-7"></a><span class="st">M2 ~ a2*X     </span></span>
-<span id="cb19-8"><a href="#cb19-8"></a></span>
-<span id="cb19-9"><a href="#cb19-9"></a><span class="st"># indirect effects (a*b)              </span></span>
-<span id="cb19-10"><a href="#cb19-10"></a><span class="st">a1b1 := a1*b1</span></span>
-<span id="cb19-11"><a href="#cb19-11"></a><span class="st">a2b2 := a2*b2</span></span>
-<span id="cb19-12"><a href="#cb19-12"></a><span class="st"># total effect              </span></span>
-<span id="cb19-13"><a href="#cb19-13"></a><span class="st">total := c + (a1*b1) + (a2*b2)          </span></span>
-<span id="cb19-14"><a href="#cb19-14"></a><span class="st">'</span> </span>
-<span id="cb19-15"><a href="#cb19-15"></a>model2_med_fit <span class="ot">&lt;-</span> <span class="fu">sem</span>(model2_med, <span class="at">data =</span> df, <span class="at">se =</span> <span class="st">'bootstrap'</span>, <span class="at">bootstrap =</span> <span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">library</span>(lavaan) </span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="fu">library</span>(semPlot)  </span>
+<span id="cb20-3"><a href="#cb20-3"></a>model2_med <span class="ot">&lt;-</span> <span class="st">' </span></span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="st"># alternative syntax of the model            </span></span>
+<span id="cb20-5"><a href="#cb20-5"></a><span class="st">Y ~ c*X + b1*M1 + b2*M2           </span></span>
+<span id="cb20-6"><a href="#cb20-6"></a><span class="st">M1 ~ a1*X              </span></span>
+<span id="cb20-7"><a href="#cb20-7"></a><span class="st">M2 ~ a2*X     </span></span>
+<span id="cb20-8"><a href="#cb20-8"></a></span>
+<span id="cb20-9"><a href="#cb20-9"></a><span class="st"># indirect effects (a*b)              </span></span>
+<span id="cb20-10"><a href="#cb20-10"></a><span class="st">a1b1 := a1*b1</span></span>
+<span id="cb20-11"><a href="#cb20-11"></a><span class="st">a2b2 := a2*b2</span></span>
+<span id="cb20-12"><a href="#cb20-12"></a><span class="st"># total effect              </span></span>
+<span id="cb20-13"><a href="#cb20-13"></a><span class="st">total := c + (a1*b1) + (a2*b2)          </span></span>
+<span id="cb20-14"><a href="#cb20-14"></a><span class="st">'</span> </span>
+<span id="cb20-15"><a href="#cb20-15"></a>model2_med_fit <span class="ot">&lt;-</span> <span class="fu">sem</span>(model2_med, <span class="at">data =</span> df, <span class="at">se =</span> <span class="st">'bootstrap'</span>, <span class="at">bootstrap =</span> <span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -828,7 +856,7 @@ Defined Parameters:
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">summary</span>(model2_med_fit, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>, <span class="at">rsquare =</span> <span class="cn">TRUE</span>, <span class="at">ci =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">summary</span>(model2_med_fit, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>, <span class="at">rsquare =</span> <span class="cn">TRUE</span>, <span class="at">ci =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>lavaan 0.6.17 ended normally after 1 iteration
@@ -936,7 +964,7 @@ Defined Parameters:
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">parameterEstimates</span>(model_med_fit, <span class="at">level =</span> .<span class="dv">95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">parameterEstimates</span>(model_med_fit, <span class="at">level =</span> .<span class="dv">95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    lhs op     rhs label    est    se      z pvalue ci.lower ci.upper
@@ -956,13 +984,13 @@ Defined Parameters:
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>plot_med2 <span class="ot">&lt;-</span> <span class="fu">semPaths</span>(model2_med_fit,</span>
-<span id="cb24-2"><a href="#cb24-2"></a>         <span class="at">whatLabels =</span> <span class="st">"est"</span>,</span>
-<span id="cb24-3"><a href="#cb24-3"></a>         <span class="at">sizeMan =</span> <span class="dv">10</span>,          </span>
-<span id="cb24-4"><a href="#cb24-4"></a>         <span class="at">style =</span> <span class="st">"ram"</span>,          </span>
-<span id="cb24-5"><a href="#cb24-5"></a>         <span class="at">layout =</span> <span class="st">"tree"</span>,</span>
-<span id="cb24-6"><a href="#cb24-6"></a>         <span class="at">intercepts =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb24-7"><a href="#cb24-7"></a>         <span class="at">rotation =</span> <span class="dv">2</span>, <span class="at">edge.label.cex =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>plot_med2 <span class="ot">&lt;-</span> <span class="fu">semPaths</span>(model2_med_fit,</span>
+<span id="cb25-2"><a href="#cb25-2"></a>         <span class="at">whatLabels =</span> <span class="st">"est"</span>,</span>
+<span id="cb25-3"><a href="#cb25-3"></a>         <span class="at">sizeMan =</span> <span class="dv">10</span>,          </span>
+<span id="cb25-4"><a href="#cb25-4"></a>         <span class="at">style =</span> <span class="st">"ram"</span>,          </span>
+<span id="cb25-5"><a href="#cb25-5"></a>         <span class="at">layout =</span> <span class="st">"tree"</span>,</span>
+<span id="cb25-6"><a href="#cb25-6"></a>         <span class="at">intercepts =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb25-7"><a href="#cb25-7"></a>         <span class="at">rotation =</span> <span class="dv">2</span>, <span class="at">edge.label.cex =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
@@ -972,8 +1000,8 @@ Defined Parameters:
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>plot_med2 <span class="ot">&lt;-</span> <span class="fu">mark_sig</span>(plot_med2,model2_med_fit)</span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">plot</span>(plot_med2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>plot_med2 <span class="ot">&lt;-</span> <span class="fu">mark_sig</span>(plot_med2,model2_med_fit)</span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="fu">plot</span>(plot_med2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>

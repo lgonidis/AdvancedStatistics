@@ -24,6 +24,7 @@ image: "image1.jpg"
 2.  Discuss a Simple Mediation Model
 3.  Use of basic path analysis for Mediation
 4.  Use of lavaan for mediation
+5.  Serial and parallel mediation
 
 ## Linear models
 
@@ -41,7 +42,9 @@ $$
 
 ## Linear models
 
-These models allowed us to test hypotheses where exogenous observed variables **X1, X2, ...** would have an effect on an endogenous observed variable **Y** However, in this approach we did examine the impact of **X1 on X2, and consequently the impact of X2 on Y.**
+These models allowed us to test hypotheses where exogenous observed variables **X1, X2, ...** would have an effect on an endogenous observed variable **Y**
+
+However, in this approach we did not examine for potential impact of **X1 on X2, and consequently the impact of X2 on Y.**
 
 ## The Simple Mediation Model
 
@@ -67,11 +70,13 @@ In other words, **X causally influences M and Y, and M causally influences Y.**
 :::
 
 ::: {.column width="80%"}
-1.  **X** should significantly predict **Y** (**path c**, although some authors argue this is not required)
+1.  **X** should significantly predict **Y** (**path c**, although some authors argue this is not required)\*
 
 2.  **X** must significantly predict **M (path a)**
 
 3.  **M** must significantly predict **Y (path b)**
+
+    Note: Typically the path above is called **c path**, whereas the direct path in the mediation would be called **c' path.** However, you will mostly be seeing the direct path in the mediation models also being called **c path** as well. Please be aware of this.
 :::
 :::
 
@@ -79,7 +84,7 @@ In other words, **X causally influences M and Y, and M causally influences Y.**
 
 ## Let us explore an example with data
 
-First we will create some random data. As we mentioned last week, in this module we will be working exclusively with randomly generated data. **Please note that will be required to generate random data for your assignments too.**
+First we will create some random data. As we mentioned last week, in this module we will be working exclusively with randomly generated data. **Please note that it will also be required to generate random data for your assignments too.**
 
 ```{r}
 set.seed(13548) #note that we set the seed to a specific value
@@ -90,28 +95,32 @@ Y <- 0.35*M +  rnorm(250) # what does the 0.6 and rnorm represent here?
 df <- data.frame(X=X, Y=Y, M=M)
 ```
 
-## First we will investigate path c regression
+## First we will investigate the c path in regression
 
 ```{r}
 model_XY <- lm(Y~X, data = df) # seen above as path c
 summary(model_XY)
 ```
 
-## Path a regression
+## Path a in regression
 
 ```{r}
 model_XM <- lm(M~X, data = df) # seen above as path a 
 summary(model_XM)
 ```
 
-## Path b regression
+## Path b in regression
 
 ```{r}
 model_MY <- lm(Y~M, data = df) # seen above as path b  
 summary(model_MY)
 ```
 
-## We will now specify and fit a path analysis model
+## The Simple Mediation Model visually
+
+![](mediation.JPG){width="763"}
+
+## We will now specify and fit a path analysis mediaton model
 
 ```{r}
 library(lavaan)
@@ -129,6 +138,33 @@ model_med <- ' # direct effect
          '
 model_med_fit <- sem(model_med, data = df, se = 'bootstrap', bootstrap = 1000, )
 ```
+
+## Guidelines prior to carry out mediation analysis
+
+<div>
+
+::: columns
+::: {.column width="20%"}
+![](mediation.JPG)
+:::
+
+::: {.column width="80%"}
+```         
+model_med <- ' # direct effect
+             Y ~ c*X
+           # mediator
+             M ~ a*X
+             Y ~ b*M
+           # indirect effect (a*b)
+             ab := a*b
+           # total effect
+             total := c + (a*b)
+         '
+```
+:::
+:::
+
+</div>
 
 ## Exploring the model
 
@@ -186,7 +222,7 @@ We see that the paths **a** and **b** are significant. The same cannot be said f
 
 In this case our direct path **c** is no longer significant, hence this is a case of **full mediation**
 
-If **both** the **indirect path ab** and the **direct path c** were significant this would have been a case of partial mediation.
+If **both** the **indirect path ab** and the **direct path c** were significant this would have been a case of **partial mediation**.
 
 If the **indirect path** was non-significant this would have been a case of **no mediation.**
 

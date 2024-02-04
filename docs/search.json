@@ -298,7 +298,7 @@
     "href": "posts/Introduction to Mediation (with lavaan)/index.html#todays-aims",
     "title": "Introduction to Mediation",
     "section": "Today’s Aims",
-    "text": "Today’s Aims\n\nIntroduce the concept of Mediation\nDiscuss a Simple Mediation Model\nUse of basic path analysis for Mediation\nUse of lavaan for mediation"
+    "text": "Today’s Aims\n\nIntroduce the concept of Mediation\nDiscuss a Simple Mediation Model\nUse of basic path analysis for Mediation\nUse of lavaan for mediation\nSerial and parallel mediation"
   },
   {
     "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#linear-models",
@@ -312,7 +312,7 @@
     "href": "posts/Introduction to Mediation (with lavaan)/index.html#linear-models-1",
     "title": "Introduction to Mediation",
     "section": "Linear models",
-    "text": "Linear models\nThese models allowed us to test hypotheses where exogenous observed variables X1, X2, … would have an effect on an endogenous observed variable Y However, in this approach we did examine the impact of X1 on X2, and consequently the impact of X2 on Y."
+    "text": "Linear models\nThese models allowed us to test hypotheses where exogenous observed variables X1, X2, … would have an effect on an endogenous observed variable Y\nHowever, in this approach we did not examine for potential impact of X1 on X2, and consequently the impact of X2 on Y."
   },
   {
     "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#the-simple-mediation-model",
@@ -333,7 +333,7 @@
     "href": "posts/Introduction to Mediation (with lavaan)/index.html#guidelines-prior-to-carry-out-mediation-analysis",
     "title": "Introduction to Mediation",
     "section": "Guidelines prior to carry out mediation analysis",
-    "text": "Guidelines prior to carry out mediation analysis\n\n\n\n\n\n\nX should significantly predict Y (path c, although some authors argue this is not required)\nX must significantly predict M (path a)\nM must significantly predict Y (path b)"
+    "text": "Guidelines prior to carry out mediation analysis\n\n\n\n\n\n\nX should significantly predict Y (path c, although some authors argue this is not required)*\nX must significantly predict M (path a)\nM must significantly predict Y (path b)\nNote: Typically the path above is called c path, whereas the direct path in the mediation would be called c’ path. However, you will mostly be seeing the direct path in the mediation models also being called c path as well. Please be aware of this."
   },
   {
     "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#quizzes-and-badgeshopefully",
@@ -424,14 +424,14 @@
     "href": "posts/Introduction to Mediation (with lavaan)/index.html#let-us-explore-an-example-with-data",
     "title": "Introduction to Mediation",
     "section": "Let us explore an example with data",
-    "text": "Let us explore an example with data\nFirst we will create some random data. As we mentioned last week, in this module we will be working exclusively with randomly generated data. Please note that will be required to generate random data for your assignments too.\n\n\nCode\nset.seed(13548) #note that we set the seed to a specific value\nX &lt;- rnorm(250) #number of observations\nM &lt;- 0.60*X + rnorm(250) # what does the 0.4 and rnorm represent here?\nY &lt;- 0.35*M +  rnorm(250) # what does the 0.6 and rnorm represent here?\n\ndf &lt;- data.frame(X=X, Y=Y, M=M)"
+    "text": "Let us explore an example with data\nFirst we will create some random data. As we mentioned last week, in this module we will be working exclusively with randomly generated data. Please note that it will also be required to generate random data for your assignments too.\n\n\nCode\nset.seed(13548) #note that we set the seed to a specific value\nX &lt;- rnorm(250) #number of observations\nM &lt;- 0.60*X + rnorm(250) # what does the 0.4 and rnorm represent here?\nY &lt;- 0.35*M +  rnorm(250) # what does the 0.6 and rnorm represent here?\n\ndf &lt;- data.frame(X=X, Y=Y, M=M)"
   },
   {
     "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#we-will-now-specify-and-fit-a-path-analysis-model",
     "href": "posts/Introduction to Mediation (with lavaan)/index.html#we-will-now-specify-and-fit-a-path-analysis-model",
     "title": "Introduction to Mediation",
     "section": "We will now specify and fit a path analysis model",
-    "text": "We will now specify and fit a path analysis model\n\n\nCode\nlibrary(lavaan)\nlibrary(semPlot)\n\nmodel_med &lt;- ' # direct effect\n             Y ~ c*X\n           # mediator\n             M ~ a*X\n             Y ~ b*M\n           # indirect effect (a*b)\n             ab := a*b\n           # total effect\n             total := c + (a*b)\n         '\nmodel_med_fit &lt;- sem(model_med, data = df, se = 'bootstrap', bootstrap = 1000, )"
+    "text": "We will now specify and fit a path analysis model\n\n\nCode\nlibrary(lavaan) \nlibrary(semPlot)  \nmodel2_med &lt;- ' \n# alternative syntax of the model            \nY ~ c*X + b1*M1 + b2*M2           \nM1 ~ a1*X              \nM2 ~ a2*X     \n\n# indirect effects (a*b)              \na1b1 := a1*b1\na2b2 := a2*b2\n# total effect              \ntotal := c + (a1*b1) + (a2*b2)          \n' \nmodel2_med_fit &lt;- sem(model2_med, data = df, se = 'bootstrap', bootstrap = 1000)"
   },
   {
     "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#exploring-the-model",
@@ -607,5 +607,47 @@
     "title": "Introduction to Advanced Statistics",
     "section": "",
     "text": "This is me (used to be)\nI love my two boys\nI also love computer games, motorbikes, music, food\nFunnily enough I love maths and statistics, and even more teaching these\nI am also dyslexic so please do tell me when you spot typing mistakes, usually whole words missing."
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#first-we-will-investigate-the-c-path-in-regression",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#first-we-will-investigate-the-c-path-in-regression",
+    "title": "Introduction to Mediation",
+    "section": "First we will investigate the c path in regression",
+    "text": "First we will investigate the c path in regression\n\n\nCode\nmodel_XY &lt;- lm(Y~X, data = df) # seen above as path c\nsummary(model_XY)\n\n\n\nCall:\nlm(formula = Y ~ X, data = df)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-2.5268 -0.7677 -0.0760  0.7206  3.5104 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)  \n(Intercept)  0.03976    0.06851   0.580   0.5622  \nX            0.16775    0.07119   2.356   0.0192 *\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.083 on 248 degrees of freedom\nMultiple R-squared:  0.0219,    Adjusted R-squared:  0.01796 \nF-statistic: 5.553 on 1 and 248 DF,  p-value: 0.01923"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#path-a-in-regression",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#path-a-in-regression",
+    "title": "Introduction to Mediation",
+    "section": "Path a in regression",
+    "text": "Path a in regression\n\n\nCode\nmodel_XM &lt;- lm(M~X, data = df) # seen above as path a \nsummary(model_XM)\n\n\n\nCall:\nlm(formula = M ~ X, data = df)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-2.1693 -0.7082  0.0269  0.6571  3.2536 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) -0.00179    0.06358  -0.028    0.978    \nX            0.61127    0.06606   9.253   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.005 on 248 degrees of freedom\nMultiple R-squared:  0.2566,    Adjusted R-squared:  0.2536 \nF-statistic: 85.61 on 1 and 248 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#path-b-in-regression",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#path-b-in-regression",
+    "title": "Introduction to Mediation",
+    "section": "Path b in regression",
+    "text": "Path b in regression\n\n\nCode\nmodel_MY &lt;- lm(Y~M, data = df) # seen above as path b  \nsummary(model_MY)\n\n\n\nCall:\nlm(formula = Y ~ M, data = df)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-2.31772 -0.66815 -0.00959  0.65951  2.66509 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  0.03999    0.06416   0.623    0.534    \nM            0.35395    0.05525   6.406 7.46e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.015 on 248 degrees of freedom\nMultiple R-squared:  0.142, Adjusted R-squared:  0.1385 \nF-statistic: 41.03 on 1 and 248 DF,  p-value: 7.458e-10"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#the-simple-mediation-model-visually-1",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#the-simple-mediation-model-visually-1",
+    "title": "Introduction to Mediation",
+    "section": "The Simple Mediation Model visually",
+    "text": "The Simple Mediation Model visually"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#we-will-now-specify-and-fit-a-path-analysis-mediaton-model",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#we-will-now-specify-and-fit-a-path-analysis-mediaton-model",
+    "title": "Introduction to Mediation",
+    "section": "We will now specify and fit a path analysis mediaton model",
+    "text": "We will now specify and fit a path analysis mediaton model\n\n\nCode\nlibrary(lavaan)\nlibrary(semPlot)\n\nmodel_med &lt;- ' # direct effect\n             Y ~ c*X\n           # mediator\n             M ~ a*X\n             Y ~ b*M\n           # indirect effect (a*b)\n             ab := a*b\n           # total effect\n             total := c + (a*b)\n         '\nmodel_med_fit &lt;- sem(model_med, data = df, se = 'bootstrap', bootstrap = 1000, )"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#guidelines-prior-to-carry-out-mediation-analysis-1",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#guidelines-prior-to-carry-out-mediation-analysis-1",
+    "title": "Introduction to Mediation",
+    "section": "Guidelines prior to carry out mediation analysis",
+    "text": "Guidelines prior to carry out mediation analysis\n\n\n\n\n\nmodel_med &lt;- ' # direct effect\n             Y ~ c*X\n           # mediator\n             M ~ a*X\n             Y ~ b*M\n           # indirect effect (a*b)\n             ab := a*b\n           # total effect\n             total := c + (a*b)\n         '"
   }
 ]
