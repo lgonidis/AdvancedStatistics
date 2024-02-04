@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "AdvancedStatistics",
     "section": "",
-    "text": "Introduction to Advanced Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\nNo matching items"
+    "text": "Introduction to Advanced Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Mediation\n\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -31,8 +31,8 @@
     "objectID": "posts/Introduction to Advanced Statistics/index.html#who-i-am",
     "href": "posts/Introduction to Advanced Statistics/index.html#who-i-am",
     "title": "Introduction to Advanced Statistics",
-    "section": "Who I am",
-    "text": "Who I am\n\n\n\n\n\n\n\nThis is me (used to be)\nI love my two boys\nI also love computer games, motorbikes, music, food\nFunnily enough I love maths and statistics, and even more teaching these\nI am also dyslexic so please do tell me when you spot typing mistakes, usually whole words missing."
+    "section": "",
+    "text": "This is me (used to be)\nI love my two boys\nI also love computer games, motorbikes, music, food\nFunnily enough I love maths and statistics, and even more teaching these\nI am also dyslexic so please do tell me when you spot typing mistakes, usually whole words missing."
   },
   {
     "objectID": "posts/Introduction to Advanced Statistics/index.html#essential-and-supplamentary-materials",
@@ -46,7 +46,7 @@
     "href": "posts/Introduction to Advanced Statistics/index.html#section",
     "title": "Introduction to Advanced Statistics",
     "section": "",
-    "text": "Multiple regression, lm()\n\n\nCode\nreading2_lm &lt;- lm(reading ~ income + books, data = df)\n\n\nsummary(reading2_lm)\n\n\n\nCall:\nlm(formula = reading ~ income + books, data = df)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-50.397 -13.633   0.547  13.698  51.585 \n\nCoefficients:\n             Estimate Std. Error t value             Pr(&gt;|t|)    \n(Intercept) 187.28030    6.14063  30.499 &lt; 0.0000000000000002 ***\nincome        0.06160    0.01997   3.085              0.00265 ** \nbooks         6.14601    1.40272   4.382            0.0000298 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 19.69 on 97 degrees of freedom\nMultiple R-squared:  0.4487,    Adjusted R-squared:  0.4373 \nF-statistic: 39.47 on 2 and 97 DF,  p-value: 0.0000000000002875"
+    "text": "Multiple regression, lm()\n\nreading2_lm &lt;- lm(reading ~ income + books, data = df)\n\n\nsummary(reading2_lm)\n\n\nCall:\nlm(formula = reading ~ income + books, data = df)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-50.397 -13.633   0.547  13.698  51.585 \n\nCoefficients:\n             Estimate Std. Error t value             Pr(&gt;|t|)    \n(Intercept) 187.28030    6.14063  30.499 &lt; 0.0000000000000002 ***\nincome        0.06160    0.01997   3.085              0.00265 ** \nbooks         6.14601    1.40272   4.382            0.0000298 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 19.69 on 97 degrees of freedom\nMultiple R-squared:  0.4487,    Adjusted R-squared:  0.4373 \nF-statistic: 39.47 on 2 and 97 DF,  p-value: 0.0000000000002875"
   },
   {
     "objectID": "posts/Introduction to Advanced Statistics/index.html#todays-aims-in-terms-of-the-module",
@@ -123,14 +123,14 @@
     "href": "posts/Introduction to Advanced Statistics/index.html#loading-the-datafile",
     "title": "Introduction to Advanced Statistics",
     "section": "Loading the datafile",
-    "text": "Loading the datafile\n\n\nCode\nlibrary(tidyverse)\nlibrary(lavaan)\ndf &lt;- read_csv(\"random.csv\")"
+    "text": "Loading the datafile\n\nlibrary(tidyverse)\nlibrary(lavaan)\ndf &lt;- read_csv(\"random.csv\")"
   },
   {
     "objectID": "posts/Introduction to Advanced Statistics/index.html#creating-the-model-and-getting-model-parameters",
     "href": "posts/Introduction to Advanced Statistics/index.html#creating-the-model-and-getting-model-parameters",
     "title": "Introduction to Advanced Statistics",
     "section": "Creating the model and getting model parameters",
-    "text": "Creating the model and getting model parameters\n\n\nCode\nreading_lm &lt;- lm(reading ~ income, data = df)\n# the option below instructs R to give us the output in non-exponential notation\noptions(scipen=999)\n\nsummary(reading_lm)\n\n\n\nCall:\nlm(formula = reading ~ income, data = df)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-50.590 -16.562  -0.178  13.429  48.207 \n\nCoefficients:\n             Estimate Std. Error t value             Pr(&gt;|t|)    \n(Intercept) 188.17787    6.68278  28.159 &lt; 0.0000000000000002 ***\nincome        0.11800    0.01662   7.098       0.000000000201 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 21.44 on 98 degrees of freedom\nMultiple R-squared:  0.3395,    Adjusted R-squared:  0.3328 \nF-statistic: 50.38 on 1 and 98 DF,  p-value: 0.0000000002013"
+    "text": "Creating the model and getting model parameters\n\nreading_lm &lt;- lm(reading ~ income, data = df)\n# the option below instructs R to give us the output in non-exponential notation\noptions(scipen=999)\n\nsummary(reading_lm)\n\n\nCall:\nlm(formula = reading ~ income, data = df)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-50.590 -16.562  -0.178  13.429  48.207 \n\nCoefficients:\n             Estimate Std. Error t value             Pr(&gt;|t|)    \n(Intercept) 188.17787    6.68278  28.159 &lt; 0.0000000000000002 ***\nincome        0.11800    0.01662   7.098       0.000000000201 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 21.44 on 98 degrees of freedom\nMultiple R-squared:  0.3395,    Adjusted R-squared:  0.3328 \nF-statistic: 50.38 on 1 and 98 DF,  p-value: 0.0000000002013"
   },
   {
     "objectID": "posts/Introduction to Advanced Statistics/index.html#looking-at-the-output",
@@ -144,7 +144,7 @@
     "href": "posts/Introduction to Advanced Statistics/index.html#let-us-recreate-the-same-model-using-lavaan",
     "title": "Introduction to Advanced Statistics",
     "section": "Let us recreate the same model using Lavaan",
-    "text": "Let us recreate the same model using Lavaan\n\n\nCode\n# lavaan uses a simple language when specifying the model\n#simple regression using lavaan \nreading_lav &lt;-   '\n  # regressions\n    reading ~ 1 + income\n  # variance (optional)\n    income ~~ income\n'\nreading_lav_sem &lt;- sem(reading_lav, data=df)\nsummary(reading_lav_sem)\n\n\nlavaan 0.6.17 ended normally after 11 iterations\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                         5\n\n  Number of observations                           100\n\nModel Test User Model:\n                                                      \n  Test statistic                                 0.000\n  Degrees of freedom                                 0\n\nParameter Estimates:\n\n  Standard errors                             Standard\n  Information                                 Expected\n  Information saturated (h1) model          Structured\n\nRegressions:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n  reading ~                                            \n    income             0.118    0.016    7.170    0.000\n\nIntercepts:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n   .reading          188.178    6.616   28.445    0.000\n    income           380.752   12.896   29.525    0.000\n\nVariances:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n    income         16630.573 2351.918    7.071    0.000\n   .reading          450.401   63.696    7.071    0.000"
+    "text": "Let us recreate the same model using Lavaan\n\n# lavaan uses a simple language when specifying the model\n#simple regression using lavaan \nreading_lav &lt;-   '\n  # regressions\n    reading ~ 1 + income\n  # variance (optional)\n    income ~~ income\n'\nreading_lav_sem &lt;- sem(reading_lav, data=df)\nsummary(reading_lav_sem)\n\nlavaan 0.6.17 ended normally after 11 iterations\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                         5\n\n  Number of observations                           100\n\nModel Test User Model:\n                                                      \n  Test statistic                                 0.000\n  Degrees of freedom                                 0\n\nParameter Estimates:\n\n  Standard errors                             Standard\n  Information                                 Expected\n  Information saturated (h1) model          Structured\n\nRegressions:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n  reading ~                                            \n    income             0.118    0.016    7.170    0.000\n\nIntercepts:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n   .reading          188.178    6.616   28.445    0.000\n    income           380.752   12.896   29.525    0.000\n\nVariances:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n    income         16630.573 2351.918    7.071    0.000\n   .reading          450.401   63.696    7.071    0.000"
   },
   {
     "objectID": "posts/Introduction to Advanced Statistics/index.html#let-us-recreate-the-same-model-using-lavaan-1",
@@ -179,7 +179,7 @@
     "href": "posts/Introduction to Advanced Statistics/index.html#visualising-with-sempaths-from-semplot",
     "title": "Introduction to Advanced Statistics",
     "section": "Visualising with semPaths() from semPlot",
-    "text": "Visualising with semPaths() from semPlot\n\n\nCode\nlibrary(semPlot)\n\nsemPaths(reading_lav_sem,\n         whatLabels = \"est\",\n         sizeMan = 10,\n         style = \"ram\",\n         layout = \"circle\")"
+    "text": "Visualising with semPaths() from semPlot\n\nlibrary(semPlot)\n\nsemPaths(reading_lav_sem,\n         whatLabels = \"est\",\n         sizeMan = 10,\n         style = \"ram\",\n         layout = \"circle\")"
   },
   {
     "objectID": "posts/Introduction to Advanced Statistics/index.html#multiple-regression-lm",
@@ -193,14 +193,14 @@
     "href": "posts/Introduction to Advanced Statistics/index.html#multiple-regression-lavaan",
     "title": "Introduction to Advanced Statistics",
     "section": "Multiple regression, lavaan",
-    "text": "Multiple regression, lavaan\n\n\nCode\nreading2_lav &lt;-   '\n  # regressions\n    reading ~ 1 + income + books\n  # covariance\n    income ~~ books\n'\nreading2_lav_sem &lt;- sem(reading2_lav, data=df)\nsummary(reading2_lav_sem)\n\n\nlavaan 0.6.17 ended normally after 38 iterations\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                         9\n\n  Number of observations                           100\n\nModel Test User Model:\n                                                      \n  Test statistic                                 0.000\n  Degrees of freedom                                 0\n\nParameter Estimates:\n\n  Standard errors                             Standard\n  Information                                 Expected\n  Information saturated (h1) model          Structured\n\nRegressions:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n  reading ~                                            \n    income             0.062    0.020    3.132    0.002\n    books              6.146    1.382    4.449    0.000\n\nCovariances:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n  income ~~                                            \n    books            152.610   28.168    5.418    0.000\n\nIntercepts:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n   .reading          187.280    6.048   30.967    0.000\n    income           380.752   12.896   29.525    0.000\n    books              3.640    0.184   19.827    0.000\n\nVariances:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n   .reading          375.988   53.173    7.071    0.000\n    income         16630.574 2351.918    7.071    0.000\n    books              3.370    0.477    7.071    0.000"
+    "text": "Multiple regression, lavaan\n\nreading2_lav &lt;-   '\n  # regressions\n    reading ~ 1 + income + books\n  # covariance\n    income ~~ books\n'\nreading2_lav_sem &lt;- sem(reading2_lav, data=df)\nsummary(reading2_lav_sem)\n\nlavaan 0.6.17 ended normally after 38 iterations\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                         9\n\n  Number of observations                           100\n\nModel Test User Model:\n                                                      \n  Test statistic                                 0.000\n  Degrees of freedom                                 0\n\nParameter Estimates:\n\n  Standard errors                             Standard\n  Information                                 Expected\n  Information saturated (h1) model          Structured\n\nRegressions:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n  reading ~                                            \n    income             0.062    0.020    3.132    0.002\n    books              6.146    1.382    4.449    0.000\n\nCovariances:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n  income ~~                                            \n    books            152.610   28.168    5.418    0.000\n\nIntercepts:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n   .reading          187.280    6.048   30.967    0.000\n    income           380.752   12.896   29.525    0.000\n    books              3.640    0.184   19.827    0.000\n\nVariances:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n   .reading          375.988   53.173    7.071    0.000\n    income         16630.574 2351.918    7.071    0.000\n    books              3.370    0.477    7.071    0.000"
   },
   {
     "objectID": "posts/Introduction to Advanced Statistics/index.html#visualising-with-sempaths-from-semplot-1",
     "href": "posts/Introduction to Advanced Statistics/index.html#visualising-with-sempaths-from-semplot-1",
     "title": "Introduction to Advanced Statistics",
     "section": "Visualising with semPaths() from semPlot",
-    "text": "Visualising with semPaths() from semPlot\n\n\nCode\nsemPaths(reading2_lav_sem,\n         whatLabels = \"est\",\n         sizeMan = 10,\n         style = \"ram\",\n         layout = \"spring\")"
+    "text": "Visualising with semPaths() from semPlot\n\nsemPaths(reading2_lav_sem,\n         whatLabels = \"est\",\n         sizeMan = 10,\n         style = \"ram\",\n         layout = \"spring\")"
   },
   {
     "objectID": "posts/Introduction to Advanced Statistics/index.html#canvas",
@@ -228,21 +228,21 @@
     "href": "posts/Introduction to Advanced Statistics/index.html#visualising-with-sempaths-from-semplot-2",
     "title": "Introduction to Advanced Statistics",
     "section": "Visualising with semPaths() from semPlot",
-    "text": "Visualising with semPaths() from semPlot\n\n\nCode\nsemPaths(reading2_lav_sem,\n         whatLabels = \"est\",\n         sizeMan = 10,          \n         style = \"ram\",          \n         layout = \"tree\",\n         intercepts = FALSE)"
+    "text": "Visualising with semPaths() from semPlot\n\nsemPaths(reading2_lav_sem,\n         whatLabels = \"est\",\n         sizeMan = 10,          \n         style = \"ram\",          \n         layout = \"tree\",\n         intercepts = FALSE)"
   },
   {
     "objectID": "posts/Introduction to Advanced Statistics/index.html#a-prelude-to-next-week.-mediation-with-lavaan",
     "href": "posts/Introduction to Advanced Statistics/index.html#a-prelude-to-next-week.-mediation-with-lavaan",
     "title": "Introduction to Advanced Statistics",
     "section": "A prelude to next week. Mediation with Lavaan",
-    "text": "A prelude to next week. Mediation with Lavaan\nWe will explore whether the number of books read actually mediate the effect of income on reading ability. We will not go in depth today as we will discuss this topic next week in detail. We will just demonstrate how the code would change in lavaan.\n\n\nCode\nreading_med_model &lt;- ' # direct effect\n             reading ~ c*income\n           # mediator\n             books ~ a*income\n             reading ~ b*books\n           # indirect effect (a*b)\n             ab := a*b\n           # total effect\n             total := c + (a*b)\n         '\nreading_med &lt;- sem(reading_med_model, data = df)\nsummary(reading_med )\n\n\nlavaan 0.6.17 ended normally after 1 iteration\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                         5\n\n  Number of observations                           100\n\nModel Test User Model:\n                                                      \n  Test statistic                                 0.000\n  Degrees of freedom                                 0\n\nParameter Estimates:\n\n  Standard errors                             Standard\n  Information                                 Expected\n  Information saturated (h1) model          Structured\n\nRegressions:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n  reading ~                                            \n    income     (c)     0.062    0.020    3.132    0.002\n  books ~                                              \n    income     (a)     0.009    0.001    8.431    0.000\n  reading ~                                            \n    books      (b)     6.146    1.382    4.449    0.000\n\nVariances:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n   .reading          375.988   53.173    7.071    0.000\n   .books              1.970    0.279    7.071    0.000\n\nDefined Parameters:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n    ab                 0.056    0.014    3.935    0.000\n    total              0.118    0.016    7.170    0.000"
+    "text": "A prelude to next week. Mediation with Lavaan\nWe will explore whether the number of books read actually mediate the effect of income on reading ability. We will not go in depth today as we will discuss this topic next week in detail. We will just demonstrate how the code would change in lavaan.\n\nreading_med_model &lt;- ' # direct effect\n             reading ~ c*income\n           # mediator\n             books ~ a*income\n             reading ~ b*books\n           # indirect effect (a*b)\n             ab := a*b\n           # total effect\n             total := c + (a*b)\n         '\nreading_med &lt;- sem(reading_med_model, data = df)\nsummary(reading_med )\n\nlavaan 0.6.17 ended normally after 1 iteration\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                         5\n\n  Number of observations                           100\n\nModel Test User Model:\n                                                      \n  Test statistic                                 0.000\n  Degrees of freedom                                 0\n\nParameter Estimates:\n\n  Standard errors                             Standard\n  Information                                 Expected\n  Information saturated (h1) model          Structured\n\nRegressions:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n  reading ~                                            \n    income     (c)     0.062    0.020    3.132    0.002\n  books ~                                              \n    income     (a)     0.009    0.001    8.431    0.000\n  reading ~                                            \n    books      (b)     6.146    1.382    4.449    0.000\n\nVariances:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n   .reading          375.988   53.173    7.071    0.000\n   .books              1.970    0.279    7.071    0.000\n\nDefined Parameters:\n                   Estimate   Std.Err  z-value  P(&gt;|z|)\n    ab                 0.056    0.014    3.935    0.000\n    total              0.118    0.016    7.170    0.000"
   },
   {
     "objectID": "posts/Introduction to Advanced Statistics/index.html#let-us-visualise-the-above-model",
     "href": "posts/Introduction to Advanced Statistics/index.html#let-us-visualise-the-above-model",
     "title": "Introduction to Advanced Statistics",
     "section": "Let us visualise the above model",
-    "text": "Let us visualise the above model\n\n\nCode\nsemPaths(reading_med,\n         whatLabels = \"est\",\n         sizeMan = 10,          \n         style = \"ram\",          \n         layout = \"tree\",\n         intercepts = FALSE,\n         rotation = 2)"
+    "text": "Let us visualise the above model\n\nsemPaths(reading_med,\n         whatLabels = \"est\",\n         sizeMan = 10,          \n         style = \"ram\",          \n         layout = \"tree\",\n         intercepts = FALSE,\n         rotation = 2)"
   },
   {
     "objectID": "posts/Introduction to Advanced Statistics/index.html#to-conclude",
@@ -292,5 +292,320 @@
     "title": "Introduction to Advanced Statistics",
     "section": "OLS vs ML",
     "text": "OLS vs ML\nGenerally in SEM, we use the maximum likelihood estimator (MLE). In this module we will be using the acronyms ML and MLE to denote the maximum likelihood estimator method. This method estimates model parameters by maximising the likelihood function. In other words, maximising the probability of observing our existing data points given specific parameter values. We will be discussing in details what these parameters are in SEM (e.g., coefficients, latent variable variances, etc.). It should also be noted that MLE is not the only estimation methods, other methods can also be successfully implemented, such as generalised least squares. We decided on the appropriate estimator based on our data characteristics and assumptions."
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#todays-aims",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#todays-aims",
+    "title": "Introduction to Mediation",
+    "section": "Today’s Aims",
+    "text": "Today’s Aims\n\nIntroduce the concept of Mediation\nDiscuss a Simple Mediation Model\nUse of basic path analysis for Mediation\nUse of lavaan for mediation"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#linear-models",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#linear-models",
+    "title": "Introduction to Mediation",
+    "section": "Linear models",
+    "text": "Linear models\nSo far we have discussed linear models where a variable Y regresses on X\n\\[\ny = b_0 +b_1x_1 + ε\n\\]\nOr, variable Y regresses on more than one variables, X1, X2, …\n\\[\ny = b_0 +b_1x_1 + b_2x_2 + ε_1\n\\]"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#linear-models-1",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#linear-models-1",
+    "title": "Introduction to Mediation",
+    "section": "Linear models",
+    "text": "Linear models\nThese models allowed us to test hypotheses where exogenous observed variables X1, X2, … would have an effect on an endogenous observed variable Y However, in this approach we did examine the impact of X1 on X2, and consequently the impact of X2 on Y."
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#the-simple-mediation-model",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#the-simple-mediation-model",
+    "title": "Introduction to Mediation",
+    "section": "The Simple Mediation Model",
+    "text": "The Simple Mediation Model\nToday we will introduce a new concept where two predicting variables X and M predict an endogenous observed variable Y.\nFurthermore, variable X also influences variable M. We will be referring to variable M as our Mediator.\nIt is also worth noting here that different sources and approaches are even stricter on the above by also requesting that these relations are causal.\nIn other words, X causally influences M and Y, and M causally influences Y."
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#the-simple-mediation-model-visually",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#the-simple-mediation-model-visually",
+    "title": "Introduction to Mediation",
+    "section": "The Simple Mediation Model visually",
+    "text": "The Simple Mediation Model visually"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#guidelines-prior-to-carry-out-mediation-analysis",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#guidelines-prior-to-carry-out-mediation-analysis",
+    "title": "Introduction to Mediation",
+    "section": "Guidelines prior to carry out mediation analysis",
+    "text": "Guidelines prior to carry out mediation analysis\n\n\n\n\n\n\nX should significantly predict Y (path c, although some authors argue this is not required)\nX must significantly predict M (path a)\nM must significantly predict Y (path b)"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#quizzes-and-badgeshopefully",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#quizzes-and-badgeshopefully",
+    "title": "Introduction to Mediation",
+    "section": "Quizzes and Badges(hopefully)",
+    "text": "Quizzes and Badges(hopefully)\nEvery week there will be a Canvas quiz provided so you can practice and enhance your understanding. These are absolutely non-compulsory but do spend some time trying to complete them. You will also be collecting points while you complete these (and other Canvas activities) and at the end of the module the two students with the highest scores will receive a surprise present."
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#github",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#github",
+    "title": "Introduction to Mediation",
+    "section": "Github",
+    "text": "Github\nGithub has been increasingly becoming a standard in the world of coding and statistical analysis as it can serve both as a repository and a host of websites related to projects. We will have a very brief demonstration today and we will return next week and start using it as a standard in our module."
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#essential-and-supplamentary-materials",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#essential-and-supplamentary-materials",
+    "title": "Introduction to Mediation",
+    "section": "Essential and Supplamentary Materials",
+    "text": "Essential and Supplamentary Materials\n\n\n\n\n\n\nPrinciples and Practice of Structural Equation Modeling\nLongitudinal Structural Equation Modeling: A comprehensive Introduction\nOfficial lavaan tutorial from lavaan.org\nPsychometrics in Exercises using R and Rstudio by Prof Anna Brown\nIntroduction to Structural Equation Modeling (SEM) in R with lavaan by Dr Johnny Lin\n** And many other online resources that will be revealed in due time"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#todays-aims-in-terms-of-structural-equation-modeling-sem",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#todays-aims-in-terms-of-structural-equation-modeling-sem",
+    "title": "Introduction to Mediation",
+    "section": "Today’s Aims in Terms of Structural Equation Modeling (SEM)",
+    "text": "Today’s Aims in Terms of Structural Equation Modeling (SEM)\n\nIntroduce key terminology that we will be using this term\nDiscuss examples of simple and multiple regression\nRevisit the same examples using lavaan\nDiscuss baximum likelihood vs. least squares"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#key-terminology",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#key-terminology",
+    "title": "Introduction to Mediation",
+    "section": "Key Terminology",
+    "text": "Key Terminology\nWe will be using quite a few terms in our module so it is important to define them in advance and try to use them consistently. Most of the them are used as in the field but you could come across some slight variations in terminology. This should not put you off or scare you, as long as you understand the substance of each term. It is also a good idea to try to learn the visual equivalents of these terms"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#key-terminology-2",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#key-terminology-2",
+    "title": "Introduction to Mediation",
+    "section": "Key Terminology 2",
+    "text": "Key Terminology 2\n\n\n\n\n\nlatent variable: a variable that is constructed/inferred indirectly by the data and does not exist in the data.\nobserved variable: a variable that has been measured and exists in our data.\nexogenous variable: an independent variable that explains an endogenous variable. Can be either observed \\((x)\\) or latent \\((ξ)\\).\nendogenous variable: a dependent variable that has a causal path leading to it. Can be either observed \\((y)\\) or latent \\((η)\\).\nmeasurement model: a model that links observed variables with latent variables"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#key-terminology-3",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#key-terminology-3",
+    "title": "Introduction to Mediation",
+    "section": "Key Terminology 3",
+    "text": "Key Terminology 3\n\n\n\n\n\nindicator: an observed variable in a measurement model (can be exogenous or endogenous).\nfactor: a latent variable defined by its indicators (can be exogenous or endogenous).\nloading: a path between an indicator and a factor.\nstructural model: a model that specifies causal relationships among exogenous variables to endogenous variables (can be observed or latent).\nregression path: a path between exogenous and endogenous variables (can be observed or latent)."
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#are-you-ready-for-the-first-headache-question",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#are-you-ready-for-the-first-headache-question",
+    "title": "Introduction to Mediation",
+    "section": "Are you ready for the first headache question?",
+    "text": "Are you ready for the first headache question?\n\n\nCode\nplot_med &lt;- mark_sig(plot_med,model_med_fit)\nplot(plot_med)"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#let-us-expand-on-this-headache-a-bit-more",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#let-us-expand-on-this-headache-a-bit-more",
+    "title": "Introduction to Mediation",
+    "section": "Let us expand on this headache a bit more",
+    "text": "Let us expand on this headache a bit more"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#simple-regression",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#simple-regression",
+    "title": "Introduction to Mediation",
+    "section": "Simple Regression",
+    "text": "Simple Regression\nSo far we have learnt that a simple regression is the linear relation between a predictor (or an independent variable, or an observed exogenous variable) and an outcome (or observed endogenous variable).\n\\[\ny_1 = b_0 +b_1x_1 + ε_1\n\\]\nwhere \\(b_0\\) is the intercept and \\(b_1\\) is the coefficient of \\(x_1\\) (observed predictor) and \\(ε_1\\) is the residual with \\(y_1\\) being the outcome."
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#simple-regression-cont.",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#simple-regression-cont.",
+    "title": "Introduction to Mediation",
+    "section": "Simple Regression cont.",
+    "text": "Simple Regression cont.\nI strongly recommend reading Kline chapter 2, pages 25-30 at minimum, Regression Fundamentals.\n\\[\n\\hat{Y} = B_XX + A_X\n\\]\nThe above equation represents predicting Y from X\nAlso referred to as regressing Y on X, with \\(\\hat{Y}\\) representing predicted scores, \\(B_X\\) unstandardised regression coefficient for predictor \\(X\\), also known as slope, and \\(A_X\\) is the intercept.\nGenerally, with linear models we would use ordinary least square (OLS) so that the least squares criterion is satisfied. In practice, we are trying to minimise the sum of squared residuals, \\(\\sum(Y-\\hat{Y})\\)"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#let-us-see-an-example-with-data",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#let-us-see-an-example-with-data",
+    "title": "Introduction to Mediation",
+    "section": "Let us see an example with data",
+    "text": "Let us see an example with data\nWe will work with the randomly generated data included in the random.csv\nThe datafile includes three variables:\nreading: reading ability as assessed in school\nincome: weekly family income in £\nbooks: number of books read in a month (on average)\nWe will create a simple regression model of reading  regressing on income using lm()"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#let-us-explore-an-example-with-data",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#let-us-explore-an-example-with-data",
+    "title": "Introduction to Mediation",
+    "section": "Let us explore an example with data",
+    "text": "Let us explore an example with data\nFirst we will create some random data. As we mentioned last week, in this module we will be working exclusively with randomly generated data. Please note that will be required to generate random data for your assignments too.\n\n\nCode\nset.seed(13548) #note that we set the seed to a specific value\nX &lt;- rnorm(250) #number of observations\nM &lt;- 0.60*X + rnorm(250) # what does the 0.4 and rnorm represent here?\nY &lt;- 0.35*M +  rnorm(250) # what does the 0.6 and rnorm represent here?\n\ndf &lt;- data.frame(X=X, Y=Y, M=M)"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#we-will-now-specify-and-fit-a-path-analysis-model",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#we-will-now-specify-and-fit-a-path-analysis-model",
+    "title": "Introduction to Mediation",
+    "section": "We will now specify and fit a path analysis model",
+    "text": "We will now specify and fit a path analysis model\n\n\nCode\nlibrary(lavaan)\nlibrary(semPlot)\n\nmodel_med &lt;- ' # direct effect\n             Y ~ c*X\n           # mediator\n             M ~ a*X\n             Y ~ b*M\n           # indirect effect (a*b)\n             ab := a*b\n           # total effect\n             total := c + (a*b)\n         '\nmodel_med_fit &lt;- sem(model_med, data = df, se = 'bootstrap', bootstrap = 1000, )"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#exploring-the-model",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#exploring-the-model",
+    "title": "Introduction to Mediation",
+    "section": "Exploring the model",
+    "text": "Exploring the model\n\n\nCode\nsummary(model_med_fit, fit.measures = TRUE, standardized = TRUE, rsquare = TRUE, ci = TRUE)\n\n\nlavaan 0.6.17 ended normally after 1 iteration\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                         5\n\n  Number of observations                           250\n\nModel Test User Model:\n                                                      \n  Test statistic                                 0.000\n  Degrees of freedom                                 0\n\nModel Test Baseline Model:\n\n  Test statistic                               113.139\n  Degrees of freedom                                 3\n  P-value                                        0.000\n\nUser Model versus Baseline Model:\n\n  Comparative Fit Index (CFI)                    1.000\n  Tucker-Lewis Index (TLI)                       1.000\n\nLoglikelihood and Information Criteria:\n\n  Loglikelihood user model (H0)               -712.004\n  Loglikelihood unrestricted model (H1)       -712.004\n                                                      \n  Akaike (AIC)                                1434.009\n  Bayesian (BIC)                              1451.616\n  Sample-size adjusted Bayesian (SABIC)       1435.766\n\nRoot Mean Square Error of Approximation:\n\n  RMSEA                                          0.000\n  90 Percent confidence interval - lower         0.000\n  90 Percent confidence interval - upper         0.000\n  P-value H_0: RMSEA &lt;= 0.050                       NA\n  P-value H_0: RMSEA &gt;= 0.080                       NA\n\nStandardized Root Mean Square Residual:\n\n  SRMR                                           0.000\n\nParameter Estimates:\n\n  Standard errors                            Bootstrap\n  Number of requested bootstrap draws             1000\n  Number of successful bootstrap draws            1000\n\nRegressions:\n                   Estimate  Std.Err  z-value  P(&gt;|z|) ci.lower ci.upper\n  Y ~                                                                   \n    X          (c)   -0.065    0.086   -0.762    0.446   -0.241    0.097\n  M ~                                                                   \n    X          (a)    0.611    0.066    9.219    0.000    0.475    0.737\n  Y ~                                                                   \n    M          (b)    0.381    0.068    5.604    0.000    0.248    0.517\n   Std.lv  Std.all\n                  \n   -0.065   -0.058\n                  \n    0.611    0.507\n                  \n    0.381    0.406\n\nVariances:\n                   Estimate  Std.Err  z-value  P(&gt;|z|) ci.lower ci.upper\n   .Y                 1.018    0.086   11.783    0.000    0.839    1.185\n   .M                 1.002    0.083   12.063    0.000    0.843    1.175\n   Std.lv  Std.all\n    1.018    0.856\n    1.002    0.743\n\nR-Square:\n                   Estimate\n    Y                 0.144\n    M                 0.257\n\nDefined Parameters:\n                   Estimate  Std.Err  z-value  P(&gt;|z|) ci.lower ci.upper\n    ab                0.233    0.053    4.365    0.000    0.135    0.347\n    total             0.168    0.074    2.259    0.024    0.025    0.306\n   Std.lv  Std.all\n    0.233    0.206\n    0.168    0.148"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#first-we-will-investigate-the-three-simple-regressions",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#first-we-will-investigate-the-three-simple-regressions",
+    "title": "Introduction to Mediation",
+    "section": "First we will investigate the three simple regressions",
+    "text": "First we will investigate the three simple regressions\n\n\nCode\nmodel_XY &lt;- lm(Y~X, data = df) # seen above as path c\nsummary(model_XY)\n\n\n\nCall:\nlm(formula = Y ~ X, data = df)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-2.5268 -0.7677 -0.0760  0.7206  3.5104 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)  \n(Intercept)  0.03976    0.06851   0.580   0.5622  \nX            0.16775    0.07119   2.356   0.0192 *\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.083 on 248 degrees of freedom\nMultiple R-squared:  0.0219,    Adjusted R-squared:  0.01796 \nF-statistic: 5.553 on 1 and 248 DF,  p-value: 0.01923"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#first-we-will-investigate-the-three-simple-regressions-1",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#first-we-will-investigate-the-three-simple-regressions-1",
+    "title": "Introduction to Mediation",
+    "section": "First we will investigate the three simple regressions",
+    "text": "First we will investigate the three simple regressions\n\n\nCode\nmodel_XM &lt;- lm(M~X, data = df) # seen above as path a \nsummary(model_XM)\n\n\n\nCall:\nlm(formula = M ~ X, data = df)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-2.1693 -0.7082  0.0269  0.6571  3.2536 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) -0.00179    0.06358  -0.028    0.978    \nX            0.61127    0.06606   9.253   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.005 on 248 degrees of freedom\nMultiple R-squared:  0.2566,    Adjusted R-squared:  0.2536 \nF-statistic: 85.61 on 1 and 248 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#first-we-will-investigate-the-three-simple-regressions-2",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#first-we-will-investigate-the-three-simple-regressions-2",
+    "title": "Introduction to Mediation",
+    "section": "First we will investigate the three simple regressions",
+    "text": "First we will investigate the three simple regressions\n\n\nCode\nmodel_MY &lt;- lm(Y~M, data = df) # seen above as path b  \nsummary(model_MY)\n\n\n\nCall:\nlm(formula = Y ~ M, data = df)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-2.31772 -0.66815 -0.00959  0.65951  2.66509 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  0.03999    0.06416   0.623    0.534    \nM            0.35395    0.05525   6.406 7.46e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.015 on 248 degrees of freedom\nMultiple R-squared:  0.142, Adjusted R-squared:  0.1385 \nF-statistic: 41.03 on 1 and 248 DF,  p-value: 7.458e-10"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#first-we-will-investigate-path-c-regression",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#first-we-will-investigate-path-c-regression",
+    "title": "Introduction to Mediation",
+    "section": "First we will investigate path c regression",
+    "text": "First we will investigate path c regression\n\n\nCode\nmodel_XY &lt;- lm(Y~X, data = df) # seen above as path c\nsummary(model_XY)\n\n\n\nCall:\nlm(formula = Y ~ X, data = df)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-2.5268 -0.7677 -0.0760  0.7206  3.5104 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)  \n(Intercept)  0.03976    0.06851   0.580   0.5622  \nX            0.16775    0.07119   2.356   0.0192 *\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.083 on 248 degrees of freedom\nMultiple R-squared:  0.0219,    Adjusted R-squared:  0.01796 \nF-statistic: 5.553 on 1 and 248 DF,  p-value: 0.01923"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#path-a-regression",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#path-a-regression",
+    "title": "Introduction to Mediation",
+    "section": "Path a regression",
+    "text": "Path a regression\n\n\nCode\nmodel_XM &lt;- lm(M~X, data = df) # seen above as path a \nsummary(model_XM)\n\n\n\nCall:\nlm(formula = M ~ X, data = df)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-2.1693 -0.7082  0.0269  0.6571  3.2536 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) -0.00179    0.06358  -0.028    0.978    \nX            0.61127    0.06606   9.253   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.005 on 248 degrees of freedom\nMultiple R-squared:  0.2566,    Adjusted R-squared:  0.2536 \nF-statistic: 85.61 on 1 and 248 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#path-b-regression",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#path-b-regression",
+    "title": "Introduction to Mediation",
+    "section": "Path b regression",
+    "text": "Path b regression\n\n\nCode\nmodel_MY &lt;- lm(Y~M, data = df) # seen above as path b  \nsummary(model_MY)\n\n\n\nCall:\nlm(formula = Y ~ M, data = df)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-2.31772 -0.66815 -0.00959  0.65951  2.66509 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  0.03999    0.06416   0.623    0.534    \nM            0.35395    0.05525   6.406 7.46e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.015 on 248 degrees of freedom\nMultiple R-squared:  0.142, Adjusted R-squared:  0.1385 \nF-statistic: 41.03 on 1 and 248 DF,  p-value: 7.458e-10"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#visualising-the-path-analysis-mediation-model",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#visualising-the-path-analysis-mediation-model",
+    "title": "Introduction to Mediation",
+    "section": "Visualising the path analysis mediation model",
+    "text": "Visualising the path analysis mediation model\n\n\nCode\nsemPaths(model_med_fit,\n         whatLabels = \"est\",\n         sizeMan = 10,          \n         style = \"ram\",          \n         layout = \"tree\",\n         intercepts = FALSE,\n         rotation = 2)"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#add-significance-stars",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#add-significance-stars",
+    "title": "Introduction to Mediation",
+    "section": "Add significance stars",
+    "text": "Add significance stars\n\n\nCode\nlibrary(semptools)\nplot_med &lt;- semPaths(model_med_fit,\n         whatLabels = \"est\",\n         sizeMan = 10,          \n         style = \"ram\",          \n         layout = \"tree\",\n         intercepts = FALSE,\n         rotation = 2, edge.label.cex = 1)"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#how-can-we-interpret-the-above",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#how-can-we-interpret-the-above",
+    "title": "Introduction to Mediation",
+    "section": "How can we interpret the above?",
+    "text": "How can we interpret the above?\nWe see that the paths a and b are significant. The same cannot be said for the path c. We also have a significant indirect effect and a significant total effect.\nIn this case our direct path c is no longer significant, hence this is a case of full mediation\nIf both the indirect path ab and the direct path c were significant this would have been a case of partial mediation.\nIf the indirect path was non-significant this would have been a case of no mediation."
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#we-can-also-extract-confidence-intervals",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#we-can-also-extract-confidence-intervals",
+    "title": "Introduction to Mediation",
+    "section": "We can also extract confidence intervals",
+    "text": "We can also extract confidence intervals\n\n\nCode\nlavaan::standardizedsolution(model_med_fit)\n\n\n    lhs op     rhs label est.std    se      z pvalue ci.lower ci.upper\n1     Y  ~       X     c  -0.058 0.076 -0.760  0.447   -0.207    0.091\n2     M  ~       X     a   0.507 0.043 11.678  0.000    0.422    0.592\n3     Y  ~       M     b   0.406 0.074  5.497  0.000    0.261    0.551\n4     Y ~~       Y         0.856 0.046 18.675  0.000    0.766    0.945\n5     M ~~       M         0.743 0.044 16.914  0.000    0.657    0.830\n6     X ~~       X         1.000 0.000     NA     NA    1.000    1.000\n7    ab :=     a*b    ab   0.206 0.045  4.573  0.000    0.118    0.294\n8 total := c+(a*b) total   0.148 0.064  2.315  0.021    0.023    0.273"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#how-do-we-report-it",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#how-do-we-report-it",
+    "title": "Introduction to Mediation",
+    "section": "How do we report it?",
+    "text": "How do we report it?\nNote that the following is just a guideline and was written based on the standardized estimates.\n‘Initial analysis indicated that X significantly predicted M and Y, and M significantly predicted Y. However, when M was incorporated as a mediator in the X and Y relationship a full mediation occurred where the indirect effect was significant (b = 0.23, p &lt; .001, z = 4.57, se = 0.21, ci[0.95] = (0.12 - 0.29), the total effect was also significant (b = 0.17, p &lt; .021, z= 2.32, se = 0.06, ci(0.95) = [0.02 - 0.27]. The direct path of X predicting y was no longer significant (b = 0.06, p = .447, z= -0.76, se = 0.08, ci(0.95) = [-0.21 - 0.09]. Both paths a (X-&gt;M) and b (M-&gt;Y) were significant, (b = 0.51, p &lt; .001, z = 11.68, se = 0.04, ci[0.95] = (0.42 - 0.59) and (b = 0.41, p &lt; .001, z = 5.50, se = 0.07, ci[0.95] = (0.26 - 0.55) respectively. This was in line with our hypothesis that the relationship between X and Y can be entirely explained by changes in M.’"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#parameter-estimates",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#parameter-estimates",
+    "title": "Introduction to Mediation",
+    "section": "Parameter Estimates",
+    "text": "Parameter Estimates\n\n\nCode\nparameterEstimates(model_med_fit, level = .95)\n\n\n    lhs op     rhs label    est    se      z pvalue ci.lower ci.upper\n1     Y  ~       X     c -0.065 0.086 -0.762  0.446   -0.241    0.097\n2     M  ~       X     a  0.611 0.066  9.219  0.000    0.475    0.737\n3     Y  ~       M     b  0.381 0.068  5.604  0.000    0.248    0.517\n4     Y ~~       Y        1.018 0.086 11.783  0.000    0.839    1.185\n5     M ~~       M        1.002 0.083 12.063  0.000    0.843    1.175\n6     X ~~       X        0.926 0.000     NA     NA    0.926    0.926\n7    ab :=     a*b    ab  0.233 0.053  4.365  0.000    0.135    0.347\n8 total := c+(a*b) total  0.168 0.074  2.259  0.024    0.025    0.306"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#standardised-parameter-estimates",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#standardised-parameter-estimates",
+    "title": "Introduction to Mediation",
+    "section": "Standardised Parameter Estimates",
+    "text": "Standardised Parameter Estimates\n\n\nCode\nlavaan::standardizedsolution(model_med_fit, level = .95)\n\n\n    lhs op     rhs label est.std    se      z pvalue ci.lower ci.upper\n1     Y  ~       X     c  -0.058 0.076 -0.760  0.447   -0.207    0.091\n2     M  ~       X     a   0.507 0.043 11.678  0.000    0.422    0.592\n3     Y  ~       M     b   0.406 0.074  5.497  0.000    0.261    0.551\n4     Y ~~       Y         0.856 0.046 18.675  0.000    0.766    0.945\n5     M ~~       M         0.743 0.044 16.914  0.000    0.657    0.830\n6     X ~~       X         1.000 0.000     NA     NA    1.000    1.000\n7    ab :=     a*b    ab   0.206 0.045  4.573  0.000    0.118    0.294\n8 total := c+(a*b) total   0.148 0.064  2.315  0.021    0.023    0.273"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#we-will-now-apply-what-we-learnt-with-a-more-complex-example",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#we-will-now-apply-what-we-learnt-with-a-more-complex-example",
+    "title": "Introduction to Mediation",
+    "section": "We will now apply what we learnt with a more complex example",
+    "text": "We will now apply what we learnt with a more complex example\nPlease log on to your Posit account and access the Week2 project where you can work on an example of serial mediation with 2 mediators."
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#parallel-mediation",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#parallel-mediation",
+    "title": "Introduction to Mediation",
+    "section": "Parallel Mediation",
+    "text": "Parallel Mediation"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#create-the-data",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#create-the-data",
+    "title": "Introduction to Mediation",
+    "section": "Create the data",
+    "text": "Create the data\n\n\nCode\nset.seed(13548) #note that we set the seed to a specific value\nX &lt;- rnorm(250) #number of observations\nM1 &lt;- 0.60*X + rnorm(250)# what does the 0.4 and rnorm represent here?\nM2 &lt;- 0.50*X + rnorm(250)\nY &lt;- 0.35*M +  rnorm(250) # what does the 0.6 and rnorm represent here?\n\ndf &lt;- data.frame(X=X, Y=Y, M1=M1, M2=M2)"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#we-will-now-specify-and-fit-a-path-analysis-model-1",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#we-will-now-specify-and-fit-a-path-analysis-model-1",
+    "title": "Introduction to Mediation",
+    "section": "We will now specify and fit a path analysis model",
+    "text": "We will now specify and fit a path analysis model\n\n\nCode\nlibrary(lavaan) \nlibrary(semPlot)  \nmodel2_med &lt;- ' \n# alternative syntax of the model            \nY ~ c*X + b1*M1 + b2*M2           \nM1 ~ a1*X              \nM2 ~ a2*X     \n\n# indirect effects (a*b)              \na1b1 := a1*b1\na2b2 := a2*b2\n# total effect              \ntotal := c + (a1*b1) + (a2*b2)          \n' \nmodel2_med_fit &lt;- sem(model2_med, data = df, se = 'bootstrap', bootstrap = 1000)"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#exploring-the-model-1",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#exploring-the-model-1",
+    "title": "Introduction to Mediation",
+    "section": "Exploring the model",
+    "text": "Exploring the model\n\n\nCode\nsummary(model2_med_fit, fit.measures = TRUE, standardized = TRUE, rsquare = TRUE, ci = TRUE)\n\n\nlavaan 0.6.17 ended normally after 1 iteration\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                         8\n\n  Number of observations                           250\n\nModel Test User Model:\n                                                      \n  Test statistic                                 0.243\n  Degrees of freedom                                 1\n  P-value (Chi-square)                           0.622\n\nModel Test Baseline Model:\n\n  Test statistic                               140.934\n  Degrees of freedom                                 6\n  P-value                                        0.000\n\nUser Model versus Baseline Model:\n\n  Comparative Fit Index (CFI)                    1.000\n  Tucker-Lewis Index (TLI)                       1.034\n\nLoglikelihood and Information Criteria:\n\n  Loglikelihood user model (H0)              -1076.137\n  Loglikelihood unrestricted model (H1)      -1076.016\n                                                      \n  Akaike (AIC)                                2168.275\n  Bayesian (BIC)                              2196.446\n  Sample-size adjusted Bayesian (SABIC)       2171.086\n\nRoot Mean Square Error of Approximation:\n\n  RMSEA                                          0.000\n  90 Percent confidence interval - lower         0.000\n  90 Percent confidence interval - upper         0.132\n  P-value H_0: RMSEA &lt;= 0.050                    0.717\n  P-value H_0: RMSEA &gt;= 0.080                    0.181\n\nStandardized Root Mean Square Residual:\n\n  SRMR                                           0.008\n\nParameter Estimates:\n\n  Standard errors                            Bootstrap\n  Number of requested bootstrap draws             1000\n  Number of successful bootstrap draws            1000\n\nRegressions:\n                   Estimate  Std.Err  z-value  P(&gt;|z|) ci.lower ci.upper\n  Y ~                                                                   \n    X          (c)    0.003    0.090    0.035    0.972   -0.174    0.172\n    M1        (b1)    0.279    0.069    4.019    0.000    0.143    0.414\n    M2        (b2)    0.008    0.062    0.121    0.904   -0.113    0.132\n  M1 ~                                                                  \n    X         (a1)    0.611    0.063    9.718    0.000    0.477    0.731\n  M2 ~                                                                  \n    X         (a2)    0.454    0.067    6.736    0.000    0.320    0.593\n   Std.lv  Std.all\n                  \n    0.003    0.003\n    0.279    0.297\n    0.008    0.008\n                  \n    0.611    0.507\n                  \n    0.454    0.397\n\nVariances:\n                   Estimate  Std.Err  z-value  P(&gt;|z|) ci.lower ci.upper\n   .Y                 1.077    0.093   11.551    0.000    0.885    1.248\n   .M1                1.002    0.083   12.104    0.000    0.831    1.156\n   .M2                1.019    0.086   11.887    0.000    0.852    1.184\n   Std.lv  Std.all\n    1.077    0.910\n    1.002    0.743\n    1.019    0.842\n\nR-Square:\n                   Estimate\n    Y                 0.090\n    M1                0.257\n    M2                0.158\n\nDefined Parameters:\n                   Estimate  Std.Err  z-value  P(&gt;|z|) ci.lower ci.upper\n    a1b1              0.170    0.045    3.815    0.000    0.086    0.259\n    a2b2              0.003    0.029    0.119    0.905   -0.052    0.062\n    total             0.177    0.079    2.227    0.026    0.011    0.336\n   Std.lv  Std.all\n    0.170    0.151\n    0.003    0.003\n    0.177    0.156"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#parameter-estimates-1",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#parameter-estimates-1",
+    "title": "Introduction to Mediation",
+    "section": "Parameter Estimates",
+    "text": "Parameter Estimates\n\n\nCode\nparameterEstimates(model_med_fit, level = .95)\n\n\n    lhs op     rhs label    est    se      z pvalue ci.lower ci.upper\n1     Y  ~       X     c -0.065 0.086 -0.762  0.446   -0.241    0.097\n2     M  ~       X     a  0.611 0.066  9.219  0.000    0.475    0.737\n3     Y  ~       M     b  0.381 0.068  5.604  0.000    0.248    0.517\n4     Y ~~       Y        1.018 0.086 11.783  0.000    0.839    1.185\n5     M ~~       M        1.002 0.083 12.063  0.000    0.843    1.175\n6     X ~~       X        0.926 0.000     NA     NA    0.926    0.926\n7    ab :=     a*b    ab  0.233 0.053  4.365  0.000    0.135    0.347\n8 total := c+(a*b) total  0.168 0.074  2.259  0.024    0.025    0.306"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#visualisation-of-the-model",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#visualisation-of-the-model",
+    "title": "Introduction to Mediation",
+    "section": "Visualisation of the model",
+    "text": "Visualisation of the model\n\n\nCode\nplot_med2 &lt;- semPaths(model2_med_fit,\n         whatLabels = \"est\",\n         sizeMan = 10,          \n         style = \"ram\",          \n         layout = \"tree\",\n         intercepts = FALSE,\n         rotation = 2, edge.label.cex = 1)"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#add-significance-stars-1",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#add-significance-stars-1",
+    "title": "Introduction to Mediation",
+    "section": "Add significance stars",
+    "text": "Add significance stars\n\n\nCode\nplot_med2 &lt;- mark_sig(plot_med2,model2_med_fit)\nplot(plot_med2)"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#what-would-your-interpretation-be",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#what-would-your-interpretation-be",
+    "title": "Introduction to Mediation",
+    "section": "What would your interpretation be?",
+    "text": "What would your interpretation be?"
+  },
+  {
+    "objectID": "posts/Introduction to Mediation (with lavaan)/index.html#follow-up-topics",
+    "href": "posts/Introduction to Mediation (with lavaan)/index.html#follow-up-topics",
+    "title": "Introduction to Mediation",
+    "section": "Follow-up topics",
+    "text": "Follow-up topics\nThis Friday we are having our first Zoom session at 12 noon.\nThere we will be chatting about questions you might have but I also want you to explore 2 questions.\n\nHow can I add a variable in order to investigate for moderation effects between X and M?\nHow can I control for a specific variable in the simple mediation model? For example how can I control for the impact of age?"
+  },
+  {
+    "objectID": "posts/Introduction to Advanced Statistics/index.html",
+    "href": "posts/Introduction to Advanced Statistics/index.html",
+    "title": "Introduction to Advanced Statistics",
+    "section": "",
+    "text": "This is me (used to be)\nI love my two boys\nI also love computer games, motorbikes, music, food\nFunnily enough I love maths and statistics, and even more teaching these\nI am also dyslexic so please do tell me when you spot typing mistakes, usually whole words missing."
   }
 ]

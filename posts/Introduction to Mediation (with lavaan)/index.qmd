@@ -1,0 +1,279 @@
+---
+title: "Introduction to Mediation"
+format: 
+  revealjs:
+    theme: league
+    transition: slide
+    background-transition: zoom
+    slide-number: c/t
+    show-slide-number: all
+    chalkboard: true
+    background-size: cover
+    smaller: true
+    echo: true
+    code-fold: true
+    code-summary: "Show the code"
+author: "Dr Lazaros Gonidis"
+date: "2024-01-27"
+image: "image1.jpg"
+---
+
+## Today's Aims
+
+1.  Introduce the concept of Mediation
+2.  Discuss a Simple Mediation Model
+3.  Use of basic path analysis for Mediation
+4.  Use of lavaan for mediation
+
+## Linear models
+
+So far we have discussed linear models where a variable **Y** regresses on **X**
+
+$$
+y = b_0 +b_1x_1 + ε
+$$
+
+Or, variable **Y** regresses on more than one variables, **X1, X2, ...**
+
+$$
+y = b_0 +b_1x_1 + b_2x_2 + ε_1
+$$
+
+## Linear models
+
+These models allowed us to test hypotheses where exogenous observed variables **X1, X2, ...** would have an effect on an endogenous observed variable **Y** However, in this approach we did examine the impact of **X1 on X2, and consequently the impact of X2 on Y.**
+
+## The Simple Mediation Model
+
+Today we will introduce a new concept where two **predicting variables X and M** predict an endogenous observed variable **Y.**
+
+Furthermore, variable **X** also influences variable **M**. We will be referring to variable **M** as our **Mediator.**
+
+It is also worth noting here that different sources and approaches are even stricter on the above by also requesting that these relations are **causal**.
+
+In other words, **X causally influences M and Y, and M causally influences Y.**
+
+## The Simple Mediation Model visually
+
+![](mediation.JPG){width="763"}
+
+## Guidelines prior to carry out mediation analysis
+
+<div>
+
+::: columns
+::: {.column width="20%"}
+![](paths.JPG){width="373" height="298"}
+:::
+
+::: {.column width="80%"}
+1.  **X** should significantly predict **Y** (**path c**, although some authors argue this is not required)
+
+2.  **X** must significantly predict **M (path a)**
+
+3.  **M** must significantly predict **Y (path b)**
+:::
+:::
+
+</div>
+
+## Let us explore an example with data
+
+First we will create some random data. As we mentioned last week, in this module we will be working exclusively with randomly generated data. **Please note that will be required to generate random data for your assignments too.**
+
+```{r}
+set.seed(13548) #note that we set the seed to a specific value
+X <- rnorm(250) #number of observations
+M <- 0.60*X + rnorm(250) # what does the 0.4 and rnorm represent here?
+Y <- 0.35*M +  rnorm(250) # what does the 0.6 and rnorm represent here?
+
+df <- data.frame(X=X, Y=Y, M=M)
+```
+
+## First we will investigate path c regression
+
+```{r}
+model_XY <- lm(Y~X, data = df) # seen above as path c
+summary(model_XY)
+```
+
+## Path a regression
+
+```{r}
+model_XM <- lm(M~X, data = df) # seen above as path a 
+summary(model_XM)
+```
+
+## Path b regression
+
+```{r}
+model_MY <- lm(Y~M, data = df) # seen above as path b  
+summary(model_MY)
+```
+
+## We will now specify and fit a path analysis model
+
+```{r}
+library(lavaan)
+library(semPlot)
+
+model_med <- ' # direct effect
+             Y ~ c*X
+           # mediator
+             M ~ a*X
+             Y ~ b*M
+           # indirect effect (a*b)
+             ab := a*b
+           # total effect
+             total := c + (a*b)
+         '
+model_med_fit <- sem(model_med, data = df, se = 'bootstrap', bootstrap = 1000, )
+```
+
+## Exploring the model
+
+```{r}
+summary(model_med_fit, fit.measures = TRUE, standardized = TRUE, rsquare = TRUE, ci = TRUE)
+```
+
+## Parameter Estimates
+
+```{r}
+parameterEstimates(model_med_fit, level = .95)
+```
+
+## Standardised Parameter Estimates
+
+```{r}
+lavaan::standardizedsolution(model_med_fit, level = .95)
+```
+
+## Visualising the path analysis mediation model
+
+```{r}
+semPaths(model_med_fit,
+         whatLabels = "est",
+         sizeMan = 10,          
+         style = "ram",          
+         layout = "tree",
+         intercepts = FALSE,
+         rotation = 2)
+```
+
+## Add significance stars
+
+```{r}
+library(semptools)
+plot_med <- semPaths(model_med_fit,
+         whatLabels = "est",
+         sizeMan = 10,          
+         style = "ram",          
+         layout = "tree",
+         intercepts = FALSE,
+         rotation = 2, edge.label.cex = 1)
+```
+
+## Are you ready for the first headache question?
+
+```{r}
+plot_med <- mark_sig(plot_med,model_med_fit)
+plot(plot_med)
+```
+
+## How can we interpret the above?
+
+We see that the paths **a** and **b** are significant. The same cannot be said for the path **c.** We also have a significant **indirect effect** and a significant **total effect**.
+
+In this case our direct path **c** is no longer significant, hence this is a case of **full mediation**
+
+If **both** the **indirect path ab** and the **direct path c** were significant this would have been a case of partial mediation.
+
+If the **indirect path** was non-significant this would have been a case of **no mediation.**
+
+## How do we report it?
+
+Note that the following is just a guideline and was written based on the standardized estimates.
+
+'Initial analysis indicated that X significantly predicted M and Y, and M significantly predicted Y. However, when M was incorporated as a mediator in the X and Y relationship a full mediation occurred where the indirect effect was significant (b = 0.23, p \< .001, z = 4.57, se = 0.21, ci\[0.95\] = (0.12 - 0.29), the total effect was also significant (b = 0.17, p \< .021, z= 2.32, se = 0.06, ci(0.95) = \[0.02 - 0.27\]. The direct path of X predicting y was no longer significant (b = 0.06, p = .447, z= -0.76, se = 0.08, ci(0.95) = \[-0.21 - 0.09\]. Both paths ***a*** (X-\>M) and ***b*** (M-\>Y) were significant, (b = 0.51, p \< .001, z = 11.68, se = 0.04, ci\[0.95\] = (0.42 - 0.59) and (b = 0.41, p \< .001, z = 5.50, se = 0.07, ci\[0.95\] = (0.26 - 0.55) respectively. This was in line with our hypothesis that the relationship between X and Y can be entirely explained by changes in M.'
+
+## We will now apply what we learnt with a more complex example
+
+Please log on to your Posit account and access the **Week2** project where you can work on an example of serial mediation with 2 mediators.
+
+## Parallel Mediation
+
+![](p_mediation.JPG)
+
+## Create the data
+
+```{r}
+set.seed(13548) #note that we set the seed to a specific value
+X <- rnorm(250) #number of observations
+M1 <- 0.60*X + rnorm(250)# what does the 0.4 and rnorm represent here?
+M2 <- 0.50*X + rnorm(250)
+Y <- 0.35*M +  rnorm(250) # what does the 0.6 and rnorm represent here?
+
+df <- data.frame(X=X, Y=Y, M1=M1, M2=M2)
+```
+
+## We will now specify and fit a path analysis model
+
+```{r}
+library(lavaan) 
+library(semPlot)  
+model2_med <- ' 
+# alternative syntax of the model            
+Y ~ c*X + b1*M1 + b2*M2           
+M1 ~ a1*X              
+M2 ~ a2*X     
+
+# indirect effects (a*b)              
+a1b1 := a1*b1
+a2b2 := a2*b2
+# total effect              
+total := c + (a1*b1) + (a2*b2)          
+' 
+model2_med_fit <- sem(model2_med, data = df, se = 'bootstrap', bootstrap = 1000)
+```
+
+## Exploring the model
+
+```{r}
+summary(model2_med_fit, fit.measures = TRUE, standardized = TRUE, rsquare = TRUE, ci = TRUE)
+```
+
+## Parameter Estimates
+
+```{r}
+parameterEstimates(model_med_fit, level = .95)
+```
+
+## Visualisation of the model
+
+```{r}
+plot_med2 <- semPaths(model2_med_fit,
+         whatLabels = "est",
+         sizeMan = 10,          
+         style = "ram",          
+         layout = "tree",
+         intercepts = FALSE,
+         rotation = 2, edge.label.cex = 1)
+```
+
+## Add significance stars
+
+```{r}
+plot_med2 <- mark_sig(plot_med2,model2_med_fit)
+plot(plot_med2)
+```
+
+## What would your interpretation be?
+
+## Follow-up topics
+
+This Friday we are having our first Zoom session at 12 noon.
+
+There we will be chatting about questions you might have but I also want you to explore 2 questions.
+
+1.  How can I add a variable in order to investigate for moderation effects between X and M?
+2.  How can I control for a specific variable in the simple mediation model? For example how can I control for the impact of age?

@@ -2,7 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/Introduction to Advanced Statistics/index.html"
+      "/posts/Introduction to Advanced Statistics/index.html",
+      "/posts/Introduction to Mediation (with lavaan)/index.html"
     ]
   }
 ]
