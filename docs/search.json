@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "AdvancedStatistics",
     "section": "",
-    "text": "Assignment 1\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nIntroduction to Advanced Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Mediation\n\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\nNo matching items"
+    "text": "Assignment 1\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nIntroduction to S.E.M\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 7, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Advanced Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Mediation\n\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -684,5 +684,173 @@
     "title": "Assignment 1",
     "section": "Generating the data",
     "text": "Generating the data\nMake sure to run the following code snipet as is in terms of numbers, any alterations may lead to errors and you will be marked down. You can however rename the variables (for example instead of X you may choose to declare Anxiety etc)\n\nset.seed(22335) #\nX &lt;- rnorm(250) \nM1 &lt;- 0.60*X + rnorm(250) \nM2 &lt;- 0.35*X + rnorm(250)\nM3 &lt;- 0.55*X + rnorm(250)\nY &lt;- 0.35*M1 + 0.1*M2 + 0.33*M3 + rnorm(250) \n\ndf &lt;- data.frame(X=X, M1=M1, M2=M2, M3=M3, Y=Y)"
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#todays-aims",
+    "href": "posts/Introduction to S.E.M/index.html#todays-aims",
+    "title": "Introduction to S.E.M",
+    "section": "Today’s Aims",
+    "text": "Today’s Aims\nToday we will use Specification of observed variable models (Path) as means to introduce S.E.M.\nOverall, today’s session will be theoretical but we may also use code snipets for illustration purposes."
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#steps-of-sem",
+    "href": "posts/Introduction to S.E.M/index.html#steps-of-sem",
+    "title": "Introduction to S.E.M.",
+    "section": "Steps of SEM",
+    "text": "Steps of SEM"
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#basic-steps",
+    "href": "posts/Introduction to S.E.M/index.html#basic-steps",
+    "title": "Introduction to S.E.M",
+    "section": "Basic Steps",
+    "text": "Basic Steps\n\nBasic steps to SEM as proposed by Kline, page 118"
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#specification",
+    "href": "posts/Introduction to S.E.M/index.html#specification",
+    "title": "Introduction to S.E.M",
+    "section": "Specification",
+    "text": "Specification\nSpecifying the model is probably the most important step in the process as it is assumed that hypothesis, hence the model, is valid and correct.\nKline also suggests that alternative possible models could also be noted as potential models should they be justified by theory or data findings."
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#identification",
+    "href": "posts/Introduction to S.E.M/index.html#identification",
+    "title": "Introduction to S.E.M",
+    "section": "Identification",
+    "text": "Identification\nSpecification of a model is usually a conceptual starting point and regardless of how grounded in theory that is there is always the need to be supported by statistical findings.\nWe therefore, build statistical models comprised of equations that define model parameters. These statistical parameters set and test relationships between our variables.\nA statistical model must be identified, meaning it is theoretically possible to algorithmically to a unique solution for each of the model parameters. This is regardless of our data and is a property of the model."
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#an-oversimplified-example",
+    "href": "posts/Introduction to S.E.M/index.html#an-oversimplified-example",
+    "title": "Introduction to S.E.M",
+    "section": "An oversimplified example",
+    "text": "An oversimplified example\nIn school you might have come across the following simple example\n\\[\n3x + 4y =10\n\\]\n\\[\nx-y=1\n\\]\nThis is an example where we have to sources of information, in this case two equations, and we need to find two unknown parameters, \\(x\\) and \\(y\\)."
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#model-identification",
+    "href": "posts/Introduction to S.E.M/index.html#model-identification",
+    "title": "Introduction to S.E.M",
+    "section": "Model Identification",
+    "text": "Model Identification\n\nWhen the number of parameters specified in our model is equal to the number of unique sources of information then we have df = 0 and a just-identified model.\nWhen the number of parameters specified in our model is less than the number of unique sources of information then we have df &gt; 0 and an over-identified model.\nWhen the number of parameters specified in our model is greater then the number of unique sources of information then we have df &lt; 0 and an under-identified model."
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#a-visual-example",
+    "href": "posts/Introduction to S.E.M/index.html#a-visual-example",
+    "title": "Introduction to S.E.M",
+    "section": "A visual example",
+    "text": "A visual example"
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#model-identification-of-our-example",
+    "href": "posts/Introduction to S.E.M/index.html#model-identification-of-our-example",
+    "title": "Introduction to S.E.M",
+    "section": "Model identification of our example",
+    "text": "Model identification of our example\nWe have 5 variables so this is equivalent to 15 unique sources of information. You can visualise this if you imagine a triangular correlation matrix.\n\nTo make your life easier you can use this formula,\n\\(p*(p+1)/2\\)\nWhere \\(p\\) is the number of variables in your model."
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#select-measures-and-collect-data",
+    "href": "posts/Introduction to S.E.M/index.html#select-measures-and-collect-data",
+    "title": "Introduction to S.E.M",
+    "section": "Select measures and collect data",
+    "text": "Select measures and collect data\nYour confidence in your statistical findings of your model will only be as good as your measurements and the quality of your data collection.\nIt is therefore vital to select good measures and follow solid methodological guidelines in terms of data collection and handling."
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#estimation",
+    "href": "posts/Introduction to S.E.M/index.html#estimation",
+    "title": "Introduction to S.E.M",
+    "section": "Estimation",
+    "text": "Estimation\nUse of statistical software to carry out the SEM analysis and go through a cycle of the following steps:\n\nEvaluate model fit (only when df &gt; 0)\n\nChi-square Test \\((x^2)\\)\nComparative Fit Index (CFI)\nTucker-Lewis Index (TLI)\nRoot Mean Square Error of Approximation (RMSEA)\nStandardized Root Mean Square Residual (SRMR)"
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#parameters-to-estimate",
+    "href": "posts/Introduction to S.E.M/index.html#parameters-to-estimate",
+    "title": "Introduction to S.E.M",
+    "section": "Parameters to Estimate",
+    "text": "Parameters to Estimate\n\nBeware of software default settings. You may not necessarily request an estimate but the software might calculate it by default. For example, the residual errors."
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#model-identification-1",
+    "href": "posts/Introduction to S.E.M/index.html#model-identification-1",
+    "title": "Introduction to S.E.M",
+    "section": "Model Identification",
+    "text": "Model Identification\n15 unique sources of information - 12 parameters to estimate = 3 (df = 3)\nTherefore, this is an over-identified model!"
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#chi-square-test-x2",
+    "href": "posts/Introduction to S.E.M/index.html#chi-square-test-x2",
+    "title": "Introduction to S.E.M",
+    "section": "Chi-square Test \\((x^2)\\)",
+    "text": "Chi-square Test \\((x^2)\\)\nThe chi-square test assesses whether our model fits the data with \\(p &lt; .05\\) indicating that the model does not fit the data well. Be aware of this as many students are fixated to significant p-values!\nAlso, as you might have heard multiple times before, this test is sensitive to sample size and does not behave well to non-normal distributions!"
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#comparative-fit-index-cfi",
+    "href": "posts/Introduction to S.E.M/index.html#comparative-fit-index-cfi",
+    "title": "Introduction to S.E.M",
+    "section": "Comparative Fit Index, CFI",
+    "text": "Comparative Fit Index, CFI\nThis fit index is, as the naming strongly implies, a comparative fit index. This means it compares our current model to a baseline model, typically a null or empty model.\nWe tend to regard CFI values above .90 as good fit index for our model.\nCFI behaves better than the chi-square test with regards to sample size."
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#tucker-lewis-index-tli",
+    "href": "posts/Introduction to S.E.M/index.html#tucker-lewis-index-tli",
+    "title": "Introduction to S.E.M",
+    "section": "Tucker-Lewis Index (TLI)",
+    "text": "Tucker-Lewis Index (TLI)\nAgain a comparative fit index where we compare our model to a null or empty model.\nIt is also, a better fit index compared to CFI when we have small sample sizes.\nWe tend to regard TLI values equal or greater than .95 as good fit index for our model, with .90 being considered as the absolute lowest acceptable value."
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#root-mean-square-error-of-approximation-rmsea",
+    "href": "posts/Introduction to S.E.M/index.html#root-mean-square-error-of-approximation-rmsea",
+    "title": "Introduction to S.E.M",
+    "section": "Root Mean Square Error of Approximation (RMSEA)",
+    "text": "Root Mean Square Error of Approximation (RMSEA)\nContrary to the previous two, RMSEA is an absolute fit index.\nIt strongly favours more parsimonious models and heavily penalizes more complex models (keep that in mind).\nWe tend to regard RMSEA values equal or less than .08 as good fit index for our model, with .10 being considered as the absolute highest acceptable value.\nHeadache question: How would you expect the RMSEA value to behave in relation to df?"
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#standardized-root-mean-square-residual-srmr",
+    "href": "posts/Introduction to S.E.M/index.html#standardized-root-mean-square-residual-srmr",
+    "title": "Introduction to S.E.M",
+    "section": "Standardized Root Mean Square Residual (SRMR)",
+    "text": "Standardized Root Mean Square Residual (SRMR)\nAlso an absolute fit index, with values less or equal to .08 indicating good fit."
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#some-good-news-and-some-bad-news",
+    "href": "posts/Introduction to S.E.M/index.html#some-good-news-and-some-bad-news",
+    "title": "Introduction to S.E.M",
+    "section": "Some good news and some bad news",
+    "text": "Some good news and some bad news\nVery often you will have fit indices that contradict each other, for example CFI and TLI may be pointing towards good fit whereas RMSEA and SRMR may be pointing towards the opposite direction. What would you do?\nHowever, if all of the fit indices are saying that you do not have a good model fit then you should not proceed to interpret model parameters!\nInstead you should …"
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#instead-you-should",
+    "href": "posts/Introduction to S.E.M/index.html#instead-you-should",
+    "title": "Introduction to S.E.M",
+    "section": "Instead you should …",
+    "text": "Instead you should …"
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#respecify-or-report-results",
+    "href": "posts/Introduction to S.E.M/index.html#respecify-or-report-results",
+    "title": "Introduction to S.E.M",
+    "section": "Respecify or report results?",
+    "text": "Respecify or report results?\nKind of both. Report your initial results and if you have a solid justification of why you could respecify then go ahead and respecify. If you do not have that solid reasoning then mention that and finish with reporting the inadequate model fit!"
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#my-model-fit-is-good",
+    "href": "posts/Introduction to S.E.M/index.html#my-model-fit-is-good",
+    "title": "Introduction to S.E.M",
+    "section": "My model fit is good",
+    "text": "My model fit is good\nMy model fit indices indicated a good fit, should I just report my findings?\nKline suggests that researchers should also consider equivalent or near-equivalent models, demonstrating that their initial model is a better model than the near equivalent ones.\nIt will very often be the case that these models may have better fit than the initial model so it is the researcher’s duty to argue why these need to be rejected at the expense of the proposed model!"
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#reporting-sem-analysis",
+    "href": "posts/Introduction to S.E.M/index.html#reporting-sem-analysis",
+    "title": "Introduction to S.E.M",
+    "section": "Reporting SEM analysis",
+    "text": "Reporting SEM analysis\nIt is vital that all analyses steps are fully disclosed and all statistical figures are accurately reported. It should also be explicitly stated how all the above steps were taken and how the proposed initial/final model is a better model compared to equivalent ones!"
+  },
+  {
+    "objectID": "posts/Introduction to S.E.M/index.html#follow-up-reading",
+    "href": "posts/Introduction to S.E.M/index.html#follow-up-reading",
+    "title": "Introduction to S.E.M",
+    "section": "Follow-up reading",
+    "text": "Follow-up reading\nI strongly advise you to finish reading chapter 6, pages 117 to 142, Principles and Practice of Structural Equation Modeling, Fourth Edition."
   }
 ]

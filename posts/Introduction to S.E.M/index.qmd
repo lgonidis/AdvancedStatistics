@@ -1,0 +1,179 @@
+---
+title: "Introduction to S.E.M"
+format: 
+  revealjs:
+    theme: league
+    transition: slide
+    background-transition: zoom
+    slide-number: c/t
+    show-slide-number: all
+    chalkboard: true
+    background-size: cover
+    smaller: true
+    echo: true
+    code-fold: true
+    code-summary: "Show the code"
+author: "Dr Lazaros Gonidis"
+date: "2024-02-7"
+image: "image1.jpg"
+---
+
+## Today's Aims
+
+Today we will use Specification of observed variable models (Path) as means to introduce S.E.M.
+
+Overall, today's session will be theoretical but we may also use code snipets for illustration purposes.
+
+## Basic Steps
+
+![Basic steps to SEM as proposed by Kline, page 118](steps.JPG){fig-align="center"}
+
+## Specification
+
+Specifying the model is probably the most important step in the process as it is assumed that hypothesis, hence the model, is valid and correct.
+
+Kline also suggests that alternative possible models could also be noted as potential models should they be justified by theory or data findings.
+
+## Identification
+
+Specification of a model is usually a conceptual starting point and regardless of how grounded in theory that is there is always the need to be supported by statistical findings.
+
+We therefore, build statistical models comprised of equations that define model parameters. These statistical parameters set and test relationships between our variables.
+
+A statistical model **must be identified**, meaning it is theoretically possible to algorithmically to a unique solution for each of the model parameters. This is **regardless of our data** and is a property of the model.
+
+## An oversimplified example
+
+In school you might have come across the following simple example
+
+$$
+3x + 4y =10
+$$
+
+$$
+x-y=1
+$$
+
+This is an example where we have to sources of information, in this case two equations, and we need to find two unknown parameters, $x$ and $y$.
+
+## Model Identification 
+
+1.  When the number of parameters specified in our model is equal to the number of **unique** sources of information then we have **df = 0** and a **just-identified model.**
+2.  When the number of parameters specified in our model is **less** than the number of **unique** sources of information then we have **df \> 0** and an **over-identified model.**
+3.  When the number of parameters specified in our model is **greater then** the number of **unique** sources of information then we have **df \< 0** and an **under-identified model.**
+
+## A visual example
+
+![](model.JPG)
+
+## Model identification of our example
+
+We have **5 variables** so this is equivalent to **15 unique sources of information.** You can visualise this if you imagine a triangular correlation matrix.
+
+![](matrix.JPG){width="353"}
+
+To make your life easier you can use this formula,
+
+$p*(p+1)/2$
+
+Where $p$ is the number of variables in your model.
+
+## Parameters to Estimate
+
+![Beware of software default settings. You may not necessarily request an estimate but the software might calculate it by default. For example, the residual errors.](model2.JPG)
+
+## Model Identification
+
+**15 unique sources of information - 12 parameters to estimate = 3 (df = 3)**
+
+Therefore, this is an **over-identified model!**
+
+## Select measures and collect data
+
+Your confidence in your statistical findings of your model will only be as good as your measurements and the quality of your data collection.
+
+It is therefore vital to select good measures and follow solid methodological guidelines in terms of data collection and handling.
+
+## Estimation
+
+Use of statistical software to carry out the SEM analysis and go through a cycle of the following steps:
+
+1.  Evaluate model fit (only when df \> 0)
+
+    1.  **Chi-square Test** $(x^2)$
+
+    2.  **Comparative Fit Index (CFI)**
+
+    3.  **Tucker-Lewis Index (TLI)**
+
+    4.  **Root Mean Square Error of Approximation (RMSEA)**
+
+    5.  **Standardized Root Mean Square Residual (SRMR)**
+
+## **Chi-square Test** $(x^2)$
+
+The chi-square test assesses whether our model fits the data with $p < .05$ indicating that the model **does not fit the data well**. Be aware of this as many students are fixated to significant ***p-values!***
+
+Also, as you might have heard multiple times before, this test is sensitive to sample size and does not behave well to non-normal distributions!
+
+## C**omparative Fit Index,** CFI
+
+This fit index is, as the naming strongly implies, a **comparative** fit index. This means it **compares** our current model to a baseline model, typically a **null** or **empty model**.
+
+We tend to regard **CFI** values above **.90** as good fit index for our model.
+
+**CFI** behaves better than the chi-square test with regards to sample size.
+
+## T**ucker-Lewis Index (TLI)**
+
+Again a comparative fit index where we compare our model to a **null** or **empty model.**
+
+It is also, a better fit index compared to CFI when we have small sample sizes.
+
+We tend to regard **TLI** values **equal or greater than** **.95** as good fit index for our model, with **.90** being considered as the absolute lowest acceptable value.
+
+## R**oot Mean Square Error of Approximation (RMSEA)**
+
+Contrary to the previous two, **RMSEA** is an absolute fit index.
+
+It strongly favours more parsimonious models and heavily penalizes more complex models (**keep that in mind)**.
+
+We tend to regard **RMSEA** values **equal or less than** **.08** as good fit index for our model, with **.10** being considered as the absolute highest acceptable value.
+
+**Headache question: How would you expect the RMSEA value to behave in relation to df?**
+
+## S**tandardized Root Mean Square Residual (SRMR)**
+
+Also an absolute fit index, with values **less or equal to .08** indicating good fit.
+
+## Some good news and some bad news
+
+Very often you will have fit indices that contradict each other, for example **CFI** and **TLI** may be pointing towards good fit whereas **RMSEA** and **SRMR** may be pointing towards the opposite direction. What would you do?
+
+**However,** if all of the fit indices are saying that you do not have a good model fit then you should not proceed to interpret model parameters!
+
+**Instead you should ...**
+
+## Instead you should ...
+
+![](steps.JPG){width="632"}
+
+## Respecify or report results?
+
+Kind of both. Report your initial results and if you have a solid justification of why you could respecify then go ahead and respecify. If you do not have that solid reasoning then mention that and finish with reporting the inadequate model fit!
+
+## My model fit is good
+
+My model fit indices indicated a good fit, should I just report my findings?
+
+Kline suggests that researchers should also consider equivalent or near-equivalent models, demonstrating that their initial model is a better model than the near equivalent ones.
+
+It will very often be the case that these models may have better fit than the initial model so it is the researcher's duty to argue why these need to be rejected at the expense of the proposed model!
+
+## Reporting SEM analysis
+
+It is vital that all analyses steps are fully disclosed and all statistical figures are accurately reported. It should also be explicitly stated how all the above steps were taken and how the proposed initial/final model is a better model compared to equivalent ones!
+
+## Follow-up reading
+
+I strongly advise you to finish reading chapter 6, pages 117 to 142, Principles and Practice of Structural Equation Modeling, Fourth Edition.
