@@ -22,7 +22,7 @@ image: "image1.jpg"
 
 Today we will use Specification of observed variable models (Path) as means to introduce S.E.M.
 
-Overall, today's session will be theoretical but we may also use code snipets for illustration purposes.
+Overall, today's session will be theoretical but we will also use coding to apply what will be discussed.
 
 ## Basic Steps
 
@@ -30,17 +30,19 @@ Overall, today's session will be theoretical but we may also use code snipets fo
 
 ## Specification
 
-Specifying the model is probably the most important step in the process as it is assumed that hypothesis, hence the model, is valid and correct.
+Specifying the model is probably the most important step in the process as it is assumed that the hypothesis, hence the model, is valid and correct.
 
 Kline also suggests that alternative possible models could also be noted as potential models should they be justified by theory or data findings.
 
 ## Identification
 
-Specification of a model is usually a conceptual starting point and regardless of how grounded in theory that is there is always the need to be supported by statistical findings.
+Specification of a model is usually a conceptual starting point and regardless of how well a model is grounded in theory, there will always be the need to be supported by statistical findings.
 
 We therefore, build statistical models comprised of equations that define model parameters. These statistical parameters set and test relationships between our variables.
 
-A statistical model **must be identified**, meaning it is theoretically possible to algorithmically to a unique solution for each of the model parameters. This is **regardless of our data** and is a property of the model.
+A statistical model **must be identified**, meaning it is theoretically possible to algorithmically aarrive to a unique solution for each of the model parameters.
+
+**Important:** Identification occurs **regardless of our data** and is a property of the model.
 
 ## An oversimplified example
 
@@ -54,13 +56,15 @@ $$
 x-y=1
 $$
 
-This is an example where we have to sources of information, in this case two equations, and we need to find two unknown parameters, $x$ and $y$.
+This is an example where we have two sources of information, in this case two equations, and we need to infer two unknown parameters, $x$ and $y$.
 
-## Model Identification 
+## Model Identification
 
 1.  When the number of parameters specified in our model is equal to the number of **unique** sources of information then we have **df = 0** and a **just-identified model.**
 2.  When the number of parameters specified in our model is **less** than the number of **unique** sources of information then we have **df \> 0** and an **over-identified model.**
 3.  When the number of parameters specified in our model is **greater then** the number of **unique** sources of information then we have **df \< 0** and an **under-identified model.**
+
+**df = number of unique sources of information - number of parameters specified**
 
 ## A visual example
 
@@ -80,7 +84,7 @@ Where $p$ is the number of variables in your model.
 
 ## Parameters to Estimate
 
-![Beware of software default settings. You may not necessarily request an estimate but the software might calculate it by default. For example, the residual errors.](model2.JPG)
+![Beware of software default settings. You may not necessarily request an estimate but the software might calculate it by default. For example, the residual errors. ](model2.JPG)
 
 ## Model Identification
 
@@ -92,7 +96,7 @@ Therefore, this is an **over-identified model!**
 
 Your confidence in your statistical findings of your model will only be as good as your measurements and the quality of your data collection.
 
-It is therefore vital to select good measures and follow solid methodological guidelines in terms of data collection and handling.
+It is therefore vital to select good measures and follow solid methodological guidelines in terms of data collection and data analysis.
 
 ## Estimation
 
@@ -114,7 +118,7 @@ Use of statistical software to carry out the SEM analysis and go through a cycle
 
 The chi-square test assesses whether our model fits the data with $p < .05$ indicating that the model **does not fit the data well**. Be aware of this as many students are fixated to significant ***p-values!***
 
-Also, as you might have heard multiple times before, this test is sensitive to sample size and does not behave well to non-normal distributions!
+Also, as you might have heard multiple times before, this test is sensitive to sample size and does not behave well with non-normal distributions!
 
 ## C**omparative Fit Index,** CFI
 
@@ -148,7 +152,7 @@ Also an absolute fit index, with values **less or equal to .08** indicating good
 
 ## Some good news and some bad news
 
-Very often you will have fit indices that contradict each other, for example **CFI** and **TLI** may be pointing towards good fit whereas **RMSEA** and **SRMR** may be pointing towards the opposite direction. What would you do?
+Very often you will have fit indices that contradict each other, for example **CFI** and **TLI** may be pointing towards good fit whereas **RMSEA** and **SRMR** may be pointing towards the opposite direction. What should you do?
 
 **However,** if all of the fit indices are saying that you do not have a good model fit then you should not proceed to interpret model parameters!
 

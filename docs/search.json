@@ -690,7 +690,7 @@
     "href": "posts/Introduction to S.E.M/index.html#todays-aims",
     "title": "Introduction to S.E.M",
     "section": "Today’s Aims",
-    "text": "Today’s Aims\nToday we will use Specification of observed variable models (Path) as means to introduce S.E.M.\nOverall, today’s session will be theoretical but we may also use code snipets for illustration purposes."
+    "text": "Today’s Aims\nToday we will use Specification of observed variable models (Path) as means to introduce S.E.M.\nOverall, today’s session will be theoretical but we will also use coding to apply what will be discussed."
   },
   {
     "objectID": "posts/Introduction to S.E.M/index.html#steps-of-sem",
@@ -711,28 +711,28 @@
     "href": "posts/Introduction to S.E.M/index.html#specification",
     "title": "Introduction to S.E.M",
     "section": "Specification",
-    "text": "Specification\nSpecifying the model is probably the most important step in the process as it is assumed that hypothesis, hence the model, is valid and correct.\nKline also suggests that alternative possible models could also be noted as potential models should they be justified by theory or data findings."
+    "text": "Specification\nSpecifying the model is probably the most important step in the process as it is assumed that the hypothesis, hence the model, is valid and correct.\nKline also suggests that alternative possible models could also be noted as potential models should they be justified by theory or data findings."
   },
   {
     "objectID": "posts/Introduction to S.E.M/index.html#identification",
     "href": "posts/Introduction to S.E.M/index.html#identification",
     "title": "Introduction to S.E.M",
     "section": "Identification",
-    "text": "Identification\nSpecification of a model is usually a conceptual starting point and regardless of how grounded in theory that is there is always the need to be supported by statistical findings.\nWe therefore, build statistical models comprised of equations that define model parameters. These statistical parameters set and test relationships between our variables.\nA statistical model must be identified, meaning it is theoretically possible to algorithmically to a unique solution for each of the model parameters. This is regardless of our data and is a property of the model."
+    "text": "Identification\nSpecification of a model is usually a conceptual starting point and regardless of how well a model is grounded in theory, there will always be the need to be supported by statistical findings.\nWe therefore, build statistical models comprised of equations that define model parameters. These statistical parameters set and test relationships between our variables.\nA statistical model must be identified, meaning it is theoretically possible to algorithmically aarrive to a unique solution for each of the model parameters.\nImportant: Identification occurs regardless of our data and is a property of the model."
   },
   {
     "objectID": "posts/Introduction to S.E.M/index.html#an-oversimplified-example",
     "href": "posts/Introduction to S.E.M/index.html#an-oversimplified-example",
     "title": "Introduction to S.E.M",
     "section": "An oversimplified example",
-    "text": "An oversimplified example\nIn school you might have come across the following simple example\n\\[\n3x + 4y =10\n\\]\n\\[\nx-y=1\n\\]\nThis is an example where we have to sources of information, in this case two equations, and we need to find two unknown parameters, \\(x\\) and \\(y\\)."
+    "text": "An oversimplified example\nIn school you might have come across the following simple example\n\\[\n3x + 4y =10\n\\]\n\\[\nx-y=1\n\\]\nThis is an example where we have two sources of information, in this case two equations, and we need to infer two unknown parameters, \\(x\\) and \\(y\\)."
   },
   {
     "objectID": "posts/Introduction to S.E.M/index.html#model-identification",
     "href": "posts/Introduction to S.E.M/index.html#model-identification",
     "title": "Introduction to S.E.M",
     "section": "Model Identification",
-    "text": "Model Identification\n\nWhen the number of parameters specified in our model is equal to the number of unique sources of information then we have df = 0 and a just-identified model.\nWhen the number of parameters specified in our model is less than the number of unique sources of information then we have df &gt; 0 and an over-identified model.\nWhen the number of parameters specified in our model is greater then the number of unique sources of information then we have df &lt; 0 and an under-identified model."
+    "text": "Model Identification\n\nWhen the number of parameters specified in our model is equal to the number of unique sources of information then we have df = 0 and a just-identified model.\nWhen the number of parameters specified in our model is less than the number of unique sources of information then we have df &gt; 0 and an over-identified model.\nWhen the number of parameters specified in our model is greater then the number of unique sources of information then we have df &lt; 0 and an under-identified model.\n\ndf = number of unique sources of information - number of parameters specified"
   },
   {
     "objectID": "posts/Introduction to S.E.M/index.html#a-visual-example",
@@ -753,7 +753,7 @@
     "href": "posts/Introduction to S.E.M/index.html#select-measures-and-collect-data",
     "title": "Introduction to S.E.M",
     "section": "Select measures and collect data",
-    "text": "Select measures and collect data\nYour confidence in your statistical findings of your model will only be as good as your measurements and the quality of your data collection.\nIt is therefore vital to select good measures and follow solid methodological guidelines in terms of data collection and handling."
+    "text": "Select measures and collect data\nYour confidence in your statistical findings of your model will only be as good as your measurements and the quality of your data collection.\nIt is therefore vital to select good measures and follow solid methodological guidelines in terms of data collection and data analysis."
   },
   {
     "objectID": "posts/Introduction to S.E.M/index.html#estimation",
@@ -781,7 +781,7 @@
     "href": "posts/Introduction to S.E.M/index.html#chi-square-test-x2",
     "title": "Introduction to S.E.M",
     "section": "Chi-square Test \\((x^2)\\)",
-    "text": "Chi-square Test \\((x^2)\\)\nThe chi-square test assesses whether our model fits the data with \\(p &lt; .05\\) indicating that the model does not fit the data well. Be aware of this as many students are fixated to significant p-values!\nAlso, as you might have heard multiple times before, this test is sensitive to sample size and does not behave well to non-normal distributions!"
+    "text": "Chi-square Test \\((x^2)\\)\nThe chi-square test assesses whether our model fits the data with \\(p &lt; .05\\) indicating that the model does not fit the data well. Be aware of this as many students are fixated to significant p-values!\nAlso, as you might have heard multiple times before, this test is sensitive to sample size and does not behave well with non-normal distributions!"
   },
   {
     "objectID": "posts/Introduction to S.E.M/index.html#comparative-fit-index-cfi",
@@ -816,7 +816,7 @@
     "href": "posts/Introduction to S.E.M/index.html#some-good-news-and-some-bad-news",
     "title": "Introduction to S.E.M",
     "section": "Some good news and some bad news",
-    "text": "Some good news and some bad news\nVery often you will have fit indices that contradict each other, for example CFI and TLI may be pointing towards good fit whereas RMSEA and SRMR may be pointing towards the opposite direction. What would you do?\nHowever, if all of the fit indices are saying that you do not have a good model fit then you should not proceed to interpret model parameters!\nInstead you should …"
+    "text": "Some good news and some bad news\nVery often you will have fit indices that contradict each other, for example CFI and TLI may be pointing towards good fit whereas RMSEA and SRMR may be pointing towards the opposite direction. What should you do?\nHowever, if all of the fit indices are saying that you do not have a good model fit then you should not proceed to interpret model parameters!\nInstead you should …"
   },
   {
     "objectID": "posts/Introduction to S.E.M/index.html#instead-you-should",

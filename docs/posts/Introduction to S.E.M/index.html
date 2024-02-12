@@ -343,7 +343,7 @@ Dr Lazaros Gonidis
 <section id="todays-aims" class="slide level2">
 <h2>Today’s Aims</h2>
 <p>Today we will use Specification of observed variable models (Path) as means to introduce S.E.M.</p>
-<p>Overall, today’s session will be theoretical but we may also use code snipets for illustration purposes.</p>
+<p>Overall, today’s session will be theoretical but we will also use coding to apply what will be discussed.</p>
 </section>
 <section id="basic-steps" class="slide level2">
 <h2>Basic Steps</h2>
@@ -351,14 +351,15 @@ Dr Lazaros Gonidis
 <img data-src="steps.JPG" class="r-stretch quarto-figure-center"><p class="caption">Basic steps to SEM as proposed by Kline, page 118</p></section>
 <section id="specification" class="slide level2">
 <h2>Specification</h2>
-<p>Specifying the model is probably the most important step in the process as it is assumed that hypothesis, hence the model, is valid and correct.</p>
+<p>Specifying the model is probably the most important step in the process as it is assumed that the hypothesis, hence the model, is valid and correct.</p>
 <p>Kline also suggests that alternative possible models could also be noted as potential models should they be justified by theory or data findings.</p>
 </section>
 <section id="identification" class="slide level2">
 <h2>Identification</h2>
-<p>Specification of a model is usually a conceptual starting point and regardless of how grounded in theory that is there is always the need to be supported by statistical findings.</p>
+<p>Specification of a model is usually a conceptual starting point and regardless of how well a model is grounded in theory, there will always be the need to be supported by statistical findings.</p>
 <p>We therefore, build statistical models comprised of equations that define model parameters. These statistical parameters set and test relationships between our variables.</p>
-<p>A statistical model <strong>must be identified</strong>, meaning it is theoretically possible to algorithmically to a unique solution for each of the model parameters. This is <strong>regardless of our data</strong> and is a property of the model.</p>
+<p>A statistical model <strong>must be identified</strong>, meaning it is theoretically possible to algorithmically aarrive to a unique solution for each of the model parameters.</p>
+<p><strong>Important:</strong> Identification occurs <strong>regardless of our data</strong> and is a property of the model.</p>
 </section>
 <section id="an-oversimplified-example" class="slide level2">
 <h2>An oversimplified example</h2>
@@ -369,7 +370,7 @@ Dr Lazaros Gonidis
 <p><span class="math display">\[
 x-y=1
 \]</span></p>
-<p>This is an example where we have to sources of information, in this case two equations, and we need to find two unknown parameters, <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
+<p>This is an example where we have two sources of information, in this case two equations, and we need to infer two unknown parameters, <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
 </section>
 <section id="model-identification" class="slide level2">
 <h2>Model Identification</h2>
@@ -378,6 +379,7 @@ x-y=1
 <li>When the number of parameters specified in our model is <strong>less</strong> than the number of <strong>unique</strong> sources of information then we have <strong>df &gt; 0</strong> and an <strong>over-identified model.</strong></li>
 <li>When the number of parameters specified in our model is <strong>greater then</strong> the number of <strong>unique</strong> sources of information then we have <strong>df &lt; 0</strong> and an <strong>under-identified model.</strong></li>
 </ol>
+<p><strong>df = number of unique sources of information - number of parameters specified</strong></p>
 </section>
 <section id="a-visual-example" class="slide level2">
 <h2>A visual example</h2>
@@ -403,7 +405,7 @@ x-y=1
 <section id="select-measures-and-collect-data" class="slide level2">
 <h2>Select measures and collect data</h2>
 <p>Your confidence in your statistical findings of your model will only be as good as your measurements and the quality of your data collection.</p>
-<p>It is therefore vital to select good measures and follow solid methodological guidelines in terms of data collection and handling.</p>
+<p>It is therefore vital to select good measures and follow solid methodological guidelines in terms of data collection and data analysis.</p>
 </section>
 <section id="estimation" class="slide level2">
 <h2>Estimation</h2>
@@ -422,7 +424,7 @@ x-y=1
 <section id="chi-square-test-x2" class="slide level2">
 <h2><strong>Chi-square Test</strong> <span class="math inline">\((x^2)\)</span></h2>
 <p>The chi-square test assesses whether our model fits the data with <span class="math inline">\(p &lt; .05\)</span> indicating that the model <strong>does not fit the data well</strong>. Be aware of this as many students are fixated to significant <strong><em>p-values!</em></strong></p>
-<p>Also, as you might have heard multiple times before, this test is sensitive to sample size and does not behave well to non-normal distributions!</p>
+<p>Also, as you might have heard multiple times before, this test is sensitive to sample size and does not behave well with non-normal distributions!</p>
 </section>
 <section id="comparative-fit-index-cfi" class="slide level2">
 <h2>C<strong>omparative Fit Index,</strong> CFI</h2>
@@ -449,7 +451,7 @@ x-y=1
 </section>
 <section id="some-good-news-and-some-bad-news" class="slide level2">
 <h2>Some good news and some bad news</h2>
-<p>Very often you will have fit indices that contradict each other, for example <strong>CFI</strong> and <strong>TLI</strong> may be pointing towards good fit whereas <strong>RMSEA</strong> and <strong>SRMR</strong> may be pointing towards the opposite direction. What would you do?</p>
+<p>Very often you will have fit indices that contradict each other, for example <strong>CFI</strong> and <strong>TLI</strong> may be pointing towards good fit whereas <strong>RMSEA</strong> and <strong>SRMR</strong> may be pointing towards the opposite direction. What should you do?</p>
 <p><strong>However,</strong> if all of the fit indices are saying that you do not have a good model fit then you should not proceed to interpret model parameters!</p>
 <p><strong>Instead you should …</strong></p>
 </section>
