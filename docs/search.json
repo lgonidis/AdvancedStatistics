@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "AdvancedStatistics",
     "section": "",
-    "text": "Assignment 1\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nExplolatory Factor Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 10, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to S.E.M\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 7, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Advanced Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Mediation\n\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\nNo matching items"
+    "text": "Assignment 1\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nExploratory Factor Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 10, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to S.E.M\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 7, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Advanced Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Mediation\n\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -856,210 +856,210 @@
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#todays-aims",
     "href": "posts/Exploratory Factor Analysis/index.html#todays-aims",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Today’s Aims",
     "text": "Today’s Aims\nToday we will define what exploratory factor analysis (EFA) is, we focus on the steps required to carry out EFA using R."
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#what-is-factor-analysis",
     "href": "posts/Exploratory Factor Analysis/index.html#what-is-factor-analysis",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "What is Factor Analysis",
     "text": "What is Factor Analysis\nFactor Analysis in the statistical technique that seeks to identify underlying relationships between observed variables.\nSpecifically, grouping these variables into groups where in-group variables correlate highly.\nIdeally, we want variables to correlate highly only with their in-group variables, and correlate weakly or not at all with variables belonging to other groups.\nWe will be referring to the term group as factor. There factors are unobserved variables…"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#what-is-exploratory-factor-analysis",
     "href": "posts/Exploratory Factor Analysis/index.html#what-is-exploratory-factor-analysis",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "What is Exploratory Factor Analysis?",
     "text": "What is Exploratory Factor Analysis?\nIt is a statistical exploratory process that seeks to identify underlying relationships between observed variables.\nFurthermore, with EFA we aim to identify latent variables that might are responsible for the shared variances between the observed variables. As mentioned in our introduction lectures latent variables are variables that are not directly measured. Instead, they are inferred by the existing relationships between our observed variables."
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#specification-of-models-in-efa",
     "href": "posts/Exploratory Factor Analysis/index.html#specification-of-models-in-efa",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Specification of models in EFA",
     "text": "Specification of models in EFA\nAccording to Kline (pages 190-191):\n\nEFA does not require an a priori specification, with number of possible factors varying from one up to as many as the indicators. (Highly not advised, but theoretically possible)\nIn EFA we have unrestricted measurement models where indicators are allowed to depend on all factors\nMultiple factors models in EFA are not actually identified. Headache question: Why would that be the case?\nIn EFA we assume that specific variance of each indicator is not shared what that of any other indicator\n\nNote: Next week we will contrast all the above points with Confirmatory Factor Analysis (CFA)"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#visualisation",
     "href": "posts/Exploratory Factor Analysis/index.html#visualisation",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Visualisation",
     "text": "Visualisation"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#do-we-analyze-correlated-factors",
     "href": "posts/Exploratory Factor Analysis/index.html#do-we-analyze-correlated-factors",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Do we analyze correlated Factors?",
     "text": "Do we analyze correlated Factors?\nTypically this is not required. However, we can specify a rotation that will allow us to analyze correlated factors!\nRotation?\nRotation allows us to simplify our model further, thus enhance its interpretation. This is an option that is applied after our initial solution and its aim is to achieve a solution where an indicator has high loading to one factor (or as few as possible) and low loading on all other factors."
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#rotations",
     "href": "posts/Exploratory Factor Analysis/index.html#rotations",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Rotations",
     "text": "Rotations\n\nOrthogonal rotation, usually the default setting for most EFA functions, treats all factors are non-correlated. The most commonly used is Varimax, however there are others. Be cautious when using orthogonal rotations, refer back to your theoretical background in order to make sure that your possible factors are indeed expected to be uncorrelated.\nOblique rotation, allows for correlated factors. The most commonly used is Promax, however there are others.\n\nSo which one should we use? Outside of the correlated or uncorrelated allowance it is difficult to decide. Many different rotation methods may give similarly valid results. I advise you to look into the factor score indeterminacy for more details."
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#software-considerations",
     "href": "posts/Exploratory Factor Analysis/index.html#software-considerations",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Software Considerations",
     "text": "Software Considerations\nCan we use lavaan to carry our EFA?\nYes, however …… psych package might make your life easier.\nEFAtools, will definitely make your life easier.\nWe will use all three in combination in the coming examples and you can decide on your own."
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#can-we-always-carry-out-efa",
     "href": "posts/Exploratory Factor Analysis/index.html#can-we-always-carry-out-efa",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Can we always carry out EFA?",
     "text": "Can we always carry out EFA?\nSome researchers argue that you could. You can definitely try, in terms of coding and running the relevant software.\nHowever, you shouldn’t if you do not meet the following two criteria (at minimum).\nKMO: Kaiser-Meyer-Olkin measure of sampling adequacy: Evaluates whether our sample is suitable for factor analysis.It does so by evaluating the proportion of variance among variable that could be attributed to underlying factors. Ranges from 0 - 1, and values closer to 1 indicate higher suitability.\nBartlett’s test of Sphericity: Assesses whether our variables/indicators have significant correlations. If our correlations are non-significant then we should not proceed. Here we are looking for evidence (p &lt; .05) in order to reject the null hypothesis that our inter-variable correlations are zero."
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#other-useful-terminology",
     "href": "posts/Exploratory Factor Analysis/index.html#other-useful-terminology",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Other Useful Terminology",
     "text": "Other Useful Terminology\n\nCommunality: The proportion of variance explained by the common factor. This will be used as a decision criterion to include or exclude indicators to a factor.\nPercentage of Variance: The percentage of variance that is due to one factor in relation to the total variance in all factors.\nEigenvalue: The total variance explained by each factor, we are ideally looking for eigenvalues above 1."
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#let-us-work-through-an-example-together",
     "href": "posts/Exploratory Factor Analysis/index.html#let-us-work-through-an-example-together",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Let us work through an example together",
     "text": "Let us work through an example together\nFirst, let’s create the random data.\n\n\nCode\nset.seed(1212)\n### normally distributed factors\n### these are just to help me set the indicators\n### the f1 and f2 will not be included in the data.frame\nf1 &lt;- rnorm(250)\nf2 &lt;- rnorm(250)\n\n### f1 indicators x1 to x3\nx1 &lt;- f1 + rnorm(250, sd=0.15)\nx2 &lt;- f1 + rnorm(250, sd=0.15)\nx3 &lt;- f1 + rnorm(250, sd=0.15)\n\n### f2 indicators x4 to x6\nx4 &lt;- f2 + rnorm(250, sd=0.15)\nx5 &lt;- f2 + rnorm(250, sd=0.15)\nx6 &lt;- f2 + rnorm(250, sd=0.15)\n\n### creating the dataframe\ndf &lt;- data.frame(x1=x1, x2=x2, x3=x3, x4=x4, x5=x5, x6=x6)"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#assess-kmo-and-bartletts-test-of-sphericity",
     "href": "posts/Exploratory Factor Analysis/index.html#assess-kmo-and-bartletts-test-of-sphericity",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Assess KMO and Bartlett’s test of Sphericity",
     "text": "Assess KMO and Bartlett’s test of Sphericity\nEFAtools\n\n\nCode\nlibrary(psych)\nlibrary(EFAtools)\n\nKMO(df) ### THIS IS NOW MASKED BY EFAtools\n\n\n\n── Kaiser-Meyer-Olkin criterion (KMO) ──────────────────────────────────────────\n\n✔ The overall KMO value for your data is middling.\n  These data are probably suitable for factor analysis.\n\n  Overall: 0.795\n\n  For each variable:\n   x1    x2    x3    x4    x5    x6 \n0.790 0.775 0.819 0.789 0.793 0.807 \n\n\nCode\nBARTLETT(df) ### THIS IS NOW MASKED BY EFAtools\n\n\n\n✔ The Bartlett's test of sphericity was significant at an alpha level of .05.\n  These data are probably suitable for factor analysis.\n\n  𝜒²(15) = 3272.23, p &lt; .001"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#assess-kmo-and-bartletts-test-of-sphericity-1",
     "href": "posts/Exploratory Factor Analysis/index.html#assess-kmo-and-bartletts-test-of-sphericity-1",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Assess KMO and Bartlett’s test of Sphericity",
     "text": "Assess KMO and Bartlett’s test of Sphericity\npsych\n\n\nCode\npsych::KMO(df)\n\n\nKaiser-Meyer-Olkin factor adequacy\nCall: psych::KMO(r = df)\nOverall MSA =  0.8\nMSA for each item = \n  x1   x2   x3   x4   x5   x6 \n0.79 0.77 0.82 0.79 0.79 0.81 \n\n\nCode\nr &lt;- cor(df)\npsych::cortest.bartlett(r)\n\n\n$chisq\n[1] 1278.319\n\n$p.value\n[1] 2.428264e-263\n\n$df\n[1] 15"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#determining-number-of-factors",
     "href": "posts/Exploratory Factor Analysis/index.html#determining-number-of-factors",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Determining number of factors",
     "text": "Determining number of factors\nEFAtools\n\n\nCode\nPARALLEL(df, eigen_type = \"PCA\")\n\n\nParallel Analysis performed using 1000 simulated random data sets\nEigenvalues were found using PCA\n\nDecision rule used: means\n\n── Number of factors to retain according to ────────────────────────────────────\n\n◌ PCA-determined eigenvalues:  2"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#determining-number-of-factors-1",
     "href": "posts/Exploratory Factor Analysis/index.html#determining-number-of-factors-1",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Determining number of factors",
     "text": "Determining number of factors\npsych\n\n\nCode\nfa.parallel(df, fa=\"pc\")\n\n\n\nParallel analysis suggests that the number of factors =  NA  and the number of components =  2"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#in-efatools-you-can-also-run-multiple-retention-methods",
     "href": "posts/Exploratory Factor Analysis/index.html#in-efatools-you-can-also-run-multiple-retention-methods",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "In EFAtools you can also run multiple retention methods",
     "text": "In EFAtools you can also run multiple retention methods\n\n\nCode\nN_FACTORS(df, criteria = c(\"PARALLEL\", \"EKC\", \"SMT\"),\n          eigen_type_other = c(\"SMC\", \"PCA\"))\n\n\n\n                                                                                                                                                                \n  🏃 ◯ ◯ Running EKC\n                                                                                                                                                                \n ◉ 🏃 ◯ Running PARALLEL\n                                                                                                                                                                \n ◉ ◉ 🏃  Running SMT\n                                                                                                                                                                \n ◉ ◉ ◉ Done!\n\n\n\n── Tests for the suitability of the data for factor analysis ───────────────────\n\nBartlett's test of sphericity\n\n✔ The Bartlett's test of sphericity was significant at an alpha level of .05.\n  These data are probably suitable for factor analysis.\n\n  𝜒²(15) = 3272.23, p &lt; .001\n\nKaiser-Meyer-Olkin criterion (KMO)\n\n✔ The overall KMO value for your data is middling with 0.795.\n  These data are probably suitable for factor analysis.\n\n── Number of factors suggested by the different factor retention criteria ──────\n\n◌ Empirical Kaiser criterion: 2\n◌ Parallel analysis with PCA: 2\n◌ Parallel analysis with SMC: 2\n◌ Sequential 𝜒² model tests: 2\n◌ Lower bound of RMSEA 90% confidence interval: 2\n◌ Akaike Information Criterion: 2"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#multiple-scree-plots",
     "href": "posts/Exploratory Factor Analysis/index.html#multiple-scree-plots",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Multiple Scree-plots",
     "text": "Multiple Scree-plots\nTry the following code at home by removing the #\n\n\nCode\n# N_FACTORS(df, method = \"ULS\")"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#factor-extraction",
     "href": "posts/Exploratory Factor Analysis/index.html#factor-extraction",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Factor Extraction",
     "text": "Factor Extraction\nEFAtools\n\n\nCode\nEFA(df, n_factors = 2, method = \"ML\")\n\n\n\nEFA performed with type = 'EFAtools', method = 'ML', and rotation = 'none'.\n\n── Unrotated Loadings ──────────────────────────────────────────────────────────\n\n     F1      F2  \nx1  -.561    .815\nx2  -.562    .816\nx3  -.552    .818\nx4   .846    .515\nx5   .855    .500\nx6   .844    .515\n\n── Variances Accounted for ─────────────────────────────────────────────────────\n\n                     F1      F2  \nSS loadings          3.093   2.781\nProp Tot Var         0.515   0.463\nCum Prop Tot Var     0.515   0.979\nProp Comm Var        0.527   0.473\nCum Prop Comm Var    0.527   1.000\n\n── Model Fit ───────────────────────────────────────────────────────────────────\n\n𝜒²(4) =  1.47, p = .832\nCFI = 1.00\nRMSEA [90% CI] = .00 [.00; .06]\nAIC = -6.53\nBIC = -20.61\nCAF = .50"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#rotating-solution",
     "href": "posts/Exploratory Factor Analysis/index.html#rotating-solution",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Rotating solution",
     "text": "Rotating solution\nEFAtools\n\n\nCode\nEFA(df, n_factors = 2, rotation = \"promax\")\n\n\n\nEFA performed with type = 'EFAtools', method = 'PAF', and rotation = 'promax'.\n\n── Rotated Loadings ────────────────────────────────────────────────────────────\n\n     F1      F2  \nx1  -.004    .989\nx2  -.003    .991\nx3   .006    .987\nx4   .991    .005\nx5   .989   -.012\nx6   .989    .007\n\n── Factor Intercorrelations ────────────────────────────────────────────────────\n\n     F1      F2  \nF1   1.000  -0.058\nF2  -0.058   1.000\n\n── Variances Accounted for ─────────────────────────────────────────────────────\n\n                     F1      F2  \nSS loadings          3.107   2.766\nProp Tot Var         0.518   0.461\nCum Prop Tot Var     0.518   0.979\nProp Comm Var        0.529   0.471\nCum Prop Comm Var    0.529   1.000\n\n── Model Fit ───────────────────────────────────────────────────────────────────\n\nCAF: .50\ndf:   4"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#factor-extraction-1",
     "href": "posts/Exploratory Factor Analysis/index.html#factor-extraction-1",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Factor Extraction",
     "text": "Factor Extraction\npsych\n\n\nCode\nFA_df&lt;- fa(df, nfactors=2, fm=\"ml\")\nsummary.psych(FA_df)\n\n\n\nFactor analysis with Call: fa(r = df, nfactors = 2, fm = \"ml\")\n\nTest of the hypothesis that 2 factors are sufficient.\nThe degrees of freedom for the model is 4  and the objective function was  0.01 \nThe number of observations was  250  with Chi Square =  1.45  with prob &lt;  0.84 \n\nThe root mean square of the residuals (RMSA) is  0 \nThe df corrected root mean square of the residuals is  0 \n\nTucker Lewis Index of factoring reliability =  1.003\nRMSEA index =  0  and the 10 % confidence intervals are  0 0.055\nBIC =  -20.64\n With factor correlations of \n      ML1   ML2\nML1  1.00 -0.06\nML2 -0.06  1.00"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#factor-extraction-psych-continued",
     "href": "posts/Exploratory Factor Analysis/index.html#factor-extraction-psych-continued",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Factor Extraction, psych continued",
     "text": "Factor Extraction, psych continued\nExamine the residuals\n\n\nCode\nresiduals.psych(FA_df)\n\n\n   x1   x2   x3   x4   x5   x6  \nx1 0.02                         \nx2 0.00 0.02                    \nx3 0.00 0.00 0.03               \nx4 0.00 0.00 0.00 0.02          \nx5 0.00 0.00 0.00 0.00 0.02     \nx6 0.00 0.00 0.00 0.00 0.00 0.02"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#interpretation-psych",
     "href": "posts/Exploratory Factor Analysis/index.html#interpretation-psych",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Interpretation, psych",
     "text": "Interpretation, psych\n\n\nCode\nFA_df$loadings\n\n\n\nLoadings:\n   ML1    ML2   \nx1         0.989\nx2         0.991\nx3         0.987\nx4  0.991       \nx5  0.989       \nx6  0.989       \n\n                 ML1   ML2\nSS loadings    2.939 2.935\nProportion Var 0.490 0.489\nCumulative Var 0.490 0.979"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#rotating-solution-2-oblimin",
     "href": "posts/Exploratory Factor Analysis/index.html#rotating-solution-2-oblimin",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Rotating solution 2, oblimin",
     "text": "Rotating solution 2, oblimin\nEFAtools\n\n\nCode\nEFA(df, n_factors = 2, rotation = \"oblimin\", method = \"ULS\")\n\n\n\nEFA performed with type = 'EFAtools', method = 'ULS', and rotation = 'oblimin'.\n\n── Rotated Loadings ────────────────────────────────────────────────────────────\n\n     F1      F2  \nx1  -.004    .989\nx2  -.003    .991\nx3   .006    .987\nx4   .991    .005\nx5   .989   -.012\nx6   .989    .007\n\n── Factor Intercorrelations ────────────────────────────────────────────────────\n\n     F1      F2  \nF1   1.000  -0.058\nF2  -0.058   1.000\n\n── Variances Accounted for ─────────────────────────────────────────────────────\n\n                     F1      F2  \nSS loadings          3.107   2.766\nProp Tot Var         0.518   0.461\nCum Prop Tot Var     0.518   0.979\nProp Comm Var        0.529   0.471\nCum Prop Comm Var    0.529   1.000\n\n── Model Fit ───────────────────────────────────────────────────────────────────\n\n𝜒²(4) =  0.00, p =1.000\nCFI = 1.00\nRMSEA [90% CI] = .00 [.00; .00]\nAIC = -8.00\nBIC = -22.09\nCAF = .50"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#mental-break-down",
     "href": "posts/Exploratory Factor Analysis/index.html#mental-break-down",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Mental Break (down)",
     "text": "Mental Break (down)\nProbably a lot to process in one go. We will take a mental break here and then we will work together through the next example."
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#but-but-what-about-lavaan",
     "href": "posts/Exploratory Factor Analysis/index.html#but-but-what-about-lavaan",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "But, but, what about lavaan???",
     "text": "But, but, what about lavaan???\nYes we have left lavaan out so far. Now is the time to have a look of how we could go through the above process using lavaan (partially).\n\n\nCode\nlibrary(lavaan)\n\nefa.model.fit &lt;- lavaan::efa(data = df, nfactors = 2, rotation = \"promax\")\nsummary(efa.model.fit)\n\n\nThis is lavaan 0.6.17 -- running exploratory factor analysis\n\n  Estimator                                         ML\n  Rotation method                       PROMAX OBLIQUE\n  Promax kappa                                       4\n  Rotation algorithm (rstarts)              PROMAX (0)\n  Standardized metric                             TRUE\n  Row weights                                   Kaiser\n\n  Number of observations                           250\n\nFit measures:\n                   aic      bic    sabic chisq df pvalue cfi rmsea\n  nfactors = 2 1025.02 1084.885 1030.994 1.478  4  0.831   1     0\n\nEigenvalues correlation matrix:\n\n     ev1      ev2      ev3      ev4      ev5      ev6 \n  3.1285   2.7871   0.0247   0.0214   0.0193   0.0189 \n\nStandardized loadings:\n\n       f1     f2      unique.var   communalities\nx1  0.989                  0.021           0.979\nx2  0.991                  0.018           0.982\nx3  0.987                  0.026           0.974\nx4         0.991           0.019           0.981\nx5         0.989           0.020           0.980\nx6         0.989           0.022           0.978\n\n                              f2    f1 total\nSum of sq (obliq) loadings 2.939 2.935 5.873\nProportion of total        0.500 0.500 1.000\nProportion var             0.490 0.489 0.979\nCumulative var             0.490 0.979 0.979\n\nFactor correlations:\n\n       f1     f2\nf1  1.000       \nf2 -0.058  1.000"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#ok-time-for-our-collaborative-example",
     "href": "posts/Exploratory Factor Analysis/index.html#ok-time-for-our-collaborative-example",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "OK, time for our collaborative example",
     "text": "OK, time for our collaborative example\nWe will use a lavaan built-in dataset called HolzingerSwineford1939\nThe data consists of mental ability test scores of seventh- and eighth-grade children from two different schools (Pasteur and Grant-White). In our version of the dataset, only 9 out of the original 26 tests are included. A CFA model that is often proposed for these 9 variables consists of three latent variables (or factors), each with three indicators:\n\na visual factor measured by 3 variables: x1, x2 and x3\na textual factor measured by 3 variables: x4, x5 and x6\na speed factor measured by 3 variables: x7, x8 and x9"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#visual-model",
     "href": "posts/Exploratory Factor Analysis/index.html#visual-model",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Visual Model",
     "text": "Visual Model"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#let-us-assign-the-data-to-a-dataframe",
     "href": "posts/Exploratory Factor Analysis/index.html#let-us-assign-the-data-to-a-dataframe",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Let us assign the data to a dataframe",
     "text": "Let us assign the data to a dataframe\n\n\nCode\ndata(HolzingerSwineford1939)\ndf2 &lt;- HolzingerSwineford1939\nhead(df2)\n\n\n  id sex ageyr agemo  school grade       x1   x2    x3       x4   x5        x6\n1  1   1    13     1 Pasteur     7 3.333333 7.75 0.375 2.333333 5.75 1.2857143\n2  2   2    13     7 Pasteur     7 5.333333 5.25 2.125 1.666667 3.00 1.2857143\n3  3   2    13     1 Pasteur     7 4.500000 5.25 1.875 1.000000 1.75 0.4285714\n4  4   1    13     2 Pasteur     7 5.333333 7.75 3.000 2.666667 4.50 2.4285714\n5  5   2    12     2 Pasteur     7 4.833333 4.75 0.875 2.666667 4.00 2.5714286\n6  6   2    14     1 Pasteur     7 5.333333 5.00 2.250 1.000000 3.00 0.8571429\n        x7   x8       x9\n1 3.391304 5.75 6.361111\n2 3.782609 6.25 7.916667\n3 3.260870 3.90 4.416667\n4 3.000000 5.30 4.861111\n5 3.695652 6.30 5.916667\n6 4.347826 6.65 7.500000"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#keep-only-the-indicators-columns",
     "href": "posts/Exploratory Factor Analysis/index.html#keep-only-the-indicators-columns",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "Keep only the indicators columns",
     "text": "Keep only the indicators columns\n\n\nCode\nlibrary(tidyverse)\ndf2 &lt;- df2 |&gt; \n  dplyr::select(7:15)"
   },
   {
     "objectID": "posts/Exploratory Factor Analysis/index.html#what-should-be-our-first-step",
     "href": "posts/Exploratory Factor Analysis/index.html#what-should-be-our-first-step",
-    "title": "Explolatory Factor Analysis",
+    "title": "Exploratory Factor Analysis",
     "section": "What should be our first step?",
     "text": "What should be our first step?"
   }

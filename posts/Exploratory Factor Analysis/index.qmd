@@ -1,5 +1,5 @@
 ---
-title: "Explolatory Factor Analysis"
+title: "Exploratory Factor Analysis"
 format: 
   revealjs:
     theme: league
