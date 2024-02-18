@@ -1,0 +1,272 @@
+---
+title: "Explolatory Factor Analysis"
+format: 
+  revealjs:
+    theme: league
+    transition: slide
+    background-transition: zoom
+    slide-number: c/t
+    show-slide-number: all
+    chalkboard: true
+    background-size: cover
+    smaller: true
+    echo: true
+    code-fold: true
+    code-summary: "Show the code"
+author: "Dr Lazaros Gonidis"
+date: "2024-02-10"
+image: "image1.jpg"
+---
+
+## Today's Aims
+
+Today we will define what **exploratory factor analysis (EFA)** is, we focus on the steps required to carry out **EFA** using **R**.
+
+## What is Factor Analysis
+
+Factor Analysis in the statistical technique that seeks to identify underlying relationships between observed variables.
+
+Specifically, grouping these variables into groups where in-group variables correlate highly.
+
+Ideally, we want variables to correlate highly only with their in-group variables, and correlate weakly or not at all with variables belonging to other groups.
+
+We will be referring to the term **group** as **factor**. There factors are unobserved variables...
+
+## What is Exploratory Factor Analysis?
+
+It is a statistical exploratory process that seeks to identify underlying relationships between observed variables.
+
+Furthermore, with **EFA** we aim to identify **latent variables** that might are responsible for the shared variances between the observed variables. As mentioned in our introduction lectures latent variables are variables that are not directly measured. Instead, they are inferred by the existing relationships between our observed variables.
+
+## Specification of models in EFA
+
+According to Kline (pages 190-191):
+
+1.  **EFA** does not require an a priori specification, with number of possible factors varying from **one** up to **as many as the indicators**. (Highly not advised, but theoretically possible)
+2.  In **EFA** we have **unrestricted measurement models** where indicators are allowed to depend on all factors
+3.  Multiple factors models in **EFA** are not actually identified. Headache question: Why would that be the case?
+4.  In **EFA** we assume that specific variance of each indicator is not shared what that of any other indicator
+
+**Note:** Next week we will contrast all the above points with **Confirmatory Factor Analysis (CFA)**
+
+## Visualisation
+
+![](model.JPG)
+
+## Do we analyze correlated Factors?
+
+Typically this is not required. However, we can specify a **rotation** that will allow us to analyze correlated factors!
+
+**Rotation?**
+
+Rotation allows us to simplify our model further, thus enhance its interpretation. This is an option that is applied after our initial solution and its aim is to achieve a solution where an indicator has high **loading** to one factor (or as few as possible) and low loading on all other factors.
+
+## Rotations
+
+1.  **Orthogonal rotation**, usually the default setting for most **EFA** functions, treats all factors are non-correlated. The most commonly used is **Varimax**, however there are others. Be cautious when using **orthogonal rotations**, refer back to your theoretical background in order to make sure that your possible factors are indeed expected to be uncorrelated.
+2.  **Oblique rotation**, **allows** for correlated factors. The most commonly used is **Promax**, however there are others.
+
+So which one should we use? Outside of the **correlated** or **uncorrelated allowance** it is difficult to decide. Many different rotation methods may give similarly valid results. I advise you to look into the **factor score indeterminacy** for more details.
+
+## Software Considerations
+
+**Can we use lavaan to carry our EFA?**
+
+Yes, however ...... **psych** package might make your life easier.
+
+**EFAtools**, will definitely make your life easier.
+
+We will use all three in combination in the coming examples and you can decide on your own.
+
+## Can we always carry out EFA?
+
+Some researchers argue that you could. You can definitely try, in terms of coding and running the relevant software.
+
+However, you shouldn't if you do not meet the following two criteria (at minimum).
+
+**KMO: Kaiser-Meyer-Olkin measure of sampling adequacy:** Evaluates whether our sample is suitable for factor analysis.It does so by evaluating the proportion of variance among variable that could be attributed to underlying factors. Ranges from **0 - 1**, and values closer to **1** indicate higher suitability.
+
+**Bartlett's test of Sphericity:** Assesses whether our variables/indicators have significant correlations. If our correlations are non-significant then we should not proceed. Here we are looking for evidence (***p \< .05***) in order to reject the null hypothesis that our inter-variable correlations are zero.
+
+## Other Useful Terminology
+
+1.  **Communality:** The proportion of variance explained by the common factor. This will be used as a decision criterion to include or exclude indicators to a factor.
+2.  **Percentage of Variance:** The percentage of variance that is due to one factor in relation to the total variance in all factors.
+3.  **Eigenvalue:** The total variance explained by each factor, we are ideally looking for eigenvalues above **1.**
+
+## Let us work through an example together
+
+First, let's create the random data.
+
+```{r}
+set.seed(1212)
+### normally distributed factors
+### these are just to help me set the indicators
+### the f1 and f2 will not be included in the data.frame
+f1 <- rnorm(250)
+f2 <- rnorm(250)
+
+### f1 indicators x1 to x3
+x1 <- f1 + rnorm(250, sd=0.15)
+x2 <- f1 + rnorm(250, sd=0.15)
+x3 <- f1 + rnorm(250, sd=0.15)
+
+### f2 indicators x4 to x6
+x4 <- f2 + rnorm(250, sd=0.15)
+x5 <- f2 + rnorm(250, sd=0.15)
+x6 <- f2 + rnorm(250, sd=0.15)
+
+### creating the dataframe
+df <- data.frame(x1=x1, x2=x2, x3=x3, x4=x4, x5=x5, x6=x6)
+```
+
+## Assess KMO and Bartlett's test of Sphericity
+
+**EFAtools**
+
+```{r}
+library(psych)
+library(EFAtools)
+
+KMO(df) ### THIS IS NOW MASKED BY EFAtools
+
+BARTLETT(df) ### THIS IS NOW MASKED BY EFAtools
+```
+
+## Assess KMO and Bartlett's test of Sphericity
+
+**psych**
+
+```{r}
+psych::KMO(df)
+r <- cor(df)
+psych::cortest.bartlett(r)
+```
+
+## Determining number of factors
+
+**EFAtools**
+
+```{r}
+PARALLEL(df, eigen_type = "PCA")
+```
+
+## Determining number of factors
+
+**psych**
+
+```{r}
+fa.parallel(df, fa="pc")
+```
+
+## In EFAtools you can also run multiple retention methods
+
+```{r}
+N_FACTORS(df, criteria = c("PARALLEL", "EKC", "SMT"),
+          eigen_type_other = c("SMC", "PCA"))
+```
+
+## Multiple Scree-plots
+
+Try the following code at home by removing the \#
+
+```{r}
+# N_FACTORS(df, method = "ULS")
+```
+
+## Factor Extraction
+
+**EFAtools**
+
+```{r}
+EFA(df, n_factors = 2, method = "ML")
+```
+
+## Rotating solution
+
+**EFAtools**
+
+```{r}
+EFA(df, n_factors = 2, rotation = "promax")
+```
+
+## Rotating solution 2, oblimin
+
+**EFAtools**
+
+```{r}
+EFA(df, n_factors = 2, rotation = "oblimin", method = "ULS")
+```
+
+## Factor Extraction
+
+**psych**
+
+```{r}
+FA_df<- fa(df, nfactors=2, fm="ml")
+summary.psych(FA_df)
+```
+
+## Factor Extraction, psych continued
+
+**Examine the residuals**
+
+```{r}
+residuals.psych(FA_df)
+```
+
+## Interpretation, psych
+
+```{r}
+FA_df$loadings
+```
+
+## Mental Break (down)
+
+Probably a lot to process in one go. We will take a mental break here and then we will work together through the next example.
+
+## But, but, what about lavaan???
+
+Yes we have left lavaan out so far. Now is the time to have a look of how we could go through the above process using lavaan (partially).
+
+```{r}
+library(lavaan)
+
+efa.model.fit <- lavaan::efa(data = df, nfactors = 2, rotation = "promax")
+summary(efa.model.fit)
+
+```
+
+## OK, time for our collaborative example
+
+We will use a lavaan built-in dataset called **HolzingerSwineford1939**
+
+The data consists of mental ability test scores of seventh- and eighth-grade children from two different schools (Pasteur and Grant-White). In our version of the dataset, only 9 out of the original 26 tests are included. A CFA model that is often proposed for these 9 variables consists of three latent variables (or factors), each with three indicators:
+
+-   a *visual* factor measured by 3 variables: `x1`, `x2` and `x3`
+
+-   a *textual* factor measured by 3 variables: `x4`, `x5` and `x6`
+
+-   a *speed* factor measured by 3 variables: `x7`, `x8` and `x9`
+
+## Visual Model
+
+![](model2.JPG){width="408"}
+
+## Let us assign the data to a dataframe
+
+```{r}
+data(HolzingerSwineford1939)
+df2 <- HolzingerSwineford1939
+head(df2)
+```
+
+## Keep only the indicators columns
+
+```{r}
+library(tidyverse)
+df2 <- df2 |> 
+  dplyr::select(7:15)
+```
+
+## What should be our first step?
