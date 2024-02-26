@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "AdvancedStatistics",
     "section": "",
-    "text": "Assignment 1\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nExploratory Factor Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 10, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to S.E.M\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 7, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Advanced Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Mediation\n\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\nNo matching items"
+    "text": "Assignment 1\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nConfirmatory Factor Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 19, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nExploratory Factor Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 10, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to S.E.M\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 7, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Advanced Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Mediation\n\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -1062,5 +1062,215 @@
     "title": "Exploratory Factor Analysis",
     "section": "What should be our first step?",
     "text": "What should be our first step?"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#todays-aims",
+    "href": "posts/Confirmatory Factor Analysis/index.html#todays-aims",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Today’s Aims",
+    "text": "Today’s Aims\nToday we will go through confirmatory factor analysis using lavaan. Our main focus will be lavaan syntax and the interpretation of output for different models and not going through the detailed mathematics behind the CFA processes. We will get a chance to talk about the mathematics and more during the next weeks of more intermediate and advanced topics."
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#todays-examples",
+    "href": "posts/Confirmatory Factor Analysis/index.html#todays-examples",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Today’s examples",
+    "text": "Today’s examples\nWe will be working on the same variables that we generated last week during the EFA. We will go through the process of one factor CFA and two factor CFA.\nWe specifically explored a model with two factors and overall 6 items, today we will first attempt to confirm a model where three items load to latent variable A. This will be our one-factor CFA.\nIn the second part of our workshop we will attempt to confirm a model with two latent variables A and B."
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#terminology",
+    "href": "posts/Confirmatory Factor Analysis/index.html#terminology",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Terminology",
+    "text": "Terminology\nToday we will also be referring back to many of the terms that we have defined in the past.\n\nObserved variables\nLatent variables\nDirectional/regression paths\nNon-directional paths/covariance/variance\nModel parameters\nExogenous, endogenous variables\nMeasurement and structural model"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#we-will-expand-on-terminology-today",
+    "href": "posts/Confirmatory Factor Analysis/index.html#we-will-expand-on-terminology-today",
+    "title": "Confirmatory Factor Analysis",
+    "section": "We will expand on terminology today",
+    "text": "We will expand on terminology today\n\nScale: latent variables do not have a measurement scale, instead we have to define one for them. To do that we need to set an origin and a unit\n\nOrigin: we can set the mean to 0\nUnit\n\nEither set the variance to 1\nOr, use the same unit as that of one of the measured variables ( only 1 item)"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#notations-in-lavaan-refresher",
+    "href": "posts/Confirmatory Factor Analysis/index.html#notations-in-lavaan-refresher",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Notations in lavaan (refresher)",
+    "text": "Notations in lavaan (refresher)\n\n~ predict, used for regression of observed outcome to observed predictors\n=~ indicator, used for latent variable to observed indicators\n~~ covariance\n1* fixes parameter or loading to 1\nNA* frees parameter or loading\n~1 intercept or mean (e.g., x1 ~ 1 estimates the mean of variable x1)\na* defines the parameter ‘a’,"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#number-of-parameters-refresher",
+    "href": "posts/Confirmatory Factor Analysis/index.html#number-of-parameters-refresher",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Number of parameters (refresher)",
+    "text": "Number of parameters (refresher)\nAs mentioned before every path or (co)variance that has not been fixed to a specific value will have to be estimated\n\nFactor loadings\nFactor covariances\nFactor variances\nError variances"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#last-weeks-example",
+    "href": "posts/Confirmatory Factor Analysis/index.html#last-weeks-example",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Last week’s example",
+    "text": "Last week’s example\nLast week we generated random data using the 1212 seed. Today we will carry out CFA on the same model but using 3131 as a seed.\n\n\nCode\nset.seed(3131)\n### normally distributed factors\n### these are just to help me set the indicators\n### the f1 and f2 will not be included in the data.frame\nf1 &lt;- rnorm(250)\nf2 &lt;- rnorm(250)\n\n### f1 indicators x1 to x3\nx1 &lt;- f1 + rnorm(250, sd=0.15)\nx2 &lt;- f1 + rnorm(250, sd=0.15)\nx3 &lt;- f1 + rnorm(250, sd=0.15)\n\n### f2 indicators x4 to x6\nx4 &lt;- f2 + rnorm(250, sd=0.15)\nx5 &lt;- f2 + rnorm(250, sd=0.15)\nx6 &lt;- f2 + rnorm(250, sd=0.15)\n\n### creating the dataframe\ndf &lt;- data.frame(x1=x1, x2=x2, x3=x3, x4=x4, x5=x5, x6=x6)"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#one-factor-cfa",
+    "href": "posts/Confirmatory Factor Analysis/index.html#one-factor-cfa",
+    "title": "Confirmatory Factor Analysis",
+    "section": "One factor CFA",
+    "text": "One factor CFA"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#one-factor-cfa-expanded",
+    "href": "posts/Confirmatory Factor Analysis/index.html#one-factor-cfa-expanded",
+    "title": "Confirmatory Factor Analysis",
+    "section": "One factor CFA, expanded",
+    "text": "One factor CFA, expanded"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#once-factor-cfa-expanded-again",
+    "href": "posts/Confirmatory Factor Analysis/index.html#once-factor-cfa-expanded-again",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Once factor CFA, expanded (again)",
+    "text": "Once factor CFA, expanded (again)"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#one-factor-cfa-and-degrees-of-freedom",
+    "href": "posts/Confirmatory Factor Analysis/index.html#one-factor-cfa-and-degrees-of-freedom",
+    "title": "Confirmatory Factor Analysis",
+    "section": "One Factor CFA and degrees of freedom",
+    "text": "One Factor CFA and degrees of freedom\n\ndf &lt; 0, the model is under-identified\ndf = 0, the model is just-identified (also known as saturated), no model fit\ndf &gt; 0, over-identified, we can assess model fit\n\nReminder: df = number of known values - number of parameters to estimate"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#one-factor-cfa-and-degrees-of-freedom-1",
+    "href": "posts/Confirmatory Factor Analysis/index.html#one-factor-cfa-and-degrees-of-freedom-1",
+    "title": "Confirmatory Factor Analysis",
+    "section": "One Factor CFA and degrees of freedom",
+    "text": "One Factor CFA and degrees of freedom\n\nTotal number of parameters (alson knows as “known values”) as previously discussed\n\\[\np(p+1)/2\n\\] \\[\n3(4)/2=6\n\\]\nNumber of parameters to estimate???? (Let us revisit the slide with the model visualisation)"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#identification-methods",
+    "href": "posts/Confirmatory Factor Analysis/index.html#identification-methods",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Identification Methods",
+    "text": "Identification Methods\n\nmarker method: we fix the first loading of each factor to 1 (what does this mean?)\nvariance standardization method: we fix the variance of each factor to 1 and we freely estimate all other loadings (what does this mean?)\nstandardization all method, standardizes the variance of each factor to 1 but also standardizes the items\n\nNote: default lavaan method is the marker method"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#let-us-see-this-example-in-lavaan",
+    "href": "posts/Confirmatory Factor Analysis/index.html#let-us-see-this-example-in-lavaan",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Let us see this example in lavaan",
+    "text": "Let us see this example in lavaan\n\n\nCode\nlibrary(lavaan)\n\nmodel1 &lt;- '\nf1 =~ x1 + x2 + x3\n'\n\nmodel1.fit &lt;- cfa(model1, data = df)\n\nsummary(model1.fit)\n\n\nlavaan 0.6.17 ended normally after 51 iterations\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                         6\n\n  Number of observations                           250\n\nModel Test User Model:\n                                                      \n  Test statistic                                 0.000\n  Degrees of freedom                                 0\n\nParameter Estimates:\n\n  Standard errors                             Standard\n  Information                                 Expected\n  Information saturated (h1) model          Structured\n\nLatent Variables:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)\n  f1 =~                                               \n    x1                1.000                           \n    x2                0.992    0.014   72.880    0.000\n    x3                0.991    0.014   72.206    0.000\n\nVariances:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)\n   .x1                0.019    0.003    6.471    0.000\n   .x2                0.023    0.003    7.277    0.000\n   .x3                0.023    0.003    7.424    0.000\n    f1                0.912    0.083   10.951    0.000"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#how-can-we-interpret-this-output",
+    "href": "posts/Confirmatory Factor Analysis/index.html#how-can-we-interpret-this-output",
+    "title": "Confirmatory Factor Analysis",
+    "section": "How can we interpret this output?",
+    "text": "How can we interpret this output?\n\nx1 estimate is 1.000 and has no std error, z-value, nor p-value. This is because lavaan uses the marker method by default. x1 has been fixed to 1 and is now the scale of our factor 1.\nx2 estimate is 0.992. For an increase of 1 unit in f1, x2 increases by 0.992. The 1 unit in f1 is the unit of x1 as this was set to be the scale\n.x1 refers to residual variances, hence the . in front of x1\nf estimate of 0.912 is the variance of our latent variable (factor)\np-values are just telling us if our estimates are significantly greater than zero\n\nBut what about intercept???"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#adding-intercept-in-lavaan",
+    "href": "posts/Confirmatory Factor Analysis/index.html#adding-intercept-in-lavaan",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Adding intercept in lavaan",
+    "text": "Adding intercept in lavaan\n\n\nCode\nlibrary(lavaan)\n\nmodel1.inter &lt;- '\nf1 =~ x1 + x2 + x3\nf1 ~ 1 \n'\n\nmodel1.inter.fit &lt;- cfa(model1.inter, data = df)\n\nsummary(model1.inter.fit)\n\n\nlavaan 0.6.17 ended normally after 51 iterations\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                        10\n\n  Number of observations                           250\n\nModel Test User Model:\n                                                      \n  Test statistic                                    NA\n  Degrees of freedom                                -1\n  P-value (Unknown)                                 NA\n\nParameter Estimates:\n\n  Standard errors                             Standard\n  Information                                 Expected\n  Information saturated (h1) model          Structured\n\nLatent Variables:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)\n  f1 =~                                               \n    x1                1.000                           \n    x2                0.992       NA                  \n    x3                0.991       NA                  \n\nIntercepts:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)\n    f1                0.000       NA                  \n   .x1                0.009       NA                  \n   .x2                0.036       NA                  \n   .x3                0.014       NA                  \n\nVariances:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)\n   .x1                0.019       NA                  \n   .x2                0.023       NA                  \n   .x3                0.023       NA                  \n    f1                0.912       NA"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#what-about-variance-standardization-method",
+    "href": "posts/Confirmatory Factor Analysis/index.html#what-about-variance-standardization-method",
+    "title": "Confirmatory Factor Analysis",
+    "section": "What about variance standardization method",
+    "text": "What about variance standardization method\n\n\nCode\nlibrary(lavaan)\n\nmodel1.var &lt;- '\nf1 =~ NA*x1 + x2 + x3\nf1 ~~ 1*f1 \n'\n\nmodel1.var.fit &lt;- cfa(model1.var, data = df)\n\nsummary(model1.var.fit)\n\n\nlavaan 0.6.17 ended normally after 31 iterations\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                         6\n\n  Number of observations                           250\n\nModel Test User Model:\n                                                      \n  Test statistic                                 0.000\n  Degrees of freedom                                 0\n\nParameter Estimates:\n\n  Standard errors                             Standard\n  Information                                 Expected\n  Information saturated (h1) model          Structured\n\nLatent Variables:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)\n  f1 =~                                               \n    x1                0.955    0.044   21.901    0.000\n    x2                0.948    0.043   21.811    0.000\n    x3                0.946    0.043   21.792    0.000\n\nVariances:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)\n    f1                1.000                           \n   .x1                0.019    0.003    6.471    0.000\n   .x2                0.023    0.003    7.277    0.000\n   .x3                0.023    0.003    7.424    0.000"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#thanks-for-nothing-laz",
+    "href": "posts/Confirmatory Factor Analysis/index.html#thanks-for-nothing-laz",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Thanks for nothing Laz!",
+    "text": "Thanks for nothing Laz!\n\n\nCode\nmodel1 &lt;- '\nf1 =~ x1 + x2 + x3\n'\n\nmodel1.fit &lt;- cfa(model1, std.lv=TRUE, data = df)\n\nsummary(model1.fit)\n\n\nlavaan 0.6.17 ended normally after 31 iterations\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                         6\n\n  Number of observations                           250\n\nModel Test User Model:\n                                                      \n  Test statistic                                 0.000\n  Degrees of freedom                                 0\n\nParameter Estimates:\n\n  Standard errors                             Standard\n  Information                                 Expected\n  Information saturated (h1) model          Structured\n\nLatent Variables:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)\n  f1 =~                                               \n    x1                0.955    0.044   21.901    0.000\n    x2                0.948    0.043   21.811    0.000\n    x3                0.946    0.043   21.792    0.000\n\nVariances:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)\n   .x1                0.019    0.003    6.471    0.000\n   .x2                0.023    0.003    7.277    0.000\n   .x3                0.023    0.003    7.424    0.000\n    f1                1.000"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#interpretation",
+    "href": "posts/Confirmatory Factor Analysis/index.html#interpretation",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Interpretation",
+    "text": "Interpretation\nRemember this method standardizes our factor, so we will need to speak in terms of standard deviations\nx1 estimate of 0.955: For an increase of 1 standard deviation in f1, x1 increases by 0.955"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#and-the-magnificent-standardization-all-walks-in",
+    "href": "posts/Confirmatory Factor Analysis/index.html#and-the-magnificent-standardization-all-walks-in",
+    "title": "Confirmatory Factor Analysis",
+    "section": "And the magnificent standardization all walks in",
+    "text": "And the magnificent standardization all walks in\n\n\nCode\nmodel1 &lt;- '\nf1 =~ x1 + x2 + x3\n'\n\nmodel1.fit &lt;- cfa(model1, data = df)\n\nsummary(model1.fit, standardized=TRUE)\n\n\nlavaan 0.6.17 ended normally after 51 iterations\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                         6\n\n  Number of observations                           250\n\nModel Test User Model:\n                                                      \n  Test statistic                                 0.000\n  Degrees of freedom                                 0\n\nParameter Estimates:\n\n  Standard errors                             Standard\n  Information                                 Expected\n  Information saturated (h1) model          Structured\n\nLatent Variables:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all\n  f1 =~                                                                 \n    x1                1.000                               0.955    0.990\n    x2                0.992    0.014   72.880    0.000    0.948    0.988\n    x3                0.991    0.014   72.206    0.000    0.946    0.987\n\nVariances:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all\n   .x1                0.019    0.003    6.471    0.000    0.019    0.020\n   .x2                0.023    0.003    7.277    0.000    0.023    0.024\n   .x3                0.023    0.003    7.424    0.000    0.023    0.025\n    f1                0.912    0.083   10.951    0.000    1.000    1.000"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#moving-on-to-model-fit-statistics",
+    "href": "posts/Confirmatory Factor Analysis/index.html#moving-on-to-model-fit-statistics",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Moving on to Model fit statistics",
+    "text": "Moving on to Model fit statistics\nAs things are now we cannot obtain model fit statistics as df =0\nSo our model is just-identified (saturated)\n\n\nCode\nmodel2 &lt;- '\nf1 =~ x1 + x2 + x3 + x4\nf2 =~ x5 + x6\n'\n\nmodel2.fit &lt;- cfa(model2, data = df)\nsummary(model2.fit, standardized=TRUE, fit.measures=TRUE)\n\n\nlavaan 0.6.17 ended normally after 48 iterations\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                        13\n\n  Number of observations                           250\n\nModel Test User Model:\n                                                      \n  Test statistic                               812.060\n  Degrees of freedom                                 8\n  P-value (Chi-square)                           0.000\n\nModel Test Baseline Model:\n\n  Test statistic                              3202.055\n  Degrees of freedom                                15\n  P-value                                        0.000\n\nUser Model versus Baseline Model:\n\n  Comparative Fit Index (CFI)                    0.748\n  Tucker-Lewis Index (TLI)                       0.527\n\nLoglikelihood and Information Criteria:\n\n  Loglikelihood user model (H0)               -889.645\n  Loglikelihood unrestricted model (H1)       -483.616\n                                                      \n  Akaike (AIC)                                1805.291\n  Bayesian (BIC)                              1851.070\n  Sample-size adjusted Bayesian (SABIC)       1809.859\n\nRoot Mean Square Error of Approximation:\n\n  RMSEA                                          0.634\n  90 Percent confidence interval - lower         0.598\n  90 Percent confidence interval - upper         0.671\n  P-value H_0: RMSEA &lt;= 0.050                    0.000\n  P-value H_0: RMSEA &gt;= 0.080                    1.000\n\nStandardized Root Mean Square Residual:\n\n  SRMR                                           0.299\n\nParameter Estimates:\n\n  Standard errors                             Standard\n  Information                                 Expected\n  Information saturated (h1) model          Structured\n\nLatent Variables:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all\n  f1 =~                                                                 \n    x1                1.000                               0.955    0.990\n    x2                0.992    0.014   72.869    0.000    0.948    0.988\n    x3                0.991    0.014   72.277    0.000    0.946    0.987\n    x4               -0.090    0.065   -1.397    0.162   -0.086   -0.088\n  f2 =~                                                                 \n    x5                1.000                               0.960    0.961\n    x6                1.028    0.185    5.548    0.000    0.986    1.017\n\nCovariances:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all\n  f1 ~~                                                                 \n    f2               -0.072    0.061   -1.180    0.238   -0.078   -0.078\n\nVariances:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all\n   .x1                0.019    0.003    6.451    0.000    0.019    0.020\n   .x2                0.023    0.003    7.296    0.000    0.023    0.025\n   .x3                0.023    0.003    7.424    0.000    0.023    0.025\n   .x4                0.947    0.085   11.180    0.000    0.947    0.992\n   .x5                0.076    0.166    0.456    0.648    0.076    0.076\n   .x6               -0.032    0.175   -0.183    0.855   -0.032   -0.034\n    f1                0.912    0.083   10.952    0.000    1.000    1.000\n    f2                0.921    0.188    4.903    0.000    1.000    1.000"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#what-if-we-make-sure-there-is-no-covariance-between-factors",
+    "href": "posts/Confirmatory Factor Analysis/index.html#what-if-we-make-sure-there-is-no-covariance-between-factors",
+    "title": "Confirmatory Factor Analysis",
+    "section": "What if we make sure there is no covariance between factors?",
+    "text": "What if we make sure there is no covariance between factors?\n\n\nCode\nmodel2.nocov &lt;- '\nf1 =~ x1 + x2 + x3 + x4\nf2 =~ x5 + x6\nf1~~0*f2\n'\n\nmodel2.nocov.fit &lt;- cfa(model2.nocov, data = df)\nsummary(model2.nocov.fit, standardized=TRUE, fit.measures=TRUE)\n\n\nlavaan 0.6.17 ended normally after 52 iterations\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                        12\n\n  Number of observations                           250\n\nModel Test User Model:\n                                                      \n  Test statistic                               813.666\n  Degrees of freedom                                 9\n  P-value (Chi-square)                           0.000\n\nModel Test Baseline Model:\n\n  Test statistic                              3202.055\n  Degrees of freedom                                15\n  P-value                                        0.000\n\nUser Model versus Baseline Model:\n\n  Comparative Fit Index (CFI)                    0.748\n  Tucker-Lewis Index (TLI)                       0.579\n\nLoglikelihood and Information Criteria:\n\n  Loglikelihood user model (H0)               -890.449\n  Loglikelihood unrestricted model (H1)       -483.616\n                                                      \n  Akaike (AIC)                                1804.898\n  Bayesian (BIC)                              1847.155\n  Sample-size adjusted Bayesian (SABIC)       1809.114\n\nRoot Mean Square Error of Approximation:\n\n  RMSEA                                          0.598\n  90 Percent confidence interval - lower         0.564\n  90 Percent confidence interval - upper         0.633\n  P-value H_0: RMSEA &lt;= 0.050                    0.000\n  P-value H_0: RMSEA &gt;= 0.080                    1.000\n\nStandardized Root Mean Square Residual:\n\n  SRMR                                           0.303\n\nParameter Estimates:\n\n  Standard errors                             Standard\n  Information                                 Expected\n  Information saturated (h1) model          Structured\n\nLatent Variables:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all\n  f1 =~                                                                 \n    x1                1.000                               0.955    0.990\n    x2                0.992       NA                      0.948    0.988\n    x3                0.991       NA                      0.946    0.987\n    x4               -0.090       NA                     -0.086   -0.088\n  f2 =~                                                                 \n    x5                1.000                               0.921    0.922\n    x6                1.116       NA                      1.028    1.060\n\nCovariances:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all\n  f1 ~~                                                                 \n    f2                0.000                               0.000    0.000\n\nVariances:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all\n   .x1                0.019       NA                      0.019    0.020\n   .x2                0.023       NA                      0.023    0.025\n   .x3                0.023       NA                      0.023    0.025\n   .x4                0.948       NA                      0.948    0.992\n   .x5                0.149       NA                      0.149    0.149\n   .x6               -0.116       NA                     -0.116   -0.123\n    f1                0.912       NA                      1.000    1.000\n    f2                0.848       NA                      1.000    1.000"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#can-we-improve-our-model",
+    "href": "posts/Confirmatory Factor Analysis/index.html#can-we-improve-our-model",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Can we improve our model?",
+    "text": "Can we improve our model?\nOne way to do that is to look into our model residuals. Model residuals are an absolute fit index where we compare our model with th observed data. Generally, you regard absolute goodness of fit as the “discrepancy” between our model and the observed data. Higher residuals indicate greater discrepancy.\nSo how high is bad? We can request either correlations or standardized residuals."
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#correlations",
+    "href": "posts/Confirmatory Factor Analysis/index.html#correlations",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Correlations",
+    "text": "Correlations\nHere both observed and estimated covariances are converted into correlations and then we calculate the differences. Greater differences indicate problematic items.\n\n\nCode\nresiduals(model2.fit, type=\"cor\")\n\n\n$type\n[1] \"cor.bollen\"\n\n$cov\n       x1     x2     x3     x4     x5     x6\nx1  0.000                                   \nx2  0.000  0.000                            \nx3  0.000  0.000  0.000                     \nx4 -0.010  0.013  0.001  0.000              \nx5 -0.010  0.015  0.000  0.967  0.000       \nx6 -0.010  0.015 -0.002  0.968  0.000  0.000"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#standardized-residuals",
+    "href": "posts/Confirmatory Factor Analysis/index.html#standardized-residuals",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Standardized residuals",
+    "text": "Standardized residuals\nHere we standardize the covariance and in practice treat it as a z-score, values greater than 1.96 indicate problematic cases.\n\n\nCode\nresiduals(model2.fit, type=\"standardized\")\n\n\n$type\n[1] \"standardized\"\n\n$cov\n       x1     x2     x3     x4     x5     x6\nx1  0.000                                   \nx2  0.000  0.000                            \nx3 -1.636  1.394  0.000                     \nx4 -1.342  1.533  0.108  0.000              \nx5 -1.462  1.783  0.010 11.027  0.000       \nx6 -1.347  1.868 -0.199 11.039  0.000  0.000"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#modification-indices",
+    "href": "posts/Confirmatory Factor Analysis/index.html#modification-indices",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Modification Indices",
+    "text": "Modification Indices\nWe should look at modification indices that give as an estimate change of our chi-square value if we make changes to our model.\n\n\nCode\nmodificationindices(model2.fit)\n\n\n   lhs op rhs      mi    epc sepc.lv sepc.all sepc.nox\n18  f2 =~  x1   1.522 -0.014  -0.013   -0.014   -0.014\n19  f2 =~  x2   3.561  0.022   0.021    0.022    0.022\n20  f2 =~  x3   0.117 -0.004  -0.004   -0.004   -0.004\n21  f2 =~  x4 225.561  0.939   0.901    0.923    0.923\n22  x1 ~~  x2   0.105  0.030   0.030    1.446    1.446\n23  x1 ~~  x3   5.001 -0.204  -0.204   -9.753   -9.753\n24  x1 ~~  x4   1.821 -0.015  -0.015   -0.109   -0.109\n25  x1 ~~  x5   0.481 -0.002  -0.002   -0.043   -0.043\n26  x1 ~~  x6   0.153  0.001   0.001    0.036    0.036\n27  x2 ~~  x3   3.971  0.173   0.173    7.516    7.516\n28  x2 ~~  x4   2.366  0.017   0.017    0.117    0.117\n29  x2 ~~  x5   0.042  0.000   0.000   -0.012   -0.012\n30  x2 ~~  x6   0.357  0.001   0.001    0.052    0.052\n31  x3 ~~  x4   0.012  0.001   0.001    0.008    0.008\n32  x3 ~~  x5   0.931  0.002   0.002    0.056    0.056\n33  x3 ~~  x6   0.970 -0.002  -0.002   -0.085   -0.085\n34  x4 ~~  x5   2.227  0.019   0.019    0.072    0.072\n35  x4 ~~  x6   3.243  0.023   0.023    0.130    0.130"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#modifying-the-model",
+    "href": "posts/Confirmatory Factor Analysis/index.html#modifying-the-model",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Modifying the model",
+    "text": "Modifying the model\n\n\nCode\nmodel2.1 &lt;- '\nf1 =~ x1 + x2 + x3 \nf2 =~ x4 + x5 + x6\n'\n\nmodel2.1.fit &lt;- cfa(model2.1, data = df)\nsummary(model2.1.fit, standardized=TRUE, fit.measures=TRUE)\n\n\nlavaan 0.6.17 ended normally after 58 iterations\n\n  Estimator                                         ML\n  Optimization method                           NLMINB\n  Number of model parameters                        13\n\n  Number of observations                           250\n\nModel Test User Model:\n                                                      \n  Test statistic                                 7.569\n  Degrees of freedom                                 8\n  P-value (Chi-square)                           0.477\n\nModel Test Baseline Model:\n\n  Test statistic                              3202.055\n  Degrees of freedom                                15\n  P-value                                        0.000\n\nUser Model versus Baseline Model:\n\n  Comparative Fit Index (CFI)                    1.000\n  Tucker-Lewis Index (TLI)                       1.000\n\nLoglikelihood and Information Criteria:\n\n  Loglikelihood user model (H0)               -487.400\n  Loglikelihood unrestricted model (H1)       -483.616\n                                                      \n  Akaike (AIC)                                1000.800\n  Bayesian (BIC)                              1046.579\n  Sample-size adjusted Bayesian (SABIC)       1005.368\n\nRoot Mean Square Error of Approximation:\n\n  RMSEA                                          0.000\n  90 Percent confidence interval - lower         0.000\n  90 Percent confidence interval - upper         0.072\n  P-value H_0: RMSEA &lt;= 0.050                    0.817\n  P-value H_0: RMSEA &gt;= 0.080                    0.025\n\nStandardized Root Mean Square Residual:\n\n  SRMR                                           0.007\n\nParameter Estimates:\n\n  Standard errors                             Standard\n  Information                                 Expected\n  Information saturated (h1) model          Structured\n\nLatent Variables:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all\n  f1 =~                                                                 \n    x1                1.000                               0.955    0.990\n    x2                0.992    0.014   72.877    0.000    0.948    0.988\n    x3                0.991    0.014   72.242    0.000    0.946    0.987\n  f2 =~                                                                 \n    x4                1.000                               0.963    0.986\n    x5                1.024    0.015   66.812    0.000    0.986    0.988\n    x6                0.997    0.014   69.570    0.000    0.960    0.990\n\nCovariances:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all\n  f1 ~~                                                                 \n    f2               -0.074    0.059   -1.263    0.206   -0.081   -0.081\n\nVariances:\n                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all\n   .x1                0.019    0.003    6.461    0.000    0.019    0.020\n   .x2                0.023    0.003    7.286    0.000    0.023    0.025\n   .x3                0.023    0.003    7.424    0.000    0.023    0.025\n   .x4                0.027    0.004    7.763    0.000    0.027    0.029\n   .x5                0.025    0.003    7.099    0.000    0.025    0.025\n   .x6                0.019    0.003    6.260    0.000    0.019    0.020\n    f1                0.912    0.083   10.951    0.000    1.000    1.000\n    f2                0.927    0.085   10.858    0.000    1.000    1.000"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#let-us-see-if-the-residuals-tell-the-same-story",
+    "href": "posts/Confirmatory Factor Analysis/index.html#let-us-see-if-the-residuals-tell-the-same-story",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Let us see if the residuals tell the same story",
+    "text": "Let us see if the residuals tell the same story\n\n\nCode\nresiduals(model2.1.fit, type=\"standardized\")\n\n\n$type\n[1] \"standardized\"\n\n$cov\n       x1     x2     x3     x4     x5     x6\nx1  0.000                                   \nx2  0.000  0.000                            \nx3 -1.669  1.497  0.000                     \nx4 -1.576  0.327 -0.624  0.000              \nx5 -0.533  1.678  0.406  0.000  0.000       \nx6 -0.907  1.477 -0.104 -0.684  0.861  0.000"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#what-about-modification-indices",
+    "href": "posts/Confirmatory Factor Analysis/index.html#what-about-modification-indices",
+    "title": "Confirmatory Factor Analysis",
+    "section": "What about modification indices",
+    "text": "What about modification indices\n\n\nCode\nmodificationindices(model2.1.fit)\n\n\n   lhs op rhs    mi    epc sepc.lv sepc.all sepc.nox\n16  f1 =~  x4 0.787 -0.012  -0.011   -0.011   -0.011\n17  f1 =~  x5 0.439  0.008   0.008    0.008    0.008\n18  f1 =~  x6 0.031  0.002   0.002    0.002    0.002\n19  f2 =~  x1 2.236 -0.017  -0.017   -0.017   -0.017\n20  f2 =~  x2 2.856  0.020   0.020    0.020    0.020\n21  f2 =~  x3 0.016 -0.002  -0.001   -0.002   -0.002\n22  x1 ~~  x2 0.016  0.017   0.017    0.839    0.839\n23  x1 ~~  x3 2.856 -0.229  -0.229  -10.923  -10.923\n24  x1 ~~  x4 0.031  0.000   0.000    0.016    0.016\n25  x1 ~~  x5 0.476 -0.001  -0.001   -0.067   -0.067\n26  x1 ~~  x6 0.051  0.000   0.000    0.023    0.023\n27  x2 ~~  x3 2.236  0.192   0.192    8.386    8.386\n28  x2 ~~  x4 1.923 -0.003  -0.003   -0.124   -0.124\n29  x2 ~~  x5 0.174  0.001   0.001    0.039    0.039\n30  x2 ~~  x6 1.393  0.002   0.002    0.116    0.116\n31  x3 ~~  x4 1.090  0.002   0.002    0.093    0.093\n32  x3 ~~  x5 0.189  0.001   0.001    0.040    0.040\n33  x3 ~~  x6 1.946 -0.003  -0.003   -0.136   -0.136\n34  x4 ~~  x5 0.031 -0.024  -0.024   -0.941   -0.941\n35  x4 ~~  x6 0.439 -0.093  -0.093   -4.050   -4.050\n36  x5 ~~  x6 0.787  0.133   0.133    6.150    6.150"
+  },
+  {
+    "objectID": "posts/Confirmatory Factor Analysis/index.html#exercise",
+    "href": "posts/Confirmatory Factor Analysis/index.html#exercise",
+    "title": "Confirmatory Factor Analysis",
+    "section": "Exercise",
+    "text": "Exercise\nLet us try a different model now. Go onto your posit cloud account and open the Week 5 project, follow the instructions and carry out the required CFA."
   }
 ]

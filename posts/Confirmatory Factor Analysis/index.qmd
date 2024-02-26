@@ -1,0 +1,314 @@
+---
+title: "Confirmatory Factor Analysis"
+format: 
+  revealjs:
+    theme: league
+    transition: slide
+    background-transition: zoom
+    slide-number: c/t
+    show-slide-number: all
+    chalkboard: true
+    background-size: cover
+    smaller: true
+    echo: true
+    code-fold: true
+    code-summary: "Show the code"
+author: "Dr Lazaros Gonidis"
+date: "2024-02-19"
+image: "image1.jpg"
+---
+
+## Today's Aims
+
+Today we will go through confirmatory factor analysis using lavaan. Our main focus will be lavaan syntax and the interpretation of output for different models and not going through the detailed mathematics behind the **CFA processes.** We will get a chance to talk about the mathematics and more during the next weeks of more intermediate and advanced topics.
+
+## Today's examples
+
+We will be working on the same variables that we generated last week during the **EFA**. We will go through the process of **one factor CFA** and **two factor CFA**.
+
+We specifically explored a model with two factors and overall 6 items, today we will first attempt to confirm a model where **three** items load to latent variable A. **This will be our one-factor CFA**.
+
+In the second part of our workshop we will attempt to confirm a model with two **latent variables A and B**.
+
+## Terminology
+
+Today we will also be referring back to many of the terms that we have defined in the past.
+
+1.  Observed variables
+2.  Latent variables
+3.  Directional/regression paths
+4.  Non-directional paths/covariance/variance
+5.  Model parameters
+6.  Exogenous, endogenous variables
+7.  Measurement and structural model
+
+## We will expand on terminology today
+
+1.  **Scale:** latent variables do not have a measurement scale, instead we have to define one for them. To do that we need to set an **origin** and a **unit**
+    1.  **Origin:** we can set the mean to **0**
+    2.  **Unit**
+        1.  Either set the **variance to 1**
+        2.  Or, use the same unit as that of one of the **measured variables ( only 1 item)**
+
+## Notations in lavaan (refresher)
+
+-   **`~`** **predict**, used for regression of observed outcome to observed predictors
+
+-   **`=~`** **indicator**, used for latent variable to observed indicators
+
+-   **`~~`** **covariance**
+
+-   **`1*`** **fixes** **parameter** or **loading** to **1**
+
+-   **`NA*`** **frees** **parameter** or **loading**
+
+-   **`~1`** **intercept** or mean (e.g., **`x1 ~ 1`** estimates the mean of variable **`x1`**)
+
+-   **`a*`** **defines** the **parameter** ‘a’,
+
+## Number of parameters (refresher)
+
+As mentioned before every **path** or (co)**variance** that has not been fixed to a specific value will have to be estimated
+
+1.  Factor loadings
+2.  Factor covariances
+3.  Factor variances
+4.  Error variances
+
+## Last week's example
+
+Last week we generated random data using the 1212 seed. Today we will carry out **CFA** on the same model but using 3131 as a seed.
+
+```{r}
+set.seed(3131)
+### normally distributed factors
+### these are just to help me set the indicators
+### the f1 and f2 will not be included in the data.frame
+f1 <- rnorm(250)
+f2 <- rnorm(250)
+
+### f1 indicators x1 to x3
+x1 <- f1 + rnorm(250, sd=0.15)
+x2 <- f1 + rnorm(250, sd=0.15)
+x3 <- f1 + rnorm(250, sd=0.15)
+
+### f2 indicators x4 to x6
+x4 <- f2 + rnorm(250, sd=0.15)
+x5 <- f2 + rnorm(250, sd=0.15)
+x6 <- f2 + rnorm(250, sd=0.15)
+
+### creating the dataframe
+df <- data.frame(x1=x1, x2=x2, x3=x3, x4=x4, x5=x5, x6=x6)
+```
+
+## One factor CFA
+
+![](onefactor.JPG)
+
+## One factor CFA, expanded
+
+![](onefactor1.JPG)
+
+## Once factor CFA, expanded (again)
+
+![](onefactor2.JPG)
+
+## One Factor CFA and degrees of freedom
+
+1.  **df \< 0**, the model is under-identified
+2.  **df = 0**, the model is just-identified (also known as saturated), no model fit
+3.  **df \> 0**, over-identified, we can assess model fit
+
+Reminder: **df = number of known values - number of parameters to estimate**
+
+## One Factor CFA and degrees of freedom
+
+1.  Total number of parameters (alson knows as "known values") as previously discussed
+
+    $$
+    p(p+1)/2
+    $$
+    $$
+    3(4)/2=6
+    $$
+
+2.  Number of parameters to estimate???? (Let us revisit the slide with the model visualisation)
+
+## Identification Methods
+
+1.  **marker method:** we fix the first loading of each factor to 1 (what does this mean?)
+2.  **variance standardization method:** we fix the variance of each factor to 1 and we freely estimate all other loadings (what does this mean?)
+3.  **standardization all method**, standardizes the variance of each factor to 1 but also standardizes the items
+
+**Note: default lavaan method is the marker method**
+
+## Let us see this example in lavaan
+
+```{r}
+library(lavaan)
+
+model1 <- '
+f1 =~ x1 + x2 + x3
+'
+
+model1.fit <- cfa(model1, data = df)
+
+summary(model1.fit)
+```
+
+## How can we interpret this output?
+
+1.  x1 estimate is 1.000 and has no std error, z-value, nor p-value. This is because lavaan uses the **marker method by default**. x1 has been fixed to 1 and is now the scale of our factor 1.
+2.  x2 estimate is 0.992. For an increase of **1 unit** in **f1**, x2 increases by 0.992. The 1 unit in f1 is the unit of x1 as this was set to be the scale
+3.  .x1 refers to residual variances, hence the . in front of x1
+4.  f estimate of 0.912 is the variance of our latent variable (factor)
+5.  p-values are just telling us if our estimates are significantly greater than zero
+
+But what about intercept???
+
+## Adding intercept in lavaan
+
+```{r}
+library(lavaan)
+
+model1.inter <- '
+f1 =~ x1 + x2 + x3
+f1 ~ 1 
+'
+
+model1.inter.fit <- cfa(model1.inter, data = df)
+
+summary(model1.inter.fit)
+```
+
+## What about **variance standardization method**
+
+```{r}
+library(lavaan)
+
+model1.var <- '
+f1 =~ NA*x1 + x2 + x3
+f1 ~~ 1*f1 
+'
+
+model1.var.fit <- cfa(model1.var, data = df)
+
+summary(model1.var.fit)
+```
+
+## Thanks for nothing Laz!
+
+```{r}
+model1 <- '
+f1 =~ x1 + x2 + x3
+'
+
+model1.fit <- cfa(model1, std.lv=TRUE, data = df)
+
+summary(model1.fit)
+```
+
+## Interpretation
+
+Remember this method standardizes our factor, so we will need to speak in terms of standard deviations
+
+**x1 estimate of 0.955**: For an increase of 1 standard deviation in **f1**, x1 increases by 0.955
+
+## And the magnificent standardization all walks in
+
+```{r}
+model1 <- '
+f1 =~ x1 + x2 + x3
+'
+
+model1.fit <- cfa(model1, data = df)
+
+summary(model1.fit, standardized=TRUE)
+```
+
+## Moving on to Model fit statistics
+
+As things are now we cannot obtain model fit statistics as **df =0**
+
+So our model is just-identified (saturated)
+
+```{r}
+model2 <- '
+f1 =~ x1 + x2 + x3 + x4
+f2 =~ x5 + x6
+'
+
+model2.fit <- cfa(model2, data = df)
+summary(model2.fit, standardized=TRUE, fit.measures=TRUE)
+```
+
+## What if we make sure there is no covariance between factors?
+
+```{r}
+model2.nocov <- '
+f1 =~ x1 + x2 + x3 + x4
+f2 =~ x5 + x6
+f1~~0*f2
+'
+
+model2.nocov.fit <- cfa(model2.nocov, data = df)
+summary(model2.nocov.fit, standardized=TRUE, fit.measures=TRUE)
+```
+
+## Can we improve our model?
+
+One way to do that is to look into our model residuals. Model residuals are an **absolute fit index** where we compare our model with th observed data. Generally, you regard **absolute goodness of fit** as the "discrepancy" between our model and the observed data. Higher residuals indicate greater discrepancy.
+
+So how high is bad? We can request either **correlations** or **standardized residuals**.
+
+## Correlations
+
+Here both observed and estimated covariances are converted into correlations and then we calculate the differences. Greater differences indicate problematic items.
+
+```{r}
+residuals(model2.fit, type="cor")
+```
+
+## Standardized residuals
+
+Here we standardize the covariance and in practice treat it as a z-score, values greater than 1.96 indicate problematic cases.
+
+```{r}
+residuals(model2.fit, type="standardized")
+```
+
+## Modification Indices
+
+We should look at modification indices that give as an estimate change of our chi-square value if we make changes to our model.
+
+```{r}
+modificationindices(model2.fit)
+```
+
+## Modifying the model
+
+```{r}
+model2.1 <- '
+f1 =~ x1 + x2 + x3 
+f2 =~ x4 + x5 + x6
+'
+
+model2.1.fit <- cfa(model2.1, data = df)
+summary(model2.1.fit, standardized=TRUE, fit.measures=TRUE)
+```
+
+## Let us see if the residuals tell the same story
+
+```{r}
+residuals(model2.1.fit, type="standardized")
+```
+
+## What about modification indices
+
+```{r}
+modificationindices(model2.1.fit)
+```
+
+## Exercise
+
+Let us try a different model now. Go onto your posit cloud account and open the Week 5 project, follow the instructions and carry out the required CFA.
