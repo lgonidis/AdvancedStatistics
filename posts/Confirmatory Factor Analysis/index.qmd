@@ -127,8 +127,7 @@ Reminder: **df = number of known values - number of parameters to estimate**
 
     $$
     p(p+1)/2
-    $$
-    $$
+    $$ $$
     3(4)/2=6
     $$
 

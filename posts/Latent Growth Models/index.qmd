@@ -1,0 +1,238 @@
+---
+title: "Latent Growth Models"
+format: 
+  revealjs:
+    theme: league
+    transition: slide
+    background-transition: zoom
+    slide-number: c/t
+    show-slide-number: all
+    chalkboard: true
+    background-size: cover
+    smaller: true
+    echo: true
+    code-fold: true
+    code-summary: "Show the code"
+author: "Dr Lazaros Gonidis"
+date: "2024-02-28"
+image: "image1.jpg"
+---
+
+## Today's Aims
+
+Today we will discuss Latent Growth Modeling (LGM) also known as Latent Growth Curve Analysis (LGCA), how it help us measure change over time (repeated measurements) and what advantages they have in comparison to other repeated measures analysis such as repeated measures ANOVA or hierarchical linear models.
+
+Specifically we will cover:
+
+1.  Assumptions for LGM
+2.  Specifying LGM using lavaan
+3.  Interpreting output
+4.  Improving a model
+5.  Adding a covariate (predictor)
+
+## Notations in lavaan (refresher)
+
+-   **`~`** **predict**, used for regression of observed outcome to observed predictors
+
+-   **`=~`** **indicator**, used for latent variable to observed indicators
+
+-   **`~~`** **covariance**
+
+-   **`1*`** **fixes** **parameter** or **loading** to **1**
+
+-   **`NA*`** **frees** **parameter** or **loading**
+
+-   **`~1`** **intercept** or mean (e.g., **`x1 ~ 1`** estimates the mean of variable **`x1`**)
+
+-   **`a*`** **defines** the **parameter** ‘a’,
+
+## lavaan package
+
+Today we will also expand our lavaan usage beyond the analysis. We will also use the function **simulateData** to create random data for our **LGM**. If you like challenges try to randomly create data that will be suitable for **LGM**.
+
+## What is LGM?
+
+Generally speaking, **LGM** is a special case of **CFA** where we incorporate a longitudinal element. This implies that we have a set of repeated measurements, at least **three**, and we want investigate change over these repeated time measurements.
+
+1.  LGM allows us to estimate means and covariances
+2.  LGM allows us to estimate observed and latent values
+3.  We will only focus on continuous measurements
+4.  All of our participants needs to be measured with the same time measurement information
+5.  We will also primarily focus on linear relationship (not exclusively though)
+
+## Let us describe a longitudinal/repeated measurements paradigm
+
+We measure a psychological construct over **4** time points **T1, T2, T3, T4**. We are interested in investigating whether the measurements will **"grow"** (technically not grow) across these time points.
+
+We will specify **two latent variables**, the **intercept** and the **slope**. Each latent variable will pass through each of the measurement points.
+
+We will set the **intercept** factor loadings to 1 as we do not want to estimate them.
+
+We will set the **slope** factor loadings to increasing **integer** values, usually starting from **0**.
+
+## Conceptual/Statistical Model
+
+![](model1.JPG)
+
+## Conceptual/Statistical Model continued
+
+![](model1matrix.JPG)
+
+## Let us generate some simulated data
+
+Here we just demonstrate the code, we will return to this code once we have explained our growth model in greater detail.
+
+```{r}
+library(lavaan)
+library(tidyverse)
+set.seed(25256)
+
+# Define the latent growth model
+lgm_model1 <- '
+i =~ 1*T0 + 1*T1 +1*T2 +1*T3
+s =~ 0*T0 + 1*T1 +2*T2 +3*T3
+gender|0*t1
+'
+# Generate random data
+simulated_data1 <- simulateData(lgm_model1, model.type = "growth")
+simulated_data1 <- simulated_data1 |> 
+  mutate(id = row_number())
+# Check the generated data
+head(simulated_data1)
+
+```
+
+## Analysis
+
+```{r}
+# Define the latent growth model
+lgm_model1 <- '
+i =~ 1*T0 + 1*T1 +1*T2 +1*T3
+s =~ 0*T0 + 1*T1 +2*T2 +3*T3
+'
+fit1 <- growth(lgm_model1, data = simulated_data1)
+summary(fit1)
+```
+
+## Reading through the output
+
+![](loadings.JPG)
+
+## Reading through the output
+
+![](intercepts.JPG)
+
+**i represents the mean of intercepts** for all our participants at **T0.**
+
+**s represents the mean of the slope,** as we move from each measurement time point to the next we should observe an increase of **0.051**
+
+For example, we would expect the slope at the last time point to be:
+
+**s = -0.038 + 3x0.051**
+
+## Reading through the output
+
+![](variances.JPG)
+
+Remember dots denote residuals. **i** and **s** do not have a dot in from of them so these values denote **variances**.
+
+## Technically, this is the full model
+
+![](model1icpt.JPG)
+
+## Getting an even better look
+
+```{r}
+summary(fit1, standardized=TRUE, fit.measures=TRUE)
+```
+
+## Looking at residuals
+
+We can look at residuals to acquire more information about specific predictors.
+
+```{r}
+residuals(fit1, type="cor")
+```
+
+## Looking at modification indices
+
+Even though you can acquire modification indices be very mindful on what these might mean about your model. In **LGM** our predictors are more than just items. Our main goal is to investigate how our measurements change across time points.
+
+```{r}
+modificationindices(fit1)
+```
+
+## Constraining our Time Point Measurements 
+
+We can leave our observed residual variances free to be estimated but constrain all of them to be the same.
+
+Does this ring a bell in terms of **hierarchical linear models?**
+
+```{r}
+lgm_model2 <- '
+i =~ 1*T0 + 1*T1 +1*T2 +1*T3
+s =~ 0*T0 + 1*T1 +2*T2 +3*T3
+T0 ~~ a*T0
+T1 ~~ a*T1
+T2 ~~ a*T2
+T3 ~~ a*T3
+'
+fit2 <- growth(lgm_model2, data = simulated_data1)
+summary(fit2, standardized=TRUE, fit.measures=TRUE)
+```
+
+## Is this a better model? Or the same?
+
+Based on the output above is **model2** better than **model1**?
+
+## Visualization
+
+Typically you could acquire this at the start so you can get a feel of your data.
+
+```{r}
+library(lcsm)
+
+plot_trajectories(data = simulated_data1,
+                  id_var = "id", 
+                  var_list = c("T0", "T1", "T2", "T3"),
+                  xlab = "Time points T0-T3",
+                  ylab = "Measurement",
+                  line_colour = "black")
+```
+
+## Can we also add a predictor to your model?
+
+Let us consider the research question that **gender** can predict differences in the **slope** and **intercept** latent variables. In other words, I want to explore whether there are **gender** differences in our longitudinal measurement.
+
+Before we move on I want you to think now in terms of **endogenous** and **exogenous** variables.
+
+![](predictor.JPG){width="340"}
+
+## Coding a predictor in our model
+
+```{r}
+lgm_model3 <- '
+i =~ 1*T0 + 1*T1 +1*T2 +1*T3
+s =~ 0*T0 + 1*T1 +2*T2 +3*T3
+i ~ gender
+s ~ gender
+T0 ~~ a*T0
+T1 ~~ a*T1
+T2 ~~ a*T2
+T3 ~~ a*T3
+'
+fit3 <- growth(lgm_model3, data = simulated_data1)
+summary(fit3, standardized=TRUE, fit.measures=TRUE)
+```
+
+## This week's exercises/challenges
+
+**Exercise 1:**
+
+I want you to specify the mode3 in lavaan but write all the necessary components in order to run it using the **cfa()** instead of **growth()**.
+
+In other words think in terms of specifying, fixing, and freeing parameters as we would have done in a **CFAt** in order to acquire the exact same values in your output. You can find the relevant project in our Posit Cloud under the name **Week 6 exercise**.
+
+**Exercise 2:**
+
+I want you to modify **model1** in order to test for **a quadratic projection instead of a linear one**. Think in terms of how a quadratic relation works and amend the slope accordingly.
