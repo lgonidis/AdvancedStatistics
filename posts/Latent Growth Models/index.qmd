@@ -162,7 +162,7 @@ Even though you can acquire modification indices be very mindful on what these m
 modificationindices(fit1)
 ```
 
-## Constraining our Time Point Measurements 
+## Constraining our Time Point Measurements
 
 We can leave our observed residual variances free to be estimated but constrain all of them to be the same.
 

@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "AdvancedStatistics",
     "section": "",
-    "text": "Assignment 1\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nLatent Growth Models\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nConfirmatory Factor Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 19, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nExploratory Factor Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 10, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to S.E.M\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 7, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Advanced Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Mediation\n\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\nNo matching items"
+    "text": "Assignment 1\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nMeta-Analysis I\n\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nLatent Growth Models\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nConfirmatory Factor Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 19, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nExploratory Factor Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 10, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to S.E.M\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 7, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Advanced Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Mediation\n\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -1426,5 +1426,264 @@
     "title": "Latent Growth Models",
     "section": "This week’s exercises/challenges",
     "text": "This week’s exercises/challenges\nExercise 1:\nI want you to specify the mode3 in lavaan but write all the necessary components in order to run it using the cfa() instead of growth().\nIn other words think in terms of specifying, fixing, and freeing parameters as we would have done in a CFAt in order to acquire the exact same values in your output. You can find the relevant project in our Posit Cloud under the name Week 6 exercise.\nExercise 2:\nI want you to modify model1 in order to test for a quadratic projection instead of a linear one. Think in terms of how a quadratic relation works and amend the slope accordingly."
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#todays-aims",
+    "href": "posts/Meta Analysis I/index.html#todays-aims",
+    "title": "Meta-Analysis I",
+    "section": "Today’s Aims",
+    "text": "Today’s Aims\nToday we will discuss meta-analysis as a statistical technique to synthesize results from different studies.\nThe main aim of a meta-analysis is to assess the evidence as presented across a number of similar studies. This assessment can help us establish whether there is a true effect, especially in the case of conflicting findings."
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#what-can-meta-analysis-tell-us",
+    "href": "posts/Meta Analysis I/index.html#what-can-meta-analysis-tell-us",
+    "title": "Meta-Analysis I",
+    "section": "What can meta-analysis tell us?",
+    "text": "What can meta-analysis tell us?\nAs mentioned in, Field, A. P., & Gillett, R. (2010). How to do a meta‐analysis. British Journal of Mathematical and Statistical Psychology, 63(3), 665-694.\n\nMean and variance of underlying population effects\nVariability in effects across studies\nModerator variables"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#strengths-of-meta-analysis",
+    "href": "posts/Meta Analysis I/index.html#strengths-of-meta-analysis",
+    "title": "Meta-Analysis I",
+    "section": "Strengths of meta-analysis",
+    "text": "Strengths of meta-analysis\n\nMeta-analysis can go beyond the answers provided in individual studies\nIt can also improve precision of findings as it includes more information\nStatistically, we have increased power in a meta-analysis compared to individual studies\nAs mentioned above, we can shed more light in the case of conflicting results\nMakes is possible to compare subgroups\n\nActually plenty of other strenghts …"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#weaknesses-of-meta-analysis",
+    "href": "posts/Meta Analysis I/index.html#weaknesses-of-meta-analysis",
+    "title": "Meta-Analysis I",
+    "section": "Weaknesses of meta-analysis",
+    "text": "Weaknesses of meta-analysis\n\nPublication bias, meta-analysis is primarily relying on published results\nSmall studies vs large studies\nHeterogeneity (we will discuss this in greater detail)\nFixed vs Random Effect (we will discuss this in greater detail)\n\nActually plenty of other limitations …"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#carrying-out-meta-analysis-is-simple-right",
+    "href": "posts/Meta Analysis I/index.html#carrying-out-meta-analysis-is-simple-right",
+    "title": "Meta-Analysis I",
+    "section": "Carrying out meta-analysis is simple, right?",
+    "text": "Carrying out meta-analysis is simple, right?"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#well-let-us-see-a-published-example",
+    "href": "posts/Meta Analysis I/index.html#well-let-us-see-a-published-example",
+    "title": "Meta-Analysis I",
+    "section": "Well let us see a published example",
+    "text": "Well let us see a published example"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#well-let-us-see-a-published-example-1",
+    "href": "posts/Meta Analysis I/index.html#well-let-us-see-a-published-example-1",
+    "title": "Meta-Analysis I",
+    "section": "Well let us see a published example",
+    "text": "Well let us see a published example"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#well-let-us-see-a-published-example-2",
+    "href": "posts/Meta Analysis I/index.html#well-let-us-see-a-published-example-2",
+    "title": "Meta-Analysis I",
+    "section": "Well let us see a published example",
+    "text": "Well let us see a published example"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#technically-it-is-simple-in-practice-it-is-not",
+    "href": "posts/Meta Analysis I/index.html#technically-it-is-simple-in-practice-it-is-not",
+    "title": "Meta-Analysis I",
+    "section": "Technically it is simple, in practice it is not",
+    "text": "Technically it is simple, in practice it is not\n\nWe should carry out a literature review\nWe should have a research question/hypothesis (hmm not before the literature review?)\nWe should have a list of inclusion/exclusion criteria\nWe should then carry out a literature review (again?)\nCollate statistical findings, calculate effect sizes\n\nCarry out the statistical analysis (wait, is the calculation of effect sizes not part of this?). Also referred to as basic meta-analysis\nYou might also want to carry out more advanced statistical analysis e.g., moderator analysis\n\nReport your findings"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#in-practice-it-is-more-complex",
+    "href": "posts/Meta Analysis I/index.html#in-practice-it-is-more-complex",
+    "title": "Meta-Analysis I",
+    "section": "In practice it is more complex",
+    "text": "In practice it is more complex\nIn practice, all of the above steps require extensive reading and clear decision making based on sound understanding of your research field and the statistics behind effect sizes and meta-analysis."
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#first-thing-first-well-not-really",
+    "href": "posts/Meta Analysis I/index.html#first-thing-first-well-not-really",
+    "title": "Meta-Analysis I",
+    "section": "First thing first, well not really!",
+    "text": "First thing first, well not really!\nToday we will start from step 5. Collate statistical findings, calculate effect sizes.\nEffect Size\nQuite often, the effect size is reported and can be directly extracted, not always though. In order to perform a meta-analysis we need effect sizes and we have to choose wisely as they can affect our results.\n\nComputable\nComparable\nReliable\nInterpretable\n\nFor more details you can see Higgins, Julian, James Thomas, Jacqueline Chandler, Miranda Cumpston, Tianjing Li, Matthew J Page, and Vivian A Welch. 2019. Cochrane Handbook for Systematic Reviews of Interventions. John Wiley & Sons."
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#so-what-is-effect-size",
+    "href": "posts/Meta Analysis I/index.html#so-what-is-effect-size",
+    "title": "Meta-Analysis I",
+    "section": "So what is effect size?",
+    "text": "So what is effect size?\nYou most probably have come across the term effect size in the past, in general terms it is a metric of the magnitude of the difference or relationship between variables. A larger effect size denotes a more meaningful difference/relationship between variables. If we consider two arithmetic means \\(\\bar{x}_1\\) and \\(\\bar{x}_2\\) then we can use Cohen’s d effect size.\nCohen’s d\n\\(d = \\frac{{\\bar{x}_1 - \\bar{x}_2}}{{s_p}}\\)\nwhere\n\\(\\bar{x}_1\\) and \\(\\bar{x}_2\\) are the mean of the two groups, and \\(s_p\\) is the pooled standard deviation defined as:\n\\(s_p = \\sqrt{\\frac{{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}}{{n_1 + n_2 - 2}}}\\)"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#a-cautionary-tale",
+    "href": "posts/Meta Analysis I/index.html#a-cautionary-tale",
+    "title": "Meta-Analysis I",
+    "section": "A cautionary tale",
+    "text": "A cautionary tale\nDo not be misguided by the word effect. There is no suggestion of causality hence you should not interpret it as such. Instead, you should treat effect size with caution.\nAlso, keep in mind that we will be working with measures of central tendency, so we need to be cautious and not automatically label everything as effect size. Furthermore, our observed effect size \\(\\hat{\\theta}_1\\) from a study 1 is only an estimate of the true effect size \\(\\theta\\). Therefore, it is subdue to sampling error:\n\\(\\hat{\\theta}_i= {\\theta}_i + {\\epsilon}_i\\)"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#we-can-see-a-very-basic-example-here",
+    "href": "posts/Meta Analysis I/index.html#we-can-see-a-very-basic-example-here",
+    "title": "Meta-Analysis I",
+    "section": "We can see a very basic example here",
+    "text": "We can see a very basic example here\n\n\nCode\nset.seed(23234)\nsample1 &lt;- rnorm(n=250, mean = 100, sd = 15)\n\nmean(sample1)\n\n\n[1] 100.4061"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#we-can-see-a-very-basic-example-here-1",
+    "href": "posts/Meta Analysis I/index.html#we-can-see-a-very-basic-example-here-1",
+    "title": "Meta-Analysis I",
+    "section": "We can see a very basic example here",
+    "text": "We can see a very basic example here\nWe can now repeat this process 1,000 times and calculate the standard deviation of this sampling distribution. This is our standard error of the mean.\n\n\nCode\nsamplemean &lt;- data.frame(m=1:1000,s=1:1000)\nfor (i in 1:1000) {\n  sample1 &lt;- rnorm(n=250, mean = 100, sd = 15)\n  samplemean$m[i] &lt;- mean(sample1)\n  samplemean$s[i] &lt;- sd(sample1)\n}\nhist(samplemean$m, breaks = 20)"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#standard-error-of-the-mean",
+    "href": "posts/Meta Analysis I/index.html#standard-error-of-the-mean",
+    "title": "Meta-Analysis I",
+    "section": "Standard error of the mean",
+    "text": "Standard error of the mean\n\\(SE=\\frac{s}{\\sqrt{n}}\\)\n\n\nCode\nsd(samplemean$m)\n\n\n[1] 0.9708343\n\n\nCode\nsd(sample1)/sqrt(250)\n\n\n[1] 1.041905\n\n\nWe can observe that the two values are similar but not quite the same."
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#standard-error-of-the-mean-1",
+    "href": "posts/Meta Analysis I/index.html#standard-error-of-the-mean-1",
+    "title": "Meta-Analysis I",
+    "section": "Standard error of the mean",
+    "text": "Standard error of the mean\n\\(SE=\\frac{s}{\\sqrt{n}}\\) We can also see that our value will depend on the sample size \\(n\\). The larger our sample size, the larger our denominator will be, hence the smaller our standard error.\n\n\nCode\nsamplemean2 &lt;- data.frame(n=1:999, m=1:999,se=1:999)\nfor (i in 2:1000) {\n  sample1 &lt;- rnorm(n=i, mean = 100, sd = 15)\n  samplemean2$n[i-1] &lt;- i\n  samplemean2$m[i-1] &lt;- mean(sample1)\n  samplemean2$se[i-1] &lt;- sd(sample1)/sqrt(i)\n}\nlibrary(ggplot2)\nggplot(samplemean2, aes(x=n, y=m))+\n  geom_line()+\n  labs(x = \"Sample Size\")+\n  labs(y = \"Mean\")"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#standard-error-of-the-mean-2",
+    "href": "posts/Meta Analysis I/index.html#standard-error-of-the-mean-2",
+    "title": "Meta-Analysis I",
+    "section": "Standard error of the mean",
+    "text": "Standard error of the mean\n\n\nCode\nggplot(samplemean2, aes(x=n, y=se))+\n  geom_line()+\n  labs(x = \"Sample Size\")+\n  labs(y = \"Standard Error\")\n\n\n\nWhat are the implications of these two plots on the Cohen’s d?\n\\(d = \\frac{{\\bar{x}_1 - \\bar{x}_2}}{{s_p}}\\)\n\\(s_p = \\sqrt{\\frac{{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}}{{n_1 + n_2 - 2}}}\\)\nRequired figures: sample size, mean, and standard deviation of each study"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#proportions-and-effect-size",
+    "href": "posts/Meta Analysis I/index.html#proportions-and-effect-size",
+    "title": "Meta-Analysis I",
+    "section": "Proportions and effect size",
+    "text": "Proportions and effect size\nBesides arithmetic means as measures of central tendency we may also work with paradigms using proportions. In order to calculate a proportion we need to divide the number of observation \\(j\\) that have a characteristic by the total sample size \\(n\\)\n\\(p=\\frac{j}{n}\\)\n\\(SE_p=\\sqrt{\\frac{p(1-p)}{n}}\\)"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#proportions-and-effect-size-1",
+    "href": "posts/Meta Analysis I/index.html#proportions-and-effect-size-1",
+    "title": "Meta-Analysis I",
+    "section": "Proportions and effect size",
+    "text": "Proportions and effect size\nLet us see a basic example. We have sample of 250 observations with 100 of them exhibiting a specific behaviour.\n\n\nCode\nn &lt;- 250\nj &lt;- 100\np &lt;- j/n\nse &lt;- sqrt((p*(1-p))/n)\np\n\n\n[1] 0.4\n\n\nCode\nse\n\n\n[1] 0.03098387\n\n\nProportions can be problematic in terms of standard error as they can only vary between 0 and 1. Can you think of the reason why?"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#transforming-proportions",
+    "href": "posts/Meta Analysis I/index.html#transforming-proportions",
+    "title": "Meta-Analysis I",
+    "section": "Transforming proportions",
+    "text": "Transforming proportions\nIn order to avoid this limitation we logit-transform proportions after we calculate the odds. The formulae for this process are:\n\\(p_{logit}=log_e(\\frac{p}{1-p})\\)\n\\(SE_{plogit}=\\sqrt{{\\frac{1}{np}}+\\frac{1}{n(1-p)}}\\)\nRequired figures: Sample size and the number of observations with a specific characteristic"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#correlations",
+    "href": "posts/Meta Analysis I/index.html#correlations",
+    "title": "Meta-Analysis I",
+    "section": "Correlations",
+    "text": "Correlations\nThe correlation expresses the amount of covariance between two variables, the most commonly used is the Pearson correlation (for continuous variables).\n\\(r_{xy}=\\frac{\\sigma^2_{xy}}{\\sigma_x\\sigma_y}\\)\n\\(SE_{r_{xy}}=\\frac{1-r^2_{xy}}{\\sqrt{n-2}}\\)\nReminder 1: this is a standardized score which means we can immediately compare correlations between variables that are not necessarily on the same scale.\nReminder 2: correlations are scores that naturally vary between -1 and 1. Does this bring in mind any potential problems?"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#fishers-z-transformation-of-correlations",
+    "href": "posts/Meta Analysis I/index.html#fishers-z-transformation-of-correlations",
+    "title": "Meta-Analysis I",
+    "section": "Fisher’s \\(z\\) transformation of correlations",
+    "text": "Fisher’s \\(z\\) transformation of correlations\n\\(z=0.5log_e(\\frac{1+r}{1-r})\\)\n\\(SE_z=\\frac{1}{\\sqrt{n-3}}\\)\nRequired figures: correlation coefficient and sample size"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#more-experimental-paradigms-and-effect-size-corrections",
+    "href": "posts/Meta Analysis I/index.html#more-experimental-paradigms-and-effect-size-corrections",
+    "title": "Meta-Analysis I",
+    "section": "More experimental paradigms and Effect size corrections",
+    "text": "More experimental paradigms and Effect size corrections\nNext week we will present more cases experimental designs and how we can calculate SE and effect sizes. Furthermore, we will discuss how we can correct our effect sizes to account for systematic biases such as small sizes."
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#fixed-effect-vs-random-effects-model",
+    "href": "posts/Meta Analysis I/index.html#fixed-effect-vs-random-effects-model",
+    "title": "Meta-Analysis I",
+    "section": "Fixed-Effect vs Random-Effects Model",
+    "text": "Fixed-Effect vs Random-Effects Model\nTypically in statistical models we work with either fixed-effect or random-effect models.\nFixed-effect models assume that all the effect sizes in our studies are derived from a homogeneous population with a fixed effect size. This means that our sample effect sizes are also homogeneous.\nRandom-effect models assume our population effect size varies randomly between our studies, therefore we should not assume that our sample sizes are homogeneous.\nIn practice, fixed-effect models have one error term and random-effect models have two error terms."
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#fixed-effect-vs-random-effects-model-1",
+    "href": "posts/Meta Analysis I/index.html#fixed-effect-vs-random-effects-model-1",
+    "title": "Meta-Analysis I",
+    "section": "Fixed-Effect vs Random-Effects Model",
+    "text": "Fixed-Effect vs Random-Effects Model\nIn our fixed-effect model our observed effect size in all studies deviates from the true effect size due to sampling error.\n\\(\\hat{\\theta}_i= \\theta + {\\epsilon}_i\\)\nIn our random-effect model our study’s observed effect size deviates from our study’s true effect size due to sampling error.\n\\(\\hat{\\theta}_i= \\theta_i + {\\epsilon}_i\\)\nThere is however a second error, that of our study’s true effect size deviating from the overarching distribution of effect sizes with a mean score of \\(\\mu\\)\n\\(\\theta_i= \\mu + {\\zeta}_i\\)\nTherefore, our study’s effect size deviates from the overall \\(\\mu\\) by two error terms.\n\\(\\hat{\\theta}_i= \\mu + {\\zeta}_i+ {\\epsilon}_i\\)"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#exchangeability-assumption-of-random-effects-model",
+    "href": "posts/Meta Analysis I/index.html#exchangeability-assumption-of-random-effects-model",
+    "title": "Meta-Analysis I",
+    "section": "Exchangeability assumption of random-effects model",
+    "text": "Exchangeability assumption of random-effects model\nThe exchangeability assumption in random-effects model dictates that our \\({\\zeta}_i\\) error from the superpopulation mean \\(\\mu\\) should be independent of \\(i\\). In other words, we cannot know in advance if \\({\\zeta}_i\\) in one study is going to be larger or smaller that the \\({\\zeta}_j\\) in another study. What does this mean for the true effect sizes for each of the study?"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#thanks-for-the-headache-but-which-model-should-i-use",
+    "href": "posts/Meta Analysis I/index.html#thanks-for-the-headache-but-which-model-should-i-use",
+    "title": "Meta-Analysis I",
+    "section": "Thanks for the headache but which model should I use?",
+    "text": "Thanks for the headache but which model should I use?\nWell as usual I have the perfect answer for you, can you guess it?\nYou can get more information on the debate on which method is more suitable for different cases here:\nhttps://journals.sagepub.com/doi/10.1177/25152459221120427\nOther authors also suggest that random-effects should be the go-to approach:\nhttps://jamiefield.github.io/files/Field%20and%20Gillett%20(2010).%20How%20to%20do%20a%20meta-analysis..pdf"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#between-study-heterogeneity",
+    "href": "posts/Meta Analysis I/index.html#between-study-heterogeneity",
+    "title": "Meta-Analysis I",
+    "section": "Between-Study Heterogeneity",
+    "text": "Between-Study Heterogeneity\nAssuming we decided to go for the random-effects model approach it instantly becomes apparent that we are facing the challenge of accounting for the \\({\\zeta}_i\\) error.\nWe will address this by estimating the variance of the distribution of true effect sizes, also known as \\(\\tau^2\\) (tau-squared).\nThere are multiple estimators that you can use, DerSimonian-Laird (\"DL\"), Restricted Maximum Likelihood (\"REML\"), Maximum Likelihood (\"ML\"), Empirical Bayes (\"EB\"), The Sidik-Jonkman (\"SJ\")  are only some examples.\nFor more information you can read:\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC4950030/"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#which-estimator-should-we-use",
+    "href": "posts/Meta Analysis I/index.html#which-estimator-should-we-use",
+    "title": "Meta-Analysis I",
+    "section": "Which estimator should we use?",
+    "text": "Which estimator should we use?\nAs a rule of thumb, if you have continuous outcomes you can use maximum likelihood.\nIf you are concerned that you have very high heterogeneity you can use Sidik-Jonkman\nIt has also been suggested that DerSimonian-Laird allows for more reproducible findings. This is because this estimator uses a formula contrary to ML that uses an iterative algorithm."
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#which-package-should-i-use",
+    "href": "posts/Meta Analysis I/index.html#which-package-should-i-use",
+    "title": "Meta-Analysis I",
+    "section": "Which package should I use?",
+    "text": "Which package should I use?\nWe will be mainly using metafor although you can also use meta if you want.\nWe will also use metadat package that has datasets for education purposes specifically for meta-analysis.\nThere are also other packages which I have not used so I will be quite limited in supporting you with other packages."
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#lets-work-through-an-example",
+    "href": "posts/Meta Analysis I/index.html#lets-work-through-an-example",
+    "title": "Meta-Analysis I",
+    "section": "Lets work through an example",
+    "text": "Lets work through an example\n\n\nCode\nlibrary(tidyverse)\nlibrary(metafor)\nlibrary(metadat)\n\ndf &lt;- get(data(dat.molloy2014))\n\nhead(df)\n\n\n              authors year  ni    ri controls          design   a_measure\n1     Axelsson et al. 2009 109 0.187     none cross-sectional self-report\n2     Axelsson et al. 2011 749 0.162     none cross-sectional self-report\n3        Bruce et al. 2010  55 0.340     none     prospective       other\n4  Christensen et al. 1999 107 0.320     none cross-sectional self-report\n5 Christensen & Smith 1995  72 0.270     none     prospective       other\n6        Cohen et al. 2004  65 0.000     none     prospective       other\n  c_measure meanage quality\n1     other   22.00       1\n2       NEO   53.59       1\n3       NEO   43.36       2\n4     other   41.70       1\n5       NEO   46.39       2\n6       NEO   41.20       2"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#keep-only-the-relevant-variables-and-add-id",
+    "href": "posts/Meta Analysis I/index.html#keep-only-the-relevant-variables-and-add-id",
+    "title": "Meta-Analysis I",
+    "section": "Keep only the relevant variables and add id",
+    "text": "Keep only the relevant variables and add id\n\n\nCode\ndf &lt;- df |&gt; \n  select(1:6)\ndf &lt;- df |&gt; \n  mutate(id=row_number())\nhead(df)\n\n\n              authors year  ni    ri controls          design id\n1     Axelsson et al. 2009 109 0.187     none cross-sectional  1\n2     Axelsson et al. 2011 749 0.162     none cross-sectional  2\n3        Bruce et al. 2010  55 0.340     none     prospective  3\n4  Christensen et al. 1999 107 0.320     none cross-sectional  4\n5 Christensen & Smith 1995  72 0.270     none     prospective  5\n6        Cohen et al. 2004  65 0.000     none     prospective  6"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#remember-pearsons-correlation-coefficient-limitation",
+    "href": "posts/Meta Analysis I/index.html#remember-pearsons-correlation-coefficient-limitation",
+    "title": "Meta-Analysis I",
+    "section": "Remember Pearson’s correlation coefficient limitation?",
+    "text": "Remember Pearson’s correlation coefficient limitation?\nWe will transform to FIscher’s \\(z\\)\n\n\nCode\ndf &lt;- escalc(measure = \"ZCOR\", ri=ri, ni=ni, data=df, slab = paste(authors, year, sep=\",\"))\n\nhead(df)\n\n\n\n              authors year  ni    ri controls          design id     yi     vi \n1     Axelsson et al. 2009 109 0.187     none cross-sectional  1 0.1892 0.0094 \n2     Axelsson et al. 2011 749 0.162     none cross-sectional  2 0.1634 0.0013 \n3        Bruce et al. 2010  55 0.340     none     prospective  3 0.3541 0.0192 \n4  Christensen et al. 1999 107 0.320     none cross-sectional  4 0.3316 0.0096 \n5 Christensen & Smith 1995  72 0.270     none     prospective  5 0.2769 0.0145 \n6        Cohen et al. 2004  65 0.000     none     prospective  6 0.0000 0.0161"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#random-effects-size",
+    "href": "posts/Meta Analysis I/index.html#random-effects-size",
+    "title": "Meta-Analysis I",
+    "section": "Random-Effects Size",
+    "text": "Random-Effects Size\n\n\nCode\nma.res &lt;- rma(yi, vi, data=df)\nma.res\n\n\n\nRandom-Effects Model (k = 16; tau^2 estimator: REML)\n\ntau^2 (estimated amount of total heterogeneity): 0.0081 (SE = 0.0055)\ntau (square root of estimated tau^2 value):      0.0901\nI^2 (total heterogeneity / total variability):   61.73%\nH^2 (total variability / sampling variability):  2.61\n\nTest for Heterogeneity:\nQ(df = 15) = 38.1595, p-val = 0.0009\n\nModel Results:\n\nestimate      se    zval    pval   ci.lb   ci.ub      \n  0.1499  0.0316  4.7501  &lt;.0001  0.0881  0.2118  *** \n\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#prediction-and-confidence-intervals",
+    "href": "posts/Meta Analysis I/index.html#prediction-and-confidence-intervals",
+    "title": "Meta-Analysis I",
+    "section": "Prediction and confidence intervals",
+    "text": "Prediction and confidence intervals\n\n\nCode\npredict(ma.res)\n\n\n\n   pred     se  ci.lb  ci.ub   pi.lb  pi.ub \n 0.1499 0.0316 0.0881 0.2118 -0.0371 0.3370 \n\n\nCode\nconfint(ma.res)\n\n\n\n       estimate   ci.lb   ci.ub \ntau^2    0.0081  0.0017  0.0378 \ntau      0.0901  0.0412  0.1944 \nI^2(%)  61.7324 25.2799 88.2545 \nH^2      2.6132  1.3383  8.5139"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#exploring-for-influencial-studies",
+    "href": "posts/Meta Analysis I/index.html#exploring-for-influencial-studies",
+    "title": "Meta-Analysis I",
+    "section": "Exploring for influencial studies",
+    "text": "Exploring for influencial studies\n\n\nCode\nma.inf &lt;- influence(ma.res)\nprint(ma.inf)\n\n\n\n                         rstudent  dffits cook.d  cov.r tau2.del  QE.del    hat \nAxelsson et al.,2009       0.2918  0.0485 0.0025 1.1331   0.0091 37.7109 0.0568 \nAxelsson et al.,2011       0.1196 -0.0031 0.0000 1.2595   0.0100 36.7672 0.1054 \nBruce et al.,2010          1.2740  0.2595 0.0660 0.9942   0.0075 35.3930 0.0364 \nChristensen et al.,1999    1.4711  0.3946 0.1439 0.9544   0.0068 33.5886 0.0562 \nChristensen & Smith,1995   0.8622  0.1838 0.0339 1.0505   0.0082 36.5396 0.0441 \nCohen et al.,2004         -0.9795 -0.2121 0.0455 1.0639   0.0084 37.1703 0.0411 \nDobbels et al.,2005        0.2177  0.0296 0.0010 1.1740   0.0094 37.6797 0.0714 \nEdiger et al.,2007        -0.9774 -0.3120 0.1001 1.1215   0.0084 36.1484 0.0889 \nInsel et al.,2006          0.7264  0.1392 0.0195 1.0561   0.0083 37.0495 0.0379 \nJerant et al.,2011        -1.8667 -0.5861 0.2198 0.8502   0.0047 25.0661 0.1058 \nMoran et al.,1997         -1.4985 -0.2771 0.0756 1.0073   0.0077 35.6617 0.0369 \nO'Cleirigh et al.,2007     1.8776  0.4918 0.2148 0.8819   0.0059 31.9021 0.0511 \nPenedo et al.,2003        -1.1892 -0.2939 0.0859 1.0550   0.0080 36.3291 0.0587 \nQuine et al.,2012         -0.0020 -0.0423 0.0021 1.2524   0.0100 37.7339 0.0998 \nStilley et al.,2004        0.8066  0.2126 0.0459 1.0907   0.0083 35.8385 0.0684 \nWiebe & Christensen,1997  -0.7160 -0.1656 0.0280 1.0853   0.0087 37.7017 0.0411 \n                          weight    dfbs inf \nAxelsson et al.,2009      5.6776  0.0481     \nAxelsson et al.,2011     10.5396 -0.0032     \nBruce et al.,2010         3.6432  0.2623     \nChristensen et al.,1999   5.6195  0.3994     \nChristensen & Smith,1995  4.4069  0.1837     \nCohen et al.,2004         4.1094 -0.2112     \nDobbels et al.,2005       7.1362  0.0296     \nEdiger et al.,2007        8.8886 -0.3128     \nInsel et al.,2006         3.7886  0.1387     \nJerant et al.,2011       10.5826 -0.5430     \nMoran et al.,1997         3.6922 -0.2791     \nO'Cleirigh et al.,2007    5.1150  0.5059     \nPenedo et al.,2003        5.8732 -0.2941     \nQuine et al.,2012         9.9778 -0.0434     \nStilley et al.,2004       6.8403  0.2125     \nWiebe & Christensen,1997  4.1094 -0.1642     \n\n\nCode\nplot(ma.inf)"
   }
 ]

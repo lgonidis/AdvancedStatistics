@@ -1,0 +1,435 @@
+---
+title: "Meta-Analysis I"
+format: 
+  revealjs:
+    theme: league
+    transition: slide
+    background-transition: zoom
+    slide-number: c/t
+    show-slide-number: all
+    chalkboard: true
+    background-size: cover
+    smaller: true
+    echo: true
+    code-fold: true
+    code-summary: "Show the code"
+author: "Dr Lazaros Gonidis"
+date: "2024-03-12"
+image: "image1.jpg"
+---
+
+## Today's Aims
+
+Today we will discuss meta-analysis as a statistical technique to synthesize results from different studies.
+
+The main aim of a meta-analysis is to assess the evidence as presented across a number of similar studies. This assessment can help us establish whether there is a true effect, especially in the case of conflicting findings.
+
+## What can meta-analysis tell us?
+
+As mentioned in, Field, A. P., & Gillett, R. (2010). How to do a meta‐analysis. *British Journal of Mathematical and Statistical Psychology*, *63*(3), 665-694.
+
+1.  Mean and variance of underlying population effects
+2.  Variability in effects across studies
+3.  Moderator variables
+
+## Strengths of meta-analysis
+
+1.  Meta-analysis can go beyond the answers provided in individual studies
+2.  It can also improve precision of findings as it includes more information
+3.  Statistically, we have increased power in a meta-analysis compared to individual studies
+4.  As mentioned above, we can shed more light in the case of conflicting results
+5.  Makes is possible to compare subgroups
+
+Actually plenty of other strenghts ...
+
+## Weaknesses of meta-analysis
+
+1.  Publication bias, meta-analysis is primarily relying on published results
+2.  Small studies vs large studies
+3.  Heterogeneity (we will discuss this in greater detail)
+4.  Fixed vs Random Effect (we will discuss this in greater detail)
+
+Actually plenty of other limitations ...
+
+## Carrying out meta-analysis is simple, right?
+
+![](anakin.jpg)
+
+## Well let us see a published example
+
+![](abstract.JPG){width="534"}
+
+## Well let us see a published example
+
+![](inclusion.jpg){width="441"}
+
+## Well let us see a published example
+
+![](forest.jpg){width="554"}
+
+## Technically it is simple, in practice it is not
+
+1.  We should carry out a literature review
+2.  We should have a research question/hypothesis (hmm not before the literature review?)
+3.  We should have a list of inclusion/exclusion criteria
+4.  We should then carry out a literature review (again?)
+5.  Collate statistical findings, calculate effect sizes
+6.  
+    1.  Carry out the statistical analysis (wait, is the calculation of effect sizes not part of this?). Also referred to as basic meta-analysis
+    2.  You might also want to carry out more advanced statistical analysis e.g., *moderator analysis*
+7.  Report your findings
+
+## In practice it is more complex
+
+In practice, all of the above steps require extensive reading and clear decision making based on sound understanding of your research field and the statistics behind effect sizes and meta-analysis.
+
+## First thing first, well not really!
+
+Today we will start from step 5. Collate statistical findings, calculate **effect sizes**.
+
+***Effect Size***
+
+Quite often, the effect size is reported and can be directly extracted, not always though. In order to perform a meta-analysis we need **effect sizes** and we have to choose wisely as they can affect our results.
+
+1.  **Computable**
+2.  **Comparable**
+3.  **Reliable**
+4.  **Interpretable**
+
+For more details you can see Higgins, Julian, James Thomas, Jacqueline Chandler, Miranda Cumpston, Tianjing Li, Matthew J Page, and Vivian A Welch. 2019. *Cochrane Handbook for Systematic Reviews of Interventions*. John Wiley & Sons.
+
+## So what is effect size?
+
+You most probably have come across the term **effect size** in the past, in general terms it is a metric of the **magnitude** of the difference or relationship between variables. A larger effect size denotes a more meaningful difference/relationship between variables. If we consider two arithmetic means $\bar{x}_1$ and $\bar{x}_2$ then we can use Cohen's d effect size.
+
+**Cohen’s *d***
+
+$d = \frac{{\bar{x}_1 - \bar{x}_2}}{{s_p}}$
+
+where
+
+$\bar{x}_1$ and $\bar{x}_2$ are the mean of the two groups, and $s_p$ is the pooled standard deviation defined as:
+
+$s_p = \sqrt{\frac{{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}}{{n_1 + n_2 - 2}}}$
+
+## A cautionary tale
+
+Do not be misguided by the word **effect**. There is no suggestion of **causality** hence you should not interpret it as such. Instead, you should treat **effect size** with caution.
+
+Also, keep in mind that we will be working with measures of central tendency, so we need to be cautious and not automatically label everything as **effect size**. Furthermore, our observed effect size $\hat{\theta}_1$ from a study 1 is only an estimate of the true effect size $\theta$. Therefore, it is subdue to sampling error:
+
+$\hat{\theta}_i= {\theta}_i + {\epsilon}_i$
+
+## We can see a very basic example here
+
+```{r}
+set.seed(23234)
+sample1 <- rnorm(n=250, mean = 100, sd = 15)
+
+mean(sample1)
+```
+
+## We can see a very basic example here
+
+We can now repeat this process 1,000 times and calculate the standard deviation of this sampling distribution. This is our **standard error of the mean.**
+
+```{r}
+samplemean <- data.frame(m=1:1000,s=1:1000)
+for (i in 1:1000) {
+  sample1 <- rnorm(n=250, mean = 100, sd = 15)
+  samplemean$m[i] <- mean(sample1)
+  samplemean$s[i] <- sd(sample1)
+}
+hist(samplemean$m, breaks = 20)
+```
+
+## Standard error of the mean
+
+$SE=\frac{s}{\sqrt{n}}$
+
+```{r}
+sd(samplemean$m)
+sd(sample1)/sqrt(250)
+```
+
+We can observe that the two values are similar but not quite the same.
+
+## Standard error of the mean
+
+$SE=\frac{s}{\sqrt{n}}$ We can also see that our value will depend on the sample size $n$. The larger our sample size, the larger our denominator will be, hence the smaller our **standard error**.
+
+```{r}
+samplemean2 <- data.frame(n=1:999, m=1:999,se=1:999)
+for (i in 2:1000) {
+  sample1 <- rnorm(n=i, mean = 100, sd = 15)
+  samplemean2$n[i-1] <- i
+  samplemean2$m[i-1] <- mean(sample1)
+  samplemean2$se[i-1] <- sd(sample1)/sqrt(i)
+}
+library(ggplot2)
+ggplot(samplemean2, aes(x=n, y=m))+
+  geom_line()+
+  labs(x = "Sample Size")+
+  labs(y = "Mean")
+```
+
+## Standard error of the mean
+
+```{r}
+ggplot(samplemean2, aes(x=n, y=se))+
+  geom_line()+
+  labs(x = "Sample Size")+
+  labs(y = "Standard Error")
+```
+
+What are the implications of these two plots on the **Cohen’s *d?***
+
+$d = \frac{{\bar{x}_1 - \bar{x}_2}}{{s_p}}$
+
+$s_p = \sqrt{\frac{{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}}{{n_1 + n_2 - 2}}}$
+
+**Required figures: sample size, mean, and standard deviation of each study**
+
+## Proportions and effect size
+
+Besides arithmetic means as measures of central tendency we may also work with paradigms using **proportions**. In order to calculate a proportion we need to divide the number of observation $j$ that have a characteristic by the total sample size $n$
+
+$p=\frac{j}{n}$
+
+$SE_p=\sqrt{\frac{p(1-p)}{n}}$
+
+## Proportions and effect size
+
+Let us see a basic example. We have sample of 250 observations with 100 of them exhibiting a specific behaviour.
+
+```{r}
+n <- 250
+j <- 100
+p <- j/n
+se <- sqrt((p*(1-p))/n)
+p
+se
+```
+
+Proportions can be problematic in terms of **standard error** as they can only vary between **0** and **1**. Can you think of the reason why?
+
+## Transforming proportions
+
+In order to avoid this limitation we **logit-transform** proportions after we calculate the **odds**. The formulae for this process are:
+
+$p_{logit}=log_e(\frac{p}{1-p})$
+
+$SE_{plogit}=\sqrt{{\frac{1}{np}}+\frac{1}{n(1-p)}}$
+
+**Required figures: Sample size and the number of observations with a specific characteristic**
+
+## Correlations
+
+The correlation expresses the amount of covariance between two variables, the most commonly used is the Pearson correlation (for continuous variables).
+
+$r_{xy}=\frac{\sigma^2_{xy}}{\sigma_x\sigma_y}$
+
+$SE_{r_{xy}}=\frac{1-r^2_{xy}}{\sqrt{n-2}}$
+
+Reminder 1: this is a standardized score which means we can immediately compare correlations between variables that are not necessarily on the same scale.
+
+Reminder 2: correlations are scores that naturally vary between **-1** and **1**. Does this bring in mind any potential problems?
+
+## Fisher's $z$ transformation of correlations
+
+$z=0.5log_e(\frac{1+r}{1-r})$
+
+$SE_z=\frac{1}{\sqrt{n-3}}$
+
+**Required figures: correlation coefficient and sample size**
+
+## More experimental paradigms and Effect size corrections
+
+Next week we will present more cases experimental designs and how we can calculate **SE** and effect sizes. Furthermore, we will discuss how we can correct our **effect sizes** to account for systematic biases such as small sizes.
+
+## Fixed-Effect vs Random-Effects Model
+
+Typically in statistical models we work with either **fixed-effect** or **random-effect** models.
+
+**Fixed-effect models** assume that all the effect sizes in our studies are derived from a homogeneous population with a fixed effect size. This means that our sample effect sizes are also homogeneous.
+
+**Random-effect models** assume our population effect size varies randomly between our studies, therefore we should not assume that our sample sizes are homogeneous.
+
+In practice, **fixed-effect models** have one error term and **random-effect models** have two error terms.
+
+## Fixed-Effect vs Random-Effects Model
+
+In our fixed-effect model our observed effect size in all studies deviates from the **true effect size** due to sampling error.
+
+$\hat{\theta}_i= \theta + {\epsilon}_i$
+
+In our random-effect model **our study's observed effect size** deviates from **our study's true effect size** due to sampling error.
+
+$\hat{\theta}_i= \theta_i + {\epsilon}_i$
+
+There is however a second error, that of our study's true effect size deviating from the overarching distribution of effect sizes with a mean score of $\mu$
+
+$\theta_i= \mu + {\zeta}_i$
+
+Therefore, our study's effect size deviates from the overall $\mu$ by two error terms.
+
+$\hat{\theta}_i= \mu + {\zeta}_i+ {\epsilon}_i$
+
+## Exchangeability assumption of random-effects model
+
+The exchangeability assumption in random-effects model dictates that our ${\zeta}_i$ error from the superpopulation mean $\mu$ should be independent of $i$. In other words, we cannot know in advance if ${\zeta}_i$ in one study is going to be larger or smaller that the ${\zeta}_j$ in another study. What does this mean for the **true effect sizes** for each of the study?
+
+## Thanks for the headache but which model should I use?
+
+Well as usual I have the perfect answer for you, can you guess it?
+
+You can get more information on the debate on which method is more suitable for different cases here:
+
+<https://journals.sagepub.com/doi/10.1177/25152459221120427>
+
+Other authors also suggest that random-effects should be the go-to approach:
+
+<https://jamiefield.github.io/files/Field%20and%20Gillett%20(2010).%20How%20to%20do%20a%20meta-analysis..pdf>
+
+## Between-Study Heterogeneity
+
+Assuming we decided to go for the random-effects model approach it instantly becomes apparent that we are facing the challenge of accounting for the ${\zeta}_i$ error.
+
+We will address this by estimating the variance of the distribution of true effect sizes, also known as $\tau^2$ (**tau-squared**). This also a measure of heterogeneity among the true effect sizes (between studies variance).
+
+There are multiple estimators that you can use, **DerSimonian-Laird (`"DL"`)**, Restricted Maximum Likelihood (`"REML"`), Maximum Likelihood (`"ML"`), Empirical Bayes (`"EB"`), The **Sidik-Jonkman (`"SJ"`)**  are only some examples.
+
+For more information you can read:
+
+<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4950030/>
+
+## Which estimator should we use?
+
+As a rule of thumb, if you have continuous outcomes you can use maximum likelihood.
+
+If you are concerned that you have very high heterogeneity you can use Sidik-Jonkman
+
+It has also been suggested that DerSimonian-Laird allows for more reproducible findings. This is because this estimator uses a formula contrary to ML that uses an iterative algorithm.
+
+## Which package should I use?
+
+We will be mainly using **metafor** although you can also use **meta** if you want.
+
+We will also use **metadat** package that has datasets for education purposes specifically for meta-analysis.
+
+There are also other packages which I have not used so I will be quite limited in supporting you with other packages.
+
+## Lets work through an example
+
+```{r}
+library(tidyverse)
+library(metafor)
+library(metadat)
+
+df <- get(data(dat.molloy2014))
+
+head(df)
+```
+
+## Keep only the relevant variables and add id
+
+```{r}
+
+df <- df |> 
+  select(1:6)
+df <- df |> 
+  mutate(id=row_number())
+head(df)
+```
+
+## Remember Pearson's correlation coefficient limitation?
+
+We will transform to FIscher's $z$
+
+```{r}
+df <- escalc(measure = "ZCOR", ri=ri, ni=ni, data=df, slab = paste(authors, year, sep=","))
+
+head(df)
+```
+
+## Random-Effects Size
+
+```{r}
+ma.res <- rma(yi, vi, data=df)
+ma.res
+```
+
+## Heterogeneity Variance $\tau^2$ 
+
+This gives us an estimate of the variance of the true effect sizes. Similarly to the variance when we square root it we get the standard deviation. Therefore, $\tau$ is the standard deviation of the true effect sizes.
+
+Can you think of an advantage of the $\tau$ that $\tau^2$ does not offer?
+
+## Q-test
+
+**Q** approximates the chi-squared distribution with **k-1** degrees of freedom. Significant **Q-test** denotes significant between-study heterogeneity.
+
+However, be very careful and do not rely exclusively on the **Q-test**. Its values increases as the number of studies increases as well as when the sample size of study increases.
+
+Do not decide between fixed and random effects model based on this result.
+
+## The $I^2$ Higgins and Thompson Statistic
+
+$I^2=\frac{Q-(k-1)}{Q}$
+
+We can use the following rule of thumb:
+
+1.  \~25%, low heterogeneity
+2.  \~50% moderate heterogeneity
+3.  \~75% substantial heterogeneity
+4.  What about negative values?
+
+## The $H^2$ Higgins and Thompson Statistic
+
+$H^2=\frac{Q}{K-1}$
+
+Values greater than 1 indicate the presence of between-study heterogeneity
+
+## So which measure is more important?
+
+**Q**'s significance depends on the size of your pool. $I^2$ does not suffer from this limitation but it is still affected by the precision of the included studies, larger sample sizes will result in sampling error that will be approaching zero. $H^2$ shares similarities with $I^2$. Finally, $\tau^2$ does not have any of these limitations, but it is hard to interpret it as there are no rules of thumb. The best approach would be to report at least $\tau^2$, $I^2$, and $Q$ and examine them in conjunction. You should also report confidence and prediction intervals.
+
+## Prediction and confidence intervals
+
+```{r}
+predict(ma.res)
+confint(ma.res)
+```
+
+## Exploring for influencial studies
+
+```{r}
+ma.inf <- influence(ma.res)
+print(ma.inf)
+```
+
+## Plot
+
+```{r}
+plot(ma.inf)
+```
+
+## Forest Plot
+
+```{r}
+forest(ma.res)
+```
+
+## Funnel Plot
+
+Please be aware that these are not publication bias tests!
+
+```{r}
+funnel(ma.res)
+```
+
+## Small Study Bias
+
+```{r}
+regtest(ma.res)
+```
