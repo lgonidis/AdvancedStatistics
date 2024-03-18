@@ -684,7 +684,7 @@ Dr Lazaros Gonidis
 <section id="between-study-heterogeneity" class="slide level2">
 <h2>Between-Study Heterogeneity</h2>
 <p>Assuming we decided to go for the random-effects model approach it instantly becomes apparent that we are facing the challenge of accounting for the <span class="math inline">\({\zeta}_i\)</span> error.</p>
-<p>We will address this by estimating the variance of the distribution of true effect sizes, also known as <span class="math inline">\(\tau^2\)</span> (<strong>tau-squared</strong>).</p>
+<p>We will address this by estimating the variance of the distribution of true effect sizes, also known as <span class="math inline">\(\tau^2\)</span> (<strong>tau-squared</strong>). This also a measure of heterogeneity among the true effect sizes (between studies variance).</p>
 <p>There are multiple estimators that you can use, <strong>DerSimonian-Laird&nbsp;(<code>"DL"</code>)</strong>, Restricted Maximum Likelihood&nbsp;(<code>"REML"</code>),&nbsp;Maximum Likelihood&nbsp;(<code>"ML"</code>), Empirical Bayes&nbsp;(<code>"EB"</code>), The&nbsp;<strong>Sidik-Jonkman&nbsp;(<code>"SJ"</code>)</strong>&nbsp; are only some examples.</p>
 <p>For more information you can read:</p>
 <p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4950030/" class="uri">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4950030/</a></p>
@@ -806,6 +806,37 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
 </section>
+<section id="heterogeneity-variance-tau2" class="slide level2">
+<h2>Heterogeneity Variance <span class="math inline">\(\tau^2\)</span></h2>
+<p>This gives us an estimate of the variance of the true effect sizes. Similarly to the variance when we square root it we get the standard deviation. Therefore, <span class="math inline">\(\tau\)</span> is the standard deviation of the true effect sizes.</p>
+<p>Can you think of an advantage of the <span class="math inline">\(\tau\)</span> that <span class="math inline">\(\tau^2\)</span> does not offer?</p>
+</section>
+<section id="q-test" class="slide level2">
+<h2>Q-test</h2>
+<p><strong>Q</strong> approximates the chi-squared distribution with <strong>k-1</strong> degrees of freedom. Significant <strong>Q-test</strong> denotes significant between-study heterogeneity.</p>
+<p>However, be very careful and do not rely exclusively on the <strong>Q-test</strong>. Its values increases as the number of studies increases as well as when the sample size of study increases.</p>
+<p>Do not decide between fixed and random effects model based on this result.</p>
+</section>
+<section id="the-i2-higgins-and-thompson-statistic" class="slide level2">
+<h2>The <span class="math inline">\(I^2\)</span> Higgins and Thompson Statistic</h2>
+<p><span class="math inline">\(I^2=\frac{Q-(k-1)}{Q}\)</span></p>
+<p>We can use the following rule of thumb:</p>
+<ol type="1">
+<li>~25%, low heterogeneity</li>
+<li>~50% moderate heterogeneity</li>
+<li>~75% substantial heterogeneity</li>
+<li>What about negative values?</li>
+</ol>
+</section>
+<section id="the-h2-higgins-and-thompson-statistic" class="slide level2">
+<h2>The <span class="math inline">\(H^2\)</span> Higgins and Thompson Statistic</h2>
+<p><span class="math inline">\(H^2=\frac{Q}{K-1}\)</span></p>
+<p>Values greater than 1 indicate the presence of between-study heterogeneity</p>
+</section>
+<section id="so-which-measure-is-more-important" class="slide level2">
+<h2>So which measure is more important?</h2>
+<p><strong>Q</strong>’s significance depends on the size of your pool. <span class="math inline">\(I^2\)</span> does not suffer from this limitation but it is still affected by the precision of the included studies, larger sample sizes will result in sampling error that will be approaching zero. <span class="math inline">\(H^2\)</span> shares similarities with <span class="math inline">\(I^2\)</span>. Finally, <span class="math inline">\(\tau^2\)</span> does not have any of these limitations, but it is hard to interpret it as there are no rules of thumb. The best approach would be to report at least <span class="math inline">\(\tau^2\)</span>, <span class="math inline">\(I^2\)</span>, and <span class="math inline">\(Q\)</span> and examine them in conjunction. You should also report confidence and prediction intervals.</p>
+</section>
 <section id="prediction-and-confidence-intervals" class="slide level2">
 <h2>Prediction and confidence intervals</h2>
 <div class="cell">
@@ -877,14 +908,59 @@ Quine et al.,2012         9.9778 -0.0434
 Stilley et al.,2004       6.8403  0.2125     
 Wiebe &amp; Christensen,1997  4.1094 -0.1642     </code></pre>
 </div>
+</div>
+</section>
+<section id="plot" class="slide level2">
+<h2>Plot</h2>
+<div class="cell">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">plot</span>(ma.inf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
+<section id="forest-plot" class="slide level2">
+<h2>Forest Plot</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">forest</span>(ma.res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"><div class="footer footer-default">
+</div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
+<section id="funnel-plot" class="slide level2">
+<h2>Funnel Plot</h2>
+<p>Please be aware that these are not publication bias tests!</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">funnel</span>(ma.res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
+<section id="small-study-bias" class="slide level2">
+<h2>Small Study Bias</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">regtest</span>(ma.res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Regression Test for Funnel Plot Asymmetry
+
+Model:     mixed-effects meta-regression model
+Predictor: standard error
+
+Test for Funnel Plot Asymmetry: z = 1.0216, p = 0.3070
+Limit Estimate (as sei -&gt; 0):   b = 0.0790 (CI: -0.0686, 0.2266)</code></pre>
+</div>
+</div>
+
+<div class="footer footer-default">
 
 </div>
 </section>

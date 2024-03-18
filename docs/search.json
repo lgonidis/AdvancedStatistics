@@ -1628,7 +1628,7 @@
     "href": "posts/Meta Analysis I/index.html#between-study-heterogeneity",
     "title": "Meta-Analysis I",
     "section": "Between-Study Heterogeneity",
-    "text": "Between-Study Heterogeneity\nAssuming we decided to go for the random-effects model approach it instantly becomes apparent that we are facing the challenge of accounting for the \\({\\zeta}_i\\) error.\nWe will address this by estimating the variance of the distribution of true effect sizes, also known as \\(\\tau^2\\) (tau-squared).\nThere are multiple estimators that you can use, DerSimonian-Laird (\"DL\"), Restricted Maximum Likelihood (\"REML\"), Maximum Likelihood (\"ML\"), Empirical Bayes (\"EB\"), The Sidik-Jonkman (\"SJ\")  are only some examples.\nFor more information you can read:\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC4950030/"
+    "text": "Between-Study Heterogeneity\nAssuming we decided to go for the random-effects model approach it instantly becomes apparent that we are facing the challenge of accounting for the \\({\\zeta}_i\\) error.\nWe will address this by estimating the variance of the distribution of true effect sizes, also known as \\(\\tau^2\\) (tau-squared). This also a measure of heterogeneity among the true effect sizes (between studies variance).\nThere are multiple estimators that you can use, DerSimonian-Laird (\"DL\"), Restricted Maximum Likelihood (\"REML\"), Maximum Likelihood (\"ML\"), Empirical Bayes (\"EB\"), The Sidik-Jonkman (\"SJ\")  are only some examples.\nFor more information you can read:\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC4950030/"
   },
   {
     "objectID": "posts/Meta Analysis I/index.html#which-estimator-should-we-use",
@@ -1684,6 +1684,69 @@
     "href": "posts/Meta Analysis I/index.html#exploring-for-influencial-studies",
     "title": "Meta-Analysis I",
     "section": "Exploring for influencial studies",
-    "text": "Exploring for influencial studies\n\n\nCode\nma.inf &lt;- influence(ma.res)\nprint(ma.inf)\n\n\n\n                         rstudent  dffits cook.d  cov.r tau2.del  QE.del    hat \nAxelsson et al.,2009       0.2918  0.0485 0.0025 1.1331   0.0091 37.7109 0.0568 \nAxelsson et al.,2011       0.1196 -0.0031 0.0000 1.2595   0.0100 36.7672 0.1054 \nBruce et al.,2010          1.2740  0.2595 0.0660 0.9942   0.0075 35.3930 0.0364 \nChristensen et al.,1999    1.4711  0.3946 0.1439 0.9544   0.0068 33.5886 0.0562 \nChristensen & Smith,1995   0.8622  0.1838 0.0339 1.0505   0.0082 36.5396 0.0441 \nCohen et al.,2004         -0.9795 -0.2121 0.0455 1.0639   0.0084 37.1703 0.0411 \nDobbels et al.,2005        0.2177  0.0296 0.0010 1.1740   0.0094 37.6797 0.0714 \nEdiger et al.,2007        -0.9774 -0.3120 0.1001 1.1215   0.0084 36.1484 0.0889 \nInsel et al.,2006          0.7264  0.1392 0.0195 1.0561   0.0083 37.0495 0.0379 \nJerant et al.,2011        -1.8667 -0.5861 0.2198 0.8502   0.0047 25.0661 0.1058 \nMoran et al.,1997         -1.4985 -0.2771 0.0756 1.0073   0.0077 35.6617 0.0369 \nO'Cleirigh et al.,2007     1.8776  0.4918 0.2148 0.8819   0.0059 31.9021 0.0511 \nPenedo et al.,2003        -1.1892 -0.2939 0.0859 1.0550   0.0080 36.3291 0.0587 \nQuine et al.,2012         -0.0020 -0.0423 0.0021 1.2524   0.0100 37.7339 0.0998 \nStilley et al.,2004        0.8066  0.2126 0.0459 1.0907   0.0083 35.8385 0.0684 \nWiebe & Christensen,1997  -0.7160 -0.1656 0.0280 1.0853   0.0087 37.7017 0.0411 \n                          weight    dfbs inf \nAxelsson et al.,2009      5.6776  0.0481     \nAxelsson et al.,2011     10.5396 -0.0032     \nBruce et al.,2010         3.6432  0.2623     \nChristensen et al.,1999   5.6195  0.3994     \nChristensen & Smith,1995  4.4069  0.1837     \nCohen et al.,2004         4.1094 -0.2112     \nDobbels et al.,2005       7.1362  0.0296     \nEdiger et al.,2007        8.8886 -0.3128     \nInsel et al.,2006         3.7886  0.1387     \nJerant et al.,2011       10.5826 -0.5430     \nMoran et al.,1997         3.6922 -0.2791     \nO'Cleirigh et al.,2007    5.1150  0.5059     \nPenedo et al.,2003        5.8732 -0.2941     \nQuine et al.,2012         9.9778 -0.0434     \nStilley et al.,2004       6.8403  0.2125     \nWiebe & Christensen,1997  4.1094 -0.1642     \n\n\nCode\nplot(ma.inf)"
+    "text": "Exploring for influencial studies\n\n\nCode\nma.inf &lt;- influence(ma.res)\nprint(ma.inf)\n\n\n\n                         rstudent  dffits cook.d  cov.r tau2.del  QE.del    hat \nAxelsson et al.,2009       0.2918  0.0485 0.0025 1.1331   0.0091 37.7109 0.0568 \nAxelsson et al.,2011       0.1196 -0.0031 0.0000 1.2595   0.0100 36.7672 0.1054 \nBruce et al.,2010          1.2740  0.2595 0.0660 0.9942   0.0075 35.3930 0.0364 \nChristensen et al.,1999    1.4711  0.3946 0.1439 0.9544   0.0068 33.5886 0.0562 \nChristensen & Smith,1995   0.8622  0.1838 0.0339 1.0505   0.0082 36.5396 0.0441 \nCohen et al.,2004         -0.9795 -0.2121 0.0455 1.0639   0.0084 37.1703 0.0411 \nDobbels et al.,2005        0.2177  0.0296 0.0010 1.1740   0.0094 37.6797 0.0714 \nEdiger et al.,2007        -0.9774 -0.3120 0.1001 1.1215   0.0084 36.1484 0.0889 \nInsel et al.,2006          0.7264  0.1392 0.0195 1.0561   0.0083 37.0495 0.0379 \nJerant et al.,2011        -1.8667 -0.5861 0.2198 0.8502   0.0047 25.0661 0.1058 \nMoran et al.,1997         -1.4985 -0.2771 0.0756 1.0073   0.0077 35.6617 0.0369 \nO'Cleirigh et al.,2007     1.8776  0.4918 0.2148 0.8819   0.0059 31.9021 0.0511 \nPenedo et al.,2003        -1.1892 -0.2939 0.0859 1.0550   0.0080 36.3291 0.0587 \nQuine et al.,2012         -0.0020 -0.0423 0.0021 1.2524   0.0100 37.7339 0.0998 \nStilley et al.,2004        0.8066  0.2126 0.0459 1.0907   0.0083 35.8385 0.0684 \nWiebe & Christensen,1997  -0.7160 -0.1656 0.0280 1.0853   0.0087 37.7017 0.0411 \n                          weight    dfbs inf \nAxelsson et al.,2009      5.6776  0.0481     \nAxelsson et al.,2011     10.5396 -0.0032     \nBruce et al.,2010         3.6432  0.2623     \nChristensen et al.,1999   5.6195  0.3994     \nChristensen & Smith,1995  4.4069  0.1837     \nCohen et al.,2004         4.1094 -0.2112     \nDobbels et al.,2005       7.1362  0.0296     \nEdiger et al.,2007        8.8886 -0.3128     \nInsel et al.,2006         3.7886  0.1387     \nJerant et al.,2011       10.5826 -0.5430     \nMoran et al.,1997         3.6922 -0.2791     \nO'Cleirigh et al.,2007    5.1150  0.5059     \nPenedo et al.,2003        5.8732 -0.2941     \nQuine et al.,2012         9.9778 -0.0434     \nStilley et al.,2004       6.8403  0.2125     \nWiebe & Christensen,1997  4.1094 -0.1642"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#heterogeneity-variance-tau2",
+    "href": "posts/Meta Analysis I/index.html#heterogeneity-variance-tau2",
+    "title": "Meta-Analysis I",
+    "section": "Heterogeneity Variance \\(\\tau^2\\)",
+    "text": "Heterogeneity Variance \\(\\tau^2\\)\nThis gives us an estimate of the variance of the true effect sizes. Similarly to the variance when we square root it we get the standard deviation. Therefore, \\(\\tau\\) is the standard deviation of the true effect sizes.\nCan you think of an advantage of the \\(\\tau\\) that \\(\\tau^2\\) does not offer?"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#q-test",
+    "href": "posts/Meta Analysis I/index.html#q-test",
+    "title": "Meta-Analysis I",
+    "section": "Q-test",
+    "text": "Q-test\nQ approximates the chi-squared distribution with k-1 degrees of freedom. Significant Q-test denotes significant between-study heterogeneity.\nHowever, be very careful and do not rely exclusively on the Q-test. Its values increases as the number of studies increases as well as when the sample size of study increases.\nDo not decide between fixed and random effects model based on this result."
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#the-i2-higgins-and-thompson-statistic",
+    "href": "posts/Meta Analysis I/index.html#the-i2-higgins-and-thompson-statistic",
+    "title": "Meta-Analysis I",
+    "section": "The \\(I^2\\) Higgins and Thompson Statistic",
+    "text": "The \\(I^2\\) Higgins and Thompson Statistic\n\\(I^2=\\frac{Q-(k-1)}{Q}\\)\nWe can use the following rule of thumb:\n\n~25%, low heterogeneity\n~50% moderate heterogeneity\n~75% substantial heterogeneity\nWhat about negative values?"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#the-h2-higgins-and-thompson-statistic",
+    "href": "posts/Meta Analysis I/index.html#the-h2-higgins-and-thompson-statistic",
+    "title": "Meta-Analysis I",
+    "section": "The \\(H^2\\) Higgins and Thompson Statistic",
+    "text": "The \\(H^2\\) Higgins and Thompson Statistic\n\\(H^2=\\frac{Q}{K-1}\\)\nValues greater than 1 indicate the presence of between-study heterogeneity"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#so-which-measure-is-more-important",
+    "href": "posts/Meta Analysis I/index.html#so-which-measure-is-more-important",
+    "title": "Meta-Analysis I",
+    "section": "So which measure is more important?",
+    "text": "So which measure is more important?\nQ’s significance depends on the size of your pool. \\(I^2\\) does not suffer from this limitation but it is still affected by the precision of the included studies, larger sample sizes will result in sampling error that will be approaching zero. \\(H^2\\) shares similarities with \\(I^2\\). Finally, \\(\\tau^2\\) does not have any of these limitations, but it is hard to interpret it as there are no rules of thumb. The best approach would be to report at least \\(\\tau^2\\), \\(I^2\\), and \\(Q\\) and examine them in conjunction. You should also report confidence and prediction intervals."
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#plot",
+    "href": "posts/Meta Analysis I/index.html#plot",
+    "title": "Meta-Analysis I",
+    "section": "Plot",
+    "text": "Plot\n\n\nCode\nplot(ma.inf)"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#forest-plot",
+    "href": "posts/Meta Analysis I/index.html#forest-plot",
+    "title": "Meta-Analysis I",
+    "section": "Forest Plot",
+    "text": "Forest Plot\n\n\nCode\nforest(ma.res)"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#funnel-plot",
+    "href": "posts/Meta Analysis I/index.html#funnel-plot",
+    "title": "Meta-Analysis I",
+    "section": "Funnel Plot",
+    "text": "Funnel Plot\nPlease be aware that these are not publication bias tests!\n\n\nCode\nfunnel(ma.res)"
+  },
+  {
+    "objectID": "posts/Meta Analysis I/index.html#small-study-bias",
+    "href": "posts/Meta Analysis I/index.html#small-study-bias",
+    "title": "Meta-Analysis I",
+    "section": "Small Study Bias",
+    "text": "Small Study Bias\n\n\nCode\nregtest(ma.res)\n\n\n\nRegression Test for Funnel Plot Asymmetry\n\nModel:     mixed-effects meta-regression model\nPredictor: standard error\n\nTest for Funnel Plot Asymmetry: z = 1.0216, p = 0.3070\nLimit Estimate (as sei -&gt; 0):   b = 0.0790 (CI: -0.0686, 0.2266)"
   }
 ]

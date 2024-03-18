@@ -359,7 +359,7 @@ ma.res <- rma(yi, vi, data=df)
 ma.res
 ```
 
-## Heterogeneity Variance $\tau^2$ 
+## Heterogeneity Variance $\tau^2$
 
 This gives us an estimate of the variance of the true effect sizes. Similarly to the variance when we square root it we get the standard deviation. Therefore, $\tau$ is the standard deviation of the true effect sizes.
 
