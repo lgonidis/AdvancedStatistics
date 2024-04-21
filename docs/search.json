@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "AdvancedStatistics",
     "section": "",
-    "text": "Assignment 1\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nMeta-Analysis I\n\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nLatent Growth Models\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nConfirmatory Factor Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 19, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nExploratory Factor Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 10, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to S.E.M\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 7, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Advanced Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Mediation\n\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\nNo matching items"
+    "text": "Assignment 1\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nCross-Lagged Panel Models\n\n\n\n\n\n\n\n\n\n\n\n\nApr 20, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nMeta-Analysis II: Subgroup Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nMar 22, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nMeta-Analysis I\n\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nLatent Growth Models\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nConfirmatory Factor Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 19, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nExploratory Factor Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 10, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to S.E.M\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 7, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Advanced Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Mediation\n\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -1748,5 +1748,250 @@
     "title": "Meta-Analysis I",
     "section": "Small Study Bias",
     "text": "Small Study Bias\n\n\nCode\nregtest(ma.res)\n\n\n\nRegression Test for Funnel Plot Asymmetry\n\nModel:     mixed-effects meta-regression model\nPredictor: standard error\n\nTest for Funnel Plot Asymmetry: z = 1.0216, p = 0.3070\nLimit Estimate (as sei -&gt; 0):   b = 0.0790 (CI: -0.0686, 0.2266)"
+  },
+  {
+    "objectID": "posts/Meta Analysis II/index.html#metafor-diagram",
+    "href": "posts/Meta Analysis II/index.html#metafor-diagram",
+    "title": "Meta-Analysis II: Subgroup Analysis",
+    "section": "metafor diagram",
+    "text": "metafor diagram"
+  },
+  {
+    "objectID": "posts/Meta Analysis II/index.html#lets-work-through-an-example",
+    "href": "posts/Meta Analysis II/index.html#lets-work-through-an-example",
+    "title": "Meta-Analysis II: Subgroup Analysis",
+    "section": "Lets work through an example",
+    "text": "Lets work through an example\n\n\nCode\nlibrary(tidyverse)\nlibrary(metafor)\nlibrary(metadat)\n\ndf &lt;- get(data(dat.molloy2014))\n\nhead(df)\n\n\n              authors year  ni    ri controls          design   a_measure\n1     Axelsson et al. 2009 109 0.187     none cross-sectional self-report\n2     Axelsson et al. 2011 749 0.162     none cross-sectional self-report\n3        Bruce et al. 2010  55 0.340     none     prospective       other\n4  Christensen et al. 1999 107 0.320     none cross-sectional self-report\n5 Christensen & Smith 1995  72 0.270     none     prospective       other\n6        Cohen et al. 2004  65 0.000     none     prospective       other\n  c_measure meanage quality\n1     other   22.00       1\n2       NEO   53.59       1\n3       NEO   43.36       2\n4     other   41.70       1\n5       NEO   46.39       2\n6       NEO   41.20       2\n\n\n\n\nCode\ndf &lt;- escalc(measure = \"ZCOR\", ri=ri, ni=ni, data=df, slab = paste(authors, year, sep=\",\"))\nma.res &lt;- rma(yi, vi, data=df)\nma.res\n\n\n\nRandom-Effects Model (k = 16; tau^2 estimator: REML)\n\ntau^2 (estimated amount of total heterogeneity): 0.0081 (SE = 0.0055)\ntau (square root of estimated tau^2 value):      0.0901\nI^2 (total heterogeneity / total variability):   61.73%\nH^2 (total variability / sampling variability):  2.61\n\nTest for Heterogeneity:\nQ(df = 15) = 38.1595, p-val = 0.0009\n\nModel Results:\n\nestimate      se    zval    pval   ci.lb   ci.ub      \n  0.1499  0.0316  4.7501  &lt;.0001  0.0881  0.2118  *** \n\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\n\nCode\npredict(ma.res)\n\n\n\n   pred     se  ci.lb  ci.ub   pi.lb  pi.ub \n 0.1499 0.0316 0.0881 0.2118 -0.0371 0.3370 \n\n\nCode\nconfint(ma.res)\n\n\n\n       estimate   ci.lb   ci.ub \ntau^2    0.0081  0.0017  0.0378 \ntau      0.0901  0.0412  0.1944 \nI^2(%)  61.7324 25.2799 88.2545 \nH^2      2.6132  1.3383  8.5139"
+  },
+  {
+    "objectID": "posts/Meta Analysis II/index.html#exploring-for-influential-studies",
+    "href": "posts/Meta Analysis II/index.html#exploring-for-influential-studies",
+    "title": "Meta-Analysis II: Subgroup Analysis",
+    "section": "Exploring for influential studies",
+    "text": "Exploring for influential studies\n\n\nCode\nma.inf &lt;- influence(ma.res)\nprint(ma.inf)\n\n\n\n                         rstudent  dffits cook.d  cov.r tau2.del  QE.del    hat \nAxelsson et al.,2009       0.2918  0.0485 0.0025 1.1331   0.0091 37.7109 0.0568 \nAxelsson et al.,2011       0.1196 -0.0031 0.0000 1.2595   0.0100 36.7672 0.1054 \nBruce et al.,2010          1.2740  0.2595 0.0660 0.9942   0.0075 35.3930 0.0364 \nChristensen et al.,1999    1.4711  0.3946 0.1439 0.9544   0.0068 33.5886 0.0562 \nChristensen & Smith,1995   0.8622  0.1838 0.0339 1.0505   0.0082 36.5396 0.0441 \nCohen et al.,2004         -0.9795 -0.2121 0.0455 1.0639   0.0084 37.1703 0.0411 \nDobbels et al.,2005        0.2177  0.0296 0.0010 1.1740   0.0094 37.6797 0.0714 \nEdiger et al.,2007        -0.9774 -0.3120 0.1001 1.1215   0.0084 36.1484 0.0889 \nInsel et al.,2006          0.7264  0.1392 0.0195 1.0561   0.0083 37.0495 0.0379 \nJerant et al.,2011        -1.8667 -0.5861 0.2198 0.8502   0.0047 25.0661 0.1058 \nMoran et al.,1997         -1.4985 -0.2771 0.0756 1.0073   0.0077 35.6617 0.0369 \nO'Cleirigh et al.,2007     1.8776  0.4918 0.2148 0.8819   0.0059 31.9021 0.0511 \nPenedo et al.,2003        -1.1892 -0.2939 0.0859 1.0550   0.0080 36.3291 0.0587 \nQuine et al.,2012         -0.0020 -0.0423 0.0021 1.2524   0.0100 37.7339 0.0998 \nStilley et al.,2004        0.8066  0.2126 0.0459 1.0907   0.0083 35.8385 0.0684 \nWiebe & Christensen,1997  -0.7160 -0.1656 0.0280 1.0853   0.0087 37.7017 0.0411 \n                          weight    dfbs inf \nAxelsson et al.,2009      5.6776  0.0481     \nAxelsson et al.,2011     10.5396 -0.0032     \nBruce et al.,2010         3.6432  0.2623     \nChristensen et al.,1999   5.6195  0.3994     \nChristensen & Smith,1995  4.4069  0.1837     \nCohen et al.,2004         4.1094 -0.2112     \nDobbels et al.,2005       7.1362  0.0296     \nEdiger et al.,2007        8.8886 -0.3128     \nInsel et al.,2006         3.7886  0.1387     \nJerant et al.,2011       10.5826 -0.5430     \nMoran et al.,1997         3.6922 -0.2791     \nO'Cleirigh et al.,2007    5.1150  0.5059     \nPenedo et al.,2003        5.8732 -0.2941     \nQuine et al.,2012         9.9778 -0.0434     \nStilley et al.,2004       6.8403  0.2125     \nWiebe & Christensen,1997  4.1094 -0.1642"
+  },
+  {
+    "objectID": "posts/Meta Analysis II/index.html#plot",
+    "href": "posts/Meta Analysis II/index.html#plot",
+    "title": "Meta-Analysis II: Subgroup Analysis",
+    "section": "Plot",
+    "text": "Plot\n\n\nCode\nplot(ma.inf)"
+  },
+  {
+    "objectID": "posts/Meta Analysis II/index.html#forest-plot",
+    "href": "posts/Meta Analysis II/index.html#forest-plot",
+    "title": "Meta-Analysis II: Subgroup Analysis",
+    "section": "Forest Plot",
+    "text": "Forest Plot\n\n\nCode\nforest(ma.res)\n\n\n\n\n\n\n\nCode\nforest(ma.res, addpred = TRUE, header = TRUE)\n\n\n\n\n\n\n\nCode\nforest(ma.res, header = TRUE)"
+  },
+  {
+    "objectID": "posts/Meta Analysis II/index.html#funnel-plot",
+    "href": "posts/Meta Analysis II/index.html#funnel-plot",
+    "title": "Meta-Analysis II: Subgroup Analysis",
+    "section": "Funnel Plot",
+    "text": "Funnel Plot\nPlease be aware that these are not publication bias tests!\n\n\nCode\nfunnel(ma.res, las=3, digits = list(2L,2))"
+  },
+  {
+    "objectID": "posts/Meta Analysis II/index.html#small-study-bias",
+    "href": "posts/Meta Analysis II/index.html#small-study-bias",
+    "title": "Meta-Analysis II: Subgroup Analysis",
+    "section": "Small Study Bias",
+    "text": "Small Study Bias\n\n\nCode\nregtest(ma.res)\n\n\n\nRegression Test for Funnel Plot Asymmetry\n\nModel:     mixed-effects meta-regression model\nPredictor: standard error\n\nTest for Funnel Plot Asymmetry: z = 1.0216, p = 0.3070\nLimit Estimate (as sei -&gt; 0):   b = 0.0790 (CI: -0.0686, 0.2266)"
+  },
+  {
+    "objectID": "posts/Meta Analysis II/index.html#adding-a-moderator",
+    "href": "posts/Meta Analysis II/index.html#adding-a-moderator",
+    "title": "Meta-Analysis II: Subgroup Analysis",
+    "section": "Adding a moderator",
+    "text": "Adding a moderator\n\n\nCode\nma.res1 &lt;- rma(yi, vi, data=df, mods = ~factor(design))\nma.res1\n\n\n\nMixed-Effects Model (k = 16; tau^2 estimator: REML)\n\ntau^2 (estimated amount of residual heterogeneity):     0.0090 (SE = 0.0062)\ntau (square root of estimated tau^2 value):             0.0946\nI^2 (residual heterogeneity / unaccounted variability): 61.47%\nH^2 (unaccounted variability / sampling variability):   2.60\nR^2 (amount of heterogeneity accounted for):            0.00%\n\nTest for Residual Heterogeneity:\nQE(df = 14) = 34.8274, p-val = 0.0016\n\nTest of Moderators (coefficient 2):\nQM(df = 1) = 0.1911, p-val = 0.6620\n\nModel Results:\n\n                           estimate      se     zval    pval    ci.lb   ci.ub \nintrcpt                      0.1701  0.0551   3.0858  0.0020   0.0621  0.2781 \nfactor(design)prospective   -0.0298  0.0682  -0.4372  0.6620  -0.1636  0.1039 \n                              \nintrcpt                    ** \nfactor(design)prospective     \n\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\n\nCode\nforest(ma.res1)"
+  },
+  {
+    "objectID": "posts/Meta Analysis II/index.html#ordered-by-year-of-publication",
+    "href": "posts/Meta Analysis II/index.html#ordered-by-year-of-publication",
+    "title": "Meta-Analysis II: Subgroup Analysis",
+    "section": "Ordered by year of publication",
+    "text": "Ordered by year of publication\n\n\nCode\ndf3 &lt;- escalc(measure = \"ZCOR\", ri=ri, ni=ni, data=df, slab = paste(authors, year, sep=\",\"))\n\ndf3 &lt;- df3[order(df3$year),] \n\nma.res3 &lt;- rma(yi, vi, data=df3)\nma.res3\n\n\n\nRandom-Effects Model (k = 16; tau^2 estimator: REML)\n\ntau^2 (estimated amount of total heterogeneity): 0.0081 (SE = 0.0055)\ntau (square root of estimated tau^2 value):      0.0901\nI^2 (total heterogeneity / total variability):   61.73%\nH^2 (total variability / sampling variability):  2.61\n\nTest for Heterogeneity:\nQ(df = 15) = 38.1595, p-val = 0.0009\n\nModel Results:\n\nestimate      se    zval    pval   ci.lb   ci.ub      \n  0.1499  0.0316  4.7501  &lt;.0001  0.0881  0.2118  *** \n\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nCode\nforest(ma.res3, addpred = TRUE, header = TRUE)"
+  },
+  {
+    "objectID": "posts/Meta Analysis II/index.html#cumulative-forest-plot",
+    "href": "posts/Meta Analysis II/index.html#cumulative-forest-plot",
+    "title": "Meta-Analysis II: Subgroup Analysis",
+    "section": "Cumulative Forest Plot",
+    "text": "Cumulative Forest Plot\n\n\nCode\nforest.cumul &lt;- cumul(ma.res3, order = order(df3$year))\nforest(forest.cumul)"
+  },
+  {
+    "objectID": "posts/Meta Analysis II/index.html#adding-a-second-moderator",
+    "href": "posts/Meta Analysis II/index.html#adding-a-second-moderator",
+    "title": "Meta-Analysis II: Subgroup Analysis",
+    "section": "Adding a second moderator",
+    "text": "Adding a second moderator\n\n\nCode\ndf2 &lt;- escalc(measure = \"ZCOR\", ri=ri, ni=ni, data=df, slab = paste(authors, year, sep=\",\"))\n\ndf2 &lt;- df[order(df$yi,df$a_measure),] \n\nma.res2 &lt;- rma(yi, vi, data=df2, mods = ~factor(a_measure)+meanage)\nma.res2\n\n\n\nMixed-Effects Model (k = 16; tau^2 estimator: REML)\n\ntau^2 (estimated amount of residual heterogeneity):     0.0085 (SE = 0.0063)\ntau (square root of estimated tau^2 value):             0.0924\nI^2 (residual heterogeneity / unaccounted variability): 58.84%\nH^2 (unaccounted variability / sampling variability):   2.43\nR^2 (amount of heterogeneity accounted for):            0.00%\n\nTest for Residual Heterogeneity:\nQE(df = 13) = 29.7360, p-val = 0.0051\n\nTest of Moderators (coefficients 2:3):\nQM(df = 2) = 1.3179, p-val = 0.5174\n\nModel Results:\n\n                              estimate      se     zval    pval    ci.lb \nintrcpt                         0.2511  0.1428   1.7576  0.0788  -0.0289 \nfactor(a_measure)self-report    0.0183  0.0701   0.2609  0.7942  -0.1191 \nmeanage                        -0.0022  0.0023  -0.9405  0.3470  -0.0066 \n                               ci.ub    \nintrcpt                       0.5310  . \nfactor(a_measure)self-report  0.1557    \nmeanage                       0.0023    \n\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nCode\nforest(ma.res2)"
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#todays-aims",
+    "href": "posts/Cross-Lagged Panel Models/index.html#todays-aims",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Today’s aims",
+    "text": "Today’s aims\n\nDefine cross-lagged models\n\nObserved variables\nLatent variables\n\nMultiple Indicators\nCovariates"
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#what-is-a-cross-lagged-model",
+    "href": "posts/Cross-Lagged Panel Models/index.html#what-is-a-cross-lagged-model",
+    "title": "Cross-Lagged Panel Models",
+    "section": "What is a cross-lagged model?",
+    "text": "What is a cross-lagged model?\n\n\nIt is often the case that our hypothesis will include a causal relationship between two variables, in this case Reading and Writing, where our variables are measured repeatedly, in this case twice. By designing a cross-lagged model we can investigate these relationships across measurement times and for both causal directions."
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#cross-lagged-model",
+    "href": "posts/Cross-Lagged Panel Models/index.html#cross-lagged-model",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Cross-lagged model",
+    "text": "Cross-lagged model\n\nReading2 is the repeated measurement of the observed variable Reading1\nWriting2 is the repeated measurement of the observed variable Writing1\n\\(\\beta_{R_{2,1}}\\) and \\(\\beta_{W_{2,1}}\\) are autoregressive paths. These paths will indicate the effects of the past on the future after controlling for the persistence element (think of time as a confound?)\n\\(\\beta_{R_{2}W_{1}}\\) and \\(\\beta_{W_{2}R_{1}}\\) are cross-lagged paths. Here we have temporal precendence as well as no assumptions in terms of of directions of effects (Granger Causality)."
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#cross-lagged-model-improved",
+    "href": "posts/Cross-Lagged Panel Models/index.html#cross-lagged-model-improved",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Cross-lagged model improved",
+    "text": "Cross-lagged model improved\n\nIn terms of structural equations: (Can you spot the mistake?)\n\\(R_2 =\\beta_{R_{2,1}}R_1 + \\beta_{R_{2}W_{1}}W_1+\\zeta_{R_{2}}\\)\n\\(W_2 =\\beta_{R_{2,1}}W_1 + \\beta_{R_{2}W_{1}}R_1+\\zeta_{W_{2}}\\)\nHow many degrees of freedom does this model have?\nWhich variables are endogenous and which ones are exogenous?"
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#cross-lagged-model-hypothesis-es",
+    "href": "posts/Cross-Lagged Panel Models/index.html#cross-lagged-model-hypothesis-es",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Cross-lagged model hypothesis (es)",
+    "text": "Cross-lagged model hypothesis (es)\n\nOur model will allow us to investigate whether Reading ability can cause Writing ability or whether Writing ability can cause Reading ability. Or ever whether both paths\nIn that case we may be interested to investigate which of the two causal paths is stronger."
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#food-for-thought",
+    "href": "posts/Cross-Lagged Panel Models/index.html#food-for-thought",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Food for thought",
+    "text": "Food for thought\nSince this is a cross-lagged model with observed variables what could the impact of measurement error be?\nIs there really any benefit from choosing this approach over separate regressions?\nYou can read more about this at chapters 4 and 5 of Longitudinal Structural Equation Modeling: A Comprehensive Introduction (second edition) by Jason T. Newsom\nLongitudinal Structural Equation Modeling | A Comprehensive Introducti (oclc.org)"
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#before-moving-on",
+    "href": "posts/Cross-Lagged Panel Models/index.html#before-moving-on",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Before Moving On…",
+    "text": "Before Moving On…\nBefore moving on to Cross-Lagged Models with Latent Variables let us attempt to code the above model using lavaan and R\nPlease go to your posit cloud and the project for week 10 code the following model:"
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#success",
+    "href": "posts/Cross-Lagged Panel Models/index.html#success",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Success!!",
+    "text": "Success!!\nAssuming you have completed the analysis should you report standardized or unstandardized solutions? (Hint: Think in terms in terms of setting equality constraints on the cross-lagged effects)\nAssuming we have succeeded in the above, what changes can we make in our model that would allow us to test whether the cross-lagged effects are significantly different?"
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#cross-lagged-models-with-latent-variables",
+    "href": "posts/Cross-Lagged Panel Models/index.html#cross-lagged-models-with-latent-variables",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Cross-Lagged Models with Latent Variables",
+    "text": "Cross-Lagged Models with Latent Variables\nOne of the approaches that reduces the risk of measurement error is the use of latent variables with multiple predictors (it is however possible to have single predictor latent variables in our models as an improvement over observed variables). See conceptual model below as presented in Longitudinal Structural Equation Modeling: A Comprehensive Introduction (second edition) by Jason T. Newsom (Figure 5.2, page 142)."
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#autoregressive-model",
+    "href": "posts/Cross-Lagged Panel Models/index.html#autoregressive-model",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Autoregressive Model",
+    "text": "Autoregressive Model\n\nThis autoregressive model was initially developed by Guttman in 1954 as a general concept of simplex model for longitudinal data. This model provides us with information of growth between consecutive time points. Adjacent time points are lag 1 paths and as the number of steps increases so does the lag. For example Reading1 and Reading3 are lag 2. The simplex model assumes that all lag 1 correlations are of the same magnitude. Furthermore, lag 2 correlation is the product of the two coefficients that link the two measurements. So, if our lag 1 correlation is 0.8 then the correlation between Reading1 and Reading3 should be 0.8*0.8=0.64.\nIf you picture a correlation matrix for the above model how do you expect the correlation values to behave?\nWhat can you infer from the model above?\nDoes it contain means structure?\nCan you spot a weakness of the above mode? (The Quasi-Simplex Model)"
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#the-quasi-simplex-model",
+    "href": "posts/Cross-Lagged Panel Models/index.html#the-quasi-simplex-model",
+    "title": "Cross-Lagged Panel Models",
+    "section": "The Quasi-Simplex Model",
+    "text": "The Quasi-Simplex Model\n\nHow many observed variables do we have per latent variable?\nCan this model be identified?\nFor the Quasi-Simplex Model first factor variance is constraint to be 1\nFor the Quasi-Simplex Model the residual variance for the first and last occurrence are constraint to be 0.\nIf you are using similar models to the Simplex Model you can use constraints that fit your measurements. For example, we can assume that the variances of all error terms are equal. Another approach would be to fix the factor loadings from and to each observed reading score to 1."
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#continued",
+    "href": "posts/Cross-Lagged Panel Models/index.html#continued",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Continued …",
+    "text": "Continued …"
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#solutions-to-observed-variables-measurement-error",
+    "href": "posts/Cross-Lagged Panel Models/index.html#solutions-to-observed-variables-measurement-error",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Solutions to Observed Variables Measurement Error",
+    "text": "Solutions to Observed Variables Measurement Error\n\nThe above is sometimes referred to as co-movement. Can you identify a potential weakness of the above model?\nWe will return to this later on as improving this will be one of the main points of discussion next week."
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#cross-lagged-models-with-latent-variables-1",
+    "href": "posts/Cross-Lagged Panel Models/index.html#cross-lagged-models-with-latent-variables-1",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Cross-Lagged Models with Latent Variables",
+    "text": "Cross-Lagged Models with Latent Variables\n\nDo you observe any constraints in the model?\nIs this model identified?\n\\(df= \\frac{J(J+1)}{2}-(2J+8)\\)"
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#a-note-on-measurement-invariance",
+    "href": "posts/Cross-Lagged Panel Models/index.html#a-note-on-measurement-invariance",
+    "title": "Cross-Lagged Panel Models",
+    "section": "A Note on Measurement Invariance",
+    "text": "A Note on Measurement Invariance\nPrior to constructing a longitudinal structural model we assume measurement invariance, meaning that the measurement properties of all latent variables are stable over time. This is why we strive to maintain the same methodology and measurements across all time points in a longitudinal study.\nFor more information read Chapter 2 in Longitudinal Structural Equation Modeling: A Comprehensive Introduction (second edition) by Jason T. Newsom"
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#meier-and-spector-reciprocal-effects-of-work-stressors-and-counterproductive-work-behavior-a-five-wave-longitudinal-study-2013",
+    "href": "posts/Cross-Lagged Panel Models/index.html#meier-and-spector-reciprocal-effects-of-work-stressors-and-counterproductive-work-behavior-a-five-wave-longitudinal-study-2013",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Meier and Spector, Reciprocal effects of work stressors and counterproductive work behavior: A five-wave longitudinal study (2013)",
+    "text": "Meier and Spector, Reciprocal effects of work stressors and counterproductive work behavior: A five-wave longitudinal study (2013)"
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#meier-and-spector",
+    "href": "posts/Cross-Lagged Panel Models/index.html#meier-and-spector",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Meier and Spector",
+    "text": "Meier and Spector"
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#meier-and-spector-1",
+    "href": "posts/Cross-Lagged Panel Models/index.html#meier-and-spector-1",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Meier and Spector",
+    "text": "Meier and Spector\nFocusing on the above one could wonder what are we actually estimating?\nWithin effects?\nBetween effects?\nSample specific or population average effects?\n(Contextual effects?)"
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#critique",
+    "href": "posts/Cross-Lagged Panel Models/index.html#critique",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Critique",
+    "text": "Critique"
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#criticisms",
+    "href": "posts/Cross-Lagged Panel Models/index.html#criticisms",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Criticisms",
+    "text": "Criticisms"
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#proposed-solutions",
+    "href": "posts/Cross-Lagged Panel Models/index.html#proposed-solutions",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Proposed Solutions",
+    "text": "Proposed Solutions\n\nhttps://pure.uva.nl/ws/files/2688454/168970_Hamaker_Kuiper_Grasman_2015_A_Critique_of_Cross_Lagged_Panel_Model.pdf\nA Critique of the Cross-Lagged Panel Model, Hamaker et al., 2015"
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#proposed-solutions-1",
+    "href": "posts/Cross-Lagged Panel Models/index.html#proposed-solutions-1",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Proposed Solutions",
+    "text": "Proposed Solutions\n\nhttps://journals.sagepub.com/doi/full/10.1177/1094428119847280\nFrom Data to Causes II: Comparing Approaches to Panel Data Analysis, Zyphur et al., 2019"
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#let-us-return-to-a-previously-discussed-model",
+    "href": "posts/Cross-Lagged Panel Models/index.html#let-us-return-to-a-previously-discussed-model",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Let us return to a previously discussed model",
+    "text": "Let us return to a previously discussed model\n\nFollowing the conceptual model above, can you code a similar model for the dataset latent.csv in your Posit Project?"
+  },
+  {
+    "objectID": "posts/Cross-Lagged Panel Models/index.html#task-for-next-week",
+    "href": "posts/Cross-Lagged Panel Models/index.html#task-for-next-week",
+    "title": "Cross-Lagged Panel Models",
+    "section": "Task for next week",
+    "text": "Task for next week\nRead A Critique of the Cross-Lagged Panel Model, Hamaker et al., 2015 and From Data to Causes II: Comparing Approaches to Panel Data Analysis, Zyphur et al., 2019. Next week we will discuss strengths and limitations of these proposed models."
   }
 ]
