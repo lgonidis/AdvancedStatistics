@@ -1,0 +1,35 @@
+---
+title: "Discussing Meta Analysis"
+format: 
+  revealjs:
+    theme: league
+    transition: slide
+    background-transition: zoom
+    slide-number: c/t
+    show-slide-number: all
+    chalkboard: true
+    background-size: cover
+    smaller: true
+    echo: true
+    code-fold: true
+    code-summary: "Show the code"
+author: "Dr Lazaros Gonidis"
+date: "2024-03-12"
+image: "image1.jpg"
+---
+
+## Challenges by "minions"
+
+1.  Reading all "relevant" studies only to find out that some are horrible in terms of statistical information provided
+2.  How far should I take it in terms of removing "influential" cases?
+3.  Difficulty in discovering enough studies with "identical" design and statistical figures.
+4.  Mainly getting started
+5.  How do we go about overcoming difficulties in terms of different measurements or measurements reporting a variety of outcomes
+
+## Challenging Tasks to Complete
+
+1.  You have found a good number of relevant papers, however not all of them use the same design or report the same type of effect size. Find a solution.
+2.  Detecting bias. How exactly can we do that?
+3.  CHALLENGING: metasem :D
+4.  Moderators and sub-group meta analysis
+5.  CHALLENGING: Meta-regression. What is it? When and how should we use it?

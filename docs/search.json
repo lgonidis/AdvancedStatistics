@@ -1748,5 +1748,19 @@
     "title": "Meta-Analysis I",
     "section": "Small Study Bias",
     "text": "Small Study Bias\n\n\nCode\nregtest(ma.res)\n\n\n\nRegression Test for Funnel Plot Asymmetry\n\nModel:     mixed-effects meta-regression model\nPredictor: standard error\n\nTest for Funnel Plot Asymmetry: z = 1.0216, p = 0.3070\nLimit Estimate (as sei -&gt; 0):   b = 0.0790 (CI: -0.0686, 0.2266)"
+  },
+  {
+    "objectID": "posts/Discussing Meta Analysis/index.html#challenges-by-minions",
+    "href": "posts/Discussing Meta Analysis/index.html#challenges-by-minions",
+    "title": "Discussing Meta Analysis",
+    "section": "Challenges by “minions”",
+    "text": "Challenges by “minions”\n\nReading all “relevant” studies only to find out that some are horrible in terms of statistical information provided\nHow far should I take it in terms of removing “influential” cases?\nDifficulty in discovering enough studies with “identical” design and statistical figures.\nMainly getting started\nHow do we go about overcoming difficulties in terms of different measurements or measurements reporting a variety of outcomes"
+  },
+  {
+    "objectID": "posts/Discussing Meta Analysis/index.html#challenging-tasks-to-complete",
+    "href": "posts/Discussing Meta Analysis/index.html#challenging-tasks-to-complete",
+    "title": "Discussing Meta Analysis",
+    "section": "Challenging Tasks to Complete",
+    "text": "Challenging Tasks to Complete\n\nYou have found a good number of relevant papers, however not all of them use the same design or report the same type of effect size. Find a solution.\nDetecting bias. How exactly can we do that?\nCHALLENGING: metasem :D\nModerators and sub-group meta analysis\nCHALLENGING: Meta-regression. What is it? When and how should we use it?"
   }
 ]
