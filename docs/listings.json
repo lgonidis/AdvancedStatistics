@@ -3,6 +3,7 @@
     "listing": "/index.html",
     "items": [
       "/posts/Assignment 1/index.html",
+      "/posts/Introduction to Advanced Statistics/index.html",
       "/posts/Cross-Lagged Panel Models/index.html",
       "/posts/Meta Analysis II/index.html",
       "/posts/Meta Analysis I/index.html",
@@ -10,7 +11,6 @@
       "/posts/Confirmatory Factor Analysis/index.html",
       "/posts/Exploratory Factor Analysis/index.html",
       "/posts/Introduction to S.E.M/index.html",
-      "/posts/Introduction to Advanced Statistics/index.html",
       "/posts/Introduction to Mediation (with lavaan)/index.html"
     ]
   }
