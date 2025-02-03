@@ -65,7 +65,7 @@ You can join our Posit Cloud Workspace by following this link:
 
 <https://posit.cloud/spaces/605745/content/all?sort=name_asc>
 
-![](images/posit qr-code.png){fig-align="center" width="393"}
+![](images/posit%20qr-code.png){fig-align="center" width="393"}
 
 ## Discord as our mean of day to day communication
 
@@ -73,7 +73,7 @@ We will be using discord as our main communication channel, please use it for an
 
 You can join us by following this link: <https://discord.gg/SxANsDEF>
 
-![](images/discord qr-code.png){fig-align="center" width="355"}
+![](images/discord%20qr-code.png){fig-align="center" width="355"}
 
 ## Assessment
 
