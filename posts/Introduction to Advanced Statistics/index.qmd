@@ -14,7 +14,7 @@ format:
     code-fold: true
     code-summary: "Show the code"
 author: "Dr Lazaros Gonidis"
-date: "2024-02-01"
+date: "today"
 image: "image1.jpg"
 ---
 
@@ -55,7 +55,7 @@ I have no idea who you are but I hope by the end of this module you will love st
 
 Hopefully you should know where to find our Canvas website, but just in case:
 
-<https://canvas.sussex.ac.uk/courses/26315/pages/module-home-page>
+<https://canvas.sussex.ac.uk/courses/31432>
 
 ## RStudio/Posit Cloud
 
@@ -63,37 +63,42 @@ For our analysis we will be using exclusively R and mainly Posit Cloud. However,
 
 You can join our Posit Cloud Workspace by following this link:
 
-<https://posit.cloud/spaces/469376/join?access_code=4YBUfhrNPGU2oWWw5Zym6bepaVV6izQ8O1KE6THK>
+<https://posit.cloud/spaces/605745/content/all?sort=name_asc>
 
-![](/qr-code.png){fig-align="center" width="336"}
+![](images/posit%20qr-code.png){fig-align="center" width="393"}
 
 ## Discord as our mean of day to day communication
 
 We will be using discord as our main communication channel, please use it for any stats related questions. If you have any more sensitive questions please do not hesitate to email me at: L.Gonidis\@Sussex.ac.uk
 
-You can join us by following this link: <https://discord.gg/9TV3xzMZ>
+You can join us by following this link: <https://discord.gg/SxANsDEF>
 
-![](/wr-code2.png){fig-align="center" width="345"}
+![](images/discord%20qr-code.png){fig-align="center" width="355"}
 
 ## Assessment
 
-The module will be assessed exclusively by coursework. This will be in the form of three 1,000 words results sections. The deadlines are:
+The module will be assessed exclusively by coursework. This will be in the form of five bi-weekly online canvas quizzes (40% total) and one 1,500 written report. The deadlines are:
 
-1.  Report 1, February 13th 16:00
-2.  Report 2, March 14th 16:00
-3.  Report 3, April 23rd 16:00
+1.  Written Report 08/04/2025, 16:00 (submission on canvas)
+2.  Canvas online quiz, week 2, deadline 14/02/2025, 10am.
+3.  Canvas online quiz, week 4, deadline 28/02/2025, 10am.
+4.  Canvas online quiz, week 6, deadline 14/03/2025, 10am.
+5.  Canvas online quiz, week 8, deadline 28/03/2025, 10am.
+6.  Canvas online quiz, week 10, deadline 11/04/2025, 10am.
 
-All submissions will be via Canvas submission points in the Assignments, Contributory E-Submission subsection. Each report topic will be released in our workshop the week prior to the submission deadline. Specifically, for Report 1 the topic will be Mediation/Moderation analysis using lavaan. You will receive detailed instructions on that next Monday.
+You can find more information on the module assessment and feedback page on Canvas:
 
-## Quizzes and Badges(hopefully)
+<https://canvas.sussex.ac.uk/courses/31432/pages/assessments-and-feedback?module_item_id=1371109>
 
-Every week there will be a Canvas quiz provided so you can practice and enhance your understanding. These are absolutely non-compulsory but do spend some time trying to complete them. You will also be collecting points while you complete these (and other Canvas activities) and at the end of the module the two students with the highest scores will receive a surprise present.
+## Achievements and Badges(hopefully)
+
+Every week there will be a Canvas practice quiz provided so you can practice and enhance your understanding. These are absolutely non-compulsory but do spend some time trying to complete them. You will also be collecting points while you complete these (and other Canvas activities) and at the end of the module the two students with the highest scores will receive a surprise present.
 
 ## Github
 
 Github has been increasingly becoming a standard in the world of coding and statistical analysis as it can serve both as a repository and a host of websites related to projects. We will have a very brief demonstration today and we will return next week and start using it as a standard in our module.
 
-## Essential and Supplamentary Materials
+## Essential and Supplementary Materials
 
 ::: columns
 ::: {.column width="20%"}
@@ -117,12 +122,34 @@ Github has been increasingly becoming a standard in the world of coding and stat
 :::
 :::
 
+## Module Content
+
+1.  Introduction to S.E.M. (Week 2)
+
+2.  Exploratory Factor Analysis (Week 3)
+
+3.  Confirmatory Factor Analysis (Week 4)
+
+4.  Mediation/Moderation Analysis (Week 5)
+
+5.  Advanced topics in S.E.M, Mean Structures and Latent Growth Models (Week 6)
+
+6.  Advanced topics in S.E.M, Multiple Sample Analysis and Measurement Invariance (Week 7)
+
+7.  Best Practices in S.E.M (Week 8)
+
+8.  Introduction to Meta-Analysis (Week 9)
+
+9.  Meta-Analysis II (Week 10)
+
+10. Meta-Analysis III (Week 11)
+
 ## Today's Aims in Terms of Structural Equation Modeling (SEM)
 
 1.  Introduce key terminology that we will be using this term
 2.  Discuss examples of **simple and multiple regression**
 3.  Revisit the same examples using **lavaan**
-4.  Discuss **baximum likelihood** vs. **least squares**
+4.  Discuss **maximum likelihood** vs. **least squares**
 
 ## Key Terminology
 
@@ -190,7 +217,7 @@ The above equation represents **predicting Y from X**
 
 Also referred to as **regressing Y on X**, with $\hat{Y}$ representing **predicted scores**, $B_X$ unstandardised regression coefficient for predictor $X$, also known as slope, and $A_X$ is the intercept.
 
-Generally, with linear models we would use **ordinary least square** (OLS) so that the **least squares criterion** is satisfied. In practice, we are trying to minimise the sum of squared residuals, $\sum(Y-\hat{Y})$
+Generally, with linear models we would use **ordinary least squares** (OLS) so that the **least squares criterion** is satisfied. In practice, we are trying to minimise the sum of squared residuals, $\sum(Y-\hat{Y})$
 
 ## Let us see an example with data
 
@@ -234,7 +261,7 @@ We also see **residual standard error of 21.44**
 
 The **square of that value is 459.67**
 
-## Let us recreate the same model using Lavaan
+## Let us recreate the same model using lavaan
 
 ```{r}
 
@@ -277,6 +304,12 @@ semPaths(reading_lav_sem,
          style = "ram",
          layout = "circle")
 ```
+
+## Quick Break Task
+
+Do a quick internet search and find two working definitions for **maximum likelihood** and **ordinary least squares**.
+
+What are the key similarities and differences?
 
 ## OLS vs ML
 
@@ -343,36 +376,9 @@ semPaths(reading2_lav_sem,
          intercepts = FALSE)
 ```
 
-## A prelude to next week. Mediation with Lavaan
+## A prelude to working on Posit Cloud
 
-We will explore whether the number of **books** read actually **mediate** the effect of **income** on **reading** ability. We will not go in depth today as we will discuss this topic next week in detail. We will just demonstrate how the code would change in lavaan.
-
-```{r}
-reading_med_model <- ' # direct effect
-             reading ~ c*income
-           # mediator
-             books ~ a*income
-             reading ~ b*books
-           # indirect effect (a*b)
-             ab := a*b
-           # total effect
-             total := c + (a*b)
-         '
-reading_med <- sem(reading_med_model, data = df)
-summary(reading_med )
-```
-
-## Let us visualise the above model
-
-```{r}
-semPaths(reading_med,
-         whatLabels = "est",
-         sizeMan = 10,          
-         style = "ram",          
-         layout = "tree",
-         intercepts = FALSE,
-         rotation = 2)
-```
+I would like everyone now to access our Posit Cloud Workspace and open the Week 1 Project
 
 ## To conclude
 

@@ -14,7 +14,7 @@ format:
     code-fold: true
     code-summary: "Show the code"
 author: "Dr Lazaros Gonidis"
-date: "2024-02-7"
+date: "2025-02-3"
 image: "image1.jpg"
 ---
 
@@ -84,7 +84,7 @@ Where $p$ is the number of variables in your model.
 
 ## Parameters to Estimate
 
-![Beware of software default settings. You may not necessarily request an estimate but the software might calculate it by default. For example, the residual errors. ](model2.JPG)
+![Beware of software default settings. You may not necessarily request an estimate but the software might calculate it by default. For example, the residual errors.](model2.JPG)
 
 ## Model Identification
 
