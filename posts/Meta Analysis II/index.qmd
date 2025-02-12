@@ -1,0 +1,134 @@
+---
+title: "Meta-Analysis II: Subgroup Analysis "
+format: 
+  revealjs:
+    theme: league
+    transition: slide
+    background-transition: zoom
+    slide-number: c/t
+    show-slide-number: all
+    chalkboard: true
+    background-size: cover
+    smaller: true
+    echo: true
+    code-fold: true
+    code-summary: "Show the code"
+author: "Dr Lazaros Gonidis"
+date: "2024-03-22"
+image: "image1.jpg"
+---
+
+## metafor diagram
+
+![](metafor.JPG)
+
+## Lets work through an example
+
+```{r}
+library(tidyverse)
+library(metafor)
+library(metadat)
+
+# https://cran.r-project.org/web/packages/metadat/readme/README.html
+df <- get(data(dat.molloy2014))
+
+head(df)
+```
+
+```{r}
+df <- escalc(measure = "ZCOR", ri=ri, ni=ni, data=df, slab = paste(authors, year, sep=","))
+ma.res <- rma(yi, vi, data=df)
+ma.res
+```
+
+```{r}
+predict(ma.res)
+confint(ma.res)
+```
+
+## Exploring for influential studies
+
+```{r}
+ma.inf <- influence(ma.res)
+print(ma.inf)
+```
+
+## Plot
+
+```{r}
+plot(ma.inf)
+```
+
+## Forest Plot
+
+```{r}
+forest(ma.res)
+```
+
+```{r}
+forest(ma.res, addpred = TRUE, header = TRUE)
+
+```
+
+```{r}
+forest(ma.res, header = TRUE)
+```
+
+## Funnel Plot
+
+Please be aware that these are not publication bias tests!
+
+```{r}
+funnel(ma.res, digits = list(1L,2))
+```
+
+## Small Study Bias
+
+```{r}
+regtest(ma.res)
+```
+
+## Adding a moderator
+
+```{r}
+# ma.res <- rma(yi, vi, data=df)
+ma.res1 <- rma(yi, vi, data=df, mods = ~factor(a_measure))
+ma.res1
+```
+
+```{r}
+forest(ma.res1, addpred = TRUE, header = TRUE)
+```
+
+## Adding a second moderator
+
+```{r}
+
+
+df2 <- escalc(measure = "ZCOR", ri=ri, ni=ni, data=df, slab = paste(authors, year, sep=","))
+
+df2 <- df[order(df$yi,df$a_measure),] 
+
+ma.res2 <- rma(yi, vi, data=df2, mods = ~factor(a_measure)+meanage)
+ma.res2
+forest(ma.res2)
+```
+
+## Ordered by year of publication
+
+```{r}
+df3 <- escalc(measure = "ZCOR", ri=ri, ni=ni, data=df, slab = paste(authors, year, sep=","))
+
+df3 <- df3[order(df3$year),] 
+
+ma.res3 <- rma(yi, vi, data=df3)
+ma.res3
+forest(ma.res3, addpred = TRUE, header = TRUE)
+```
+
+## Cumulative Forest Plot
+
+```{r}
+forest.cumul <- cumul(ma.res3, order = order(df3$year))
+forest(forest.cumul)
+```
