@@ -24,28 +24,28 @@ Today we will define what **exploratory factor analysis (EFA)** is, we focus on 
 
 ## What is Factor Analysis
 
-Factor Analysis in the statistical technique that seeks to identify underlying relationships between observed variables.
+Factor Analysis is the statistical technique that seeks to identify underlying relationships between observed variables.
 
-Specifically, grouping these variables into groups where in-group variables correlate highly.
+Specifically, grouping these variables into groups where in-group variables **correlate highly**.
 
-Ideally, we want variables to correlate highly only with their in-group variables, and correlate weakly or not at all with variables belonging to other groups.
+Ideally, we want variables to correlate highly only with their in-group variables, and **correlate weakly or not at all with variables belonging to other groups**.
 
-We will be referring to the term **group** as **factor**. There factors are unobserved variables...
+We will be referring to the term **group** as **factor**. These factors are **unobserved variables**...
 
-## What is Exploratory Factor Analysis?
+## What is Exploratory Factor Analysis (EFA)?
 
 It is a statistical exploratory process that seeks to identify underlying relationships between observed variables.
 
-Furthermore, with **EFA** we aim to identify **latent variables** that might are responsible for the shared variances between the observed variables. As mentioned in our introduction lectures latent variables are variables that are not directly measured. Instead, they are inferred by the existing relationships between our observed variables.
+Furthermore, with **EFA** we aim to identify **latent variables** that might be responsible for the shared variances between the observed variables. As mentioned in our introduction lectures latent variables are variables that are not directly measured. Instead, they are **inferred by the existing relationships between our observed variables**.
 
 ## Specification of models in EFA
 
 According to Kline (pages 190-191):
 
-1.  **EFA** does not require an a priori specification, with number of possible factors varying from **one** up to **as many as the indicators**. (Highly not advised, but theoretically possible)
+1.  **EFA** does not require a priori specification, with number of possible factors varying from **one** up to **as many as the indicators**. (Highly not advised, but theoretically possible)
 2.  In **EFA** we have **unrestricted measurement models** where indicators are allowed to depend on all factors
 3.  Multiple factors models in **EFA** are not actually identified. Headache question: Why would that be the case?
-4.  In **EFA** we assume that specific variance of each indicator is not shared what that of any other indicator
+4.  In **EFA** we assume that specific variance of each indicator is not shared with that of any other indicator
 
 **Note:** Next week we will contrast all the above points with **Confirmatory Factor Analysis (CFA)**
 
@@ -59,11 +59,11 @@ Typically this is not required. However, we can specify a **rotation** that will
 
 **Rotation?**
 
-Rotation allows us to simplify our model further, thus enhance its interpretation. This is an option that is applied after our initial solution and its aim is to achieve a solution where an indicator has high **loading** to one factor (or as few as possible) and low loading on all other factors.
+Rotation allows us to simplify our model further, thus enhance its interpretation. This is an option that is **applied after our initial solution** and its aim is to achieve a solution where an indicator has high **loading** to one factor (or to as few as possible) and low loading on all other factors.
 
 ## Rotations
 
-1.  **Orthogonal rotation**, usually the default setting for most **EFA** functions, treats all factors are non-correlated. The most commonly used is **Varimax**, however there are others. Be cautious when using **orthogonal rotations**, refer back to your theoretical background in order to make sure that your possible factors are indeed expected to be uncorrelated.
+1.  **Orthogonal rotation**, usually the default setting for most **EFA** functions, treats all factors as non-correlated. The most commonly used is **Varimax**, however there are others. Be cautious when using **orthogonal rotations**, refer back to your theoretical background in order to make sure that your possible factors are indeed expected to be **uncorrelated**.
 2.  **Oblique rotation**, **allows** for correlated factors. The most commonly used is **Promax**, however there are others.
 
 So which one should we use? Outside of the **correlated** or **uncorrelated allowance** it is difficult to decide. Many different rotation methods may give similarly valid results. I advise you to look into the **factor score indeterminacy** for more details.
