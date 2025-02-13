@@ -14,7 +14,7 @@ format:
     code-fold: true
     code-summary: "Show the code"
 author: "Dr Lazaros Gonidis"
-date: "2024-02-19"
+date: "2024-02-13"
 image: "image1.jpg"
 ---
 
@@ -64,7 +64,7 @@ Today we will also be referring back to many of the terms that we have defined i
 
 -   **`~1`** **intercept** or mean (e.g., **`x1 ~ 1`** estimates the mean of variable **`x1`**)
 
--   **`a*`** **defines** the **parameter** ‘a’,
+-   **`a*`** **defines** the **parameter** 'a',
 
 ## Number of parameters (refresher)
 
