@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "AdvancedStatistics",
     "section": "",
-    "text": "Assignment 1\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nExploratory Factor Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 11, 2025\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Advanced Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 11, 2025\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to S.E.M\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 3, 2025\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nCross-Lagged Panel Models\n\n\n\n\n\n\n\n\n\n\n\n\nApr 20, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nMeta-Analysis II: Subgroup Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nMar 22, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nMeta-Analysis I\n\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nLatent Growth Models\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nConfirmatory Factor Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 19, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Mediation\n\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\nNo matching items"
+    "text": "Assignment 1\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nIntroduction to Advanced Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nMar 4, 2025\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nExploratory Factor Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 11, 2025\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to S.E.M\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 3, 2025\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nCross-Lagged Panel Models\n\n\n\n\n\n\n\n\n\n\n\n\nApr 20, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nMeta-Analysis II: Subgroup Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nMar 22, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nMeta-Analysis I\n\n\n\n\n\n\n\n\n\n\n\n\nMar 12, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nLatent Growth Models\n\n\n\n\n\n\n\n\n\n\n\n\nMar 3, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nConfirmatory Factor Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 19, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to Mediation\n\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2024\n\n\nDr Lazaros Gonidis\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -1278,7 +1278,7 @@
     "href": "posts/Latent Growth Models/index.html#todays-aims",
     "title": "Latent Growth Models",
     "section": "Today’s Aims",
-    "text": "Today’s Aims\nToday we will discuss Latent Growth Modeling (LGM) also known as Latent Growth Curve Analysis (LGCA), how it help us measure change over time (repeated measurements) and what advantages they have in comparison to other repeated measures analysis such as repeated measures ANOVA or hierarchical linear models.\nSpecifically we will cover:\n\nAssumptions for LGM\nSpecifying LGM using lavaan\nInterpreting output\nImproving a model\nAdding a covariate (predictor)"
+    "text": "Today’s Aims\nToday we will discuss Latent Growth Modeling (LGM) also known as Latent Growth Curve Analysis (LGCA). We will discuss how it help us measure change over time (repeated measurements) and what advantages it has in comparison to other repeated measures analyses such as repeated measures ANOVA or hierarchical linear models.\nSpecifically we will cover:\n\nAssumptions for LGM\nSpecifying LGM using lavaan\nInterpreting output\nImproving a model\nAdding a covariate (predictor)"
   },
   {
     "objectID": "posts/Latent Growth Models/index.html#notations-in-lavaan-refresher",
@@ -1355,7 +1355,7 @@
     "href": "posts/Latent Growth Models/index.html#reading-through-the-output-2",
     "title": "Latent Growth Models",
     "section": "Reading through the output",
-    "text": "Reading through the output\n\nRemember dots denote residuals. i and s do not have a dot in from of them so these values denote variances."
+    "text": "Reading through the output\n\nRemember dots denote residuals. i and s do not have a dot in front of them so these values denote variances."
   },
   {
     "objectID": "posts/Latent Growth Models/index.html#technically-this-is-the-full-model",
@@ -1425,7 +1425,7 @@
     "href": "posts/Latent Growth Models/index.html#this-weeks-exerciseschallenges",
     "title": "Latent Growth Models",
     "section": "This week’s exercises/challenges",
-    "text": "This week’s exercises/challenges\nExercise 1:\nI want you to specify the mode3 in lavaan but write all the necessary components in order to run it using the cfa() instead of growth().\nIn other words think in terms of specifying, fixing, and freeing parameters as we would have done in a CFAt in order to acquire the exact same values in your output. You can find the relevant project in our Posit Cloud under the name Week 6 exercise.\nExercise 2:\nI want you to modify model1 in order to test for a quadratic projection instead of a linear one. Think in terms of how a quadratic relation works and amend the slope accordingly."
+    "text": "This week’s exercises/challenges\nExercise 1:\nI want you to specify the mode3 in lavaan but write all the necessary components in order to run it using the cfa() instead of growth().\nIn other words think in terms of specifying, fixing, and freeing parameters as we would have done in a CFA in order to acquire the exact same values in your output. You can find the relevant project in our Posit Cloud under the name Week 6 exercise.\nExercise 2:\nI want you to modify model1 in order to test for a quadratic projection instead of a linear one. Think in terms of how a quadratic relation works and amend the slope accordingly."
   },
   {
     "objectID": "posts/Meta Analysis I/index.html#todays-aims",

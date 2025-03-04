@@ -14,13 +14,13 @@ format:
     code-fold: true
     code-summary: "Show the code"
 author: "Dr Lazaros Gonidis"
-date: "2024-02-28"
+date: "2024-03-03"
 image: "image1.jpg"
 ---
 
 ## Today's Aims
 
-Today we will discuss Latent Growth Modeling (LGM) also known as Latent Growth Curve Analysis (LGCA), how it help us measure change over time (repeated measurements) and what advantages they have in comparison to other repeated measures analysis such as repeated measures ANOVA or hierarchical linear models.
+Today we will discuss Latent Growth Modeling (LGM) also known as Latent Growth Curve Analysis (LGCA). We will discuss how it help us measure change over time (repeated measurements) and what advantages it has in comparison to other repeated measures analyses such as repeated measures ANOVA or hierarchical linear models.
 
 Specifically we will cover:
 
@@ -134,7 +134,7 @@ For example, we would expect the slope at the last time point to be:
 
 ![](variances.JPG)
 
-Remember dots denote residuals. **i** and **s** do not have a dot in from of them so these values denote **variances**.
+Remember dots denote residuals. **i** and **s** do not have a dot in front of them so these values denote **variances**.
 
 ## Technically, this is the full model
 
@@ -231,7 +231,7 @@ summary(fit3, standardized=TRUE, fit.measures=TRUE)
 
 I want you to specify the mode3 in lavaan but write all the necessary components in order to run it using the **cfa()** instead of **growth()**.
 
-In other words think in terms of specifying, fixing, and freeing parameters as we would have done in a **CFAt** in order to acquire the exact same values in your output. You can find the relevant project in our Posit Cloud under the name **Week 6 exercise**.
+In other words think in terms of specifying, fixing, and freeing parameters as we would have done in a **CFA** in order to acquire the exact same values in your output. You can find the relevant project in our Posit Cloud under the name **Week 6 exercise**.
 
 **Exercise 2:**
 
