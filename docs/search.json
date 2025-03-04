@@ -1750,6 +1750,20 @@
     "text": "Small Study Bias\n\n\nCode\nregtest(ma.res)\n\n\n\nRegression Test for Funnel Plot Asymmetry\n\nModel:     mixed-effects meta-regression model\nPredictor: standard error\n\nTest for Funnel Plot Asymmetry: z = 1.0216, p = 0.3070\nLimit Estimate (as sei -&gt; 0):   b = 0.0790 (CI: -0.0686, 0.2266)"
   },
   {
+<<<<<<< HEAD
+    "objectID": "posts/Discussing Meta Analysis/index.html#challenges-by-minions",
+    "href": "posts/Discussing Meta Analysis/index.html#challenges-by-minions",
+    "title": "Discussing Meta Analysis",
+    "section": "Challenges by “minions”",
+    "text": "Challenges by “minions”\n\nReading all “relevant” studies only to find out that some are horrible in terms of statistical information provided\nHow far should I take it in terms of removing “influential” cases?\nDifficulty in discovering enough studies with “identical” design and statistical figures.\nMainly getting started\nHow do we go about overcoming difficulties in terms of different measurements or measurements reporting a variety of outcomes"
+  },
+  {
+    "objectID": "posts/Discussing Meta Analysis/index.html#challenging-tasks-to-complete",
+    "href": "posts/Discussing Meta Analysis/index.html#challenging-tasks-to-complete",
+    "title": "Discussing Meta Analysis",
+    "section": "Challenging Tasks to Complete",
+    "text": "Challenging Tasks to Complete\n\nYou have found a good number of relevant papers, however not all of them use the same design or report the same type of effect size. Find a solution.\nDetecting bias. How exactly can we do that?\nCHALLENGING: metasem :D\nModerators and sub-group meta analysis\nCHALLENGING: Meta-regression. What is it? When and how should we use it?"
+=======
     "objectID": "posts/Meta Analysis II/index.html#metafor-diagram",
     "href": "posts/Meta Analysis II/index.html#metafor-diagram",
     "title": "Meta-Analysis II: Subgroup Analysis",
@@ -1993,6 +2007,9 @@
     "title": "Cross-Lagged Panel Models",
     "section": "Task for next week",
     "text": "Task for next week\nRead A Critique of the Cross-Lagged Panel Model, Hamaker et al., 2015 and From Data to Causes II: Comparing Approaches to Panel Data Analysis, Zyphur et al., 2019. Next week we will discuss strengths and limitations of these proposed models."
+<<<<<<< HEAD
+>>>>>>> 8cf111c9331c40586d397da1aba793f20cb16d7c
+=======
   },
   {
     "objectID": "posts/Introduction to Advanced Statistics/index.html#achievements-and-badgeshopefully",
@@ -2028,5 +2045,6 @@
     "title": "Introduction to Advanced Statistics",
     "section": "A prelude to working on Posit Cloud",
     "text": "A prelude to working on Posit Cloud\nI would like everyone now to access our Posit Cloud Workspace and open the Week 1 Project"
+>>>>>>> d786d0d613ce60fb35a4947e8db21d6e268fc18d
   }
 ]
