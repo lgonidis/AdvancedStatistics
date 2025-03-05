@@ -14,7 +14,7 @@ format:
     code-fold: true
     code-summary: "Show the code"
 author: "Dr Lazaros Gonidis"
-date: "2024-03-03"
+date: "2025-03-03"
 image: "image1.jpg"
 ---
 
@@ -44,7 +44,7 @@ Specifically we will cover:
 
 -   **`~1`** **intercept** or mean (e.g., **`x1 ~ 1`** estimates the mean of variable **`x1`**)
 
--   **`a*`** **defines** the **parameter** ‘a’,
+-   **`a*`** **defines** the **parameter** 'a',
 
 ## lavaan package
 
