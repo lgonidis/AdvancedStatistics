@@ -30,7 +30,13 @@ image: "image1.jpg"
 
 ![](auto1.JPG){width="531" height="342"}
 
-This autoregressive model was initially developed by Guttman in 1954 as a general concept of **simplex model** for longitudinal data. This model provides us with information of growth between consecutive time points. Adjacent time points are **lag 1** paths and as the number of steps increases so does the lag. For example Reading1 and Reading3 are **lag 2**. The **simplex model** assumes that all lag 1 correlations are of the same magnitude. Furthermore, **lag 2** correlation is the product of the two coefficients that link the two measurements. So, if our lag 1 correlation is 0.8 then the correlation between **Reading1 and Reading3** should be 0.8\*0.8=0.64.
+This autoregressive model was initially developed by Guttman in 1954 as a general concept of **simplex model** for longitudinal data. This model provides us with information of growth between consecutive time points. Adjacent time points are **lag 1** paths and as the number of steps increases so does the lag. For example Reading1 and Reading3 are **lag 2**.
+
+## Autoregressive Model
+
+![](auto1.JPG){width="531" height="342"}
+
+The **simplex model** assumes that all lag 1 correlations are of the same magnitude. Furthermore, **lag 2** correlation is the product of the two coefficients that link the two measurements. So, if our lag 1 correlation is 0.8 then the correlation between **Reading1 and Reading3** should be 0.8\*0.8=0.64.
 
 ## Autoregressive Model
 
