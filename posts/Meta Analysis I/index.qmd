@@ -14,7 +14,7 @@ format:
     code-fold: true
     code-summary: "Show the code"
 author: "Dr Lazaros Gonidis"
-date: "2024-03-12"
+date: "2025-03-30"
 image: "image1.jpg"
 ---
 
@@ -40,7 +40,7 @@ As mentioned in, Field, A. P., & Gillett, R. (2010). How to do a meta‐analysis
 4.  As mentioned above, we can shed more light in the case of conflicting results
 5.  Makes is possible to compare subgroups
 
-Actually plenty of other strenghts ...
+Actually plenty of other strengths ...
 
 ## Weaknesses of meta-analysis
 
@@ -401,7 +401,7 @@ predict(ma.res)
 confint(ma.res)
 ```
 
-## Exploring for influencial studies
+## Exploring for influential studies
 
 ```{r}
 ma.inf <- influence(ma.res)
