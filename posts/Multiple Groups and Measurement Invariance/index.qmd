@@ -30,7 +30,7 @@ In terms of coding, this is a rather simple task. However, there are some import
 library(lavaan)
 library(semPlot)
 
-df <- data(HolzingerSwineford1939)
+
 
 HS.model <- ' visual  =~ x1 + x2 + x3 
               textual =~ x4 + x5 + x6
@@ -95,7 +95,7 @@ summary(fit1, fit.measures = TRUE, remove.unused = FALSE)
 
 Are the factor loadings equivalent across all groups?
 
-## Code in lavaan, 
+## Code in lavaan,
 
 ```{r}
 # metric invariance
@@ -162,7 +162,7 @@ lavInspect(fit3, "mu")[[1]] - lavInspect(fit3, "sampstat")[[1]]$mean
 lavInspect(fit3, "mu")[[2]] - lavInspect(fit3, "sampstat")[[2]]$mean
 ```
 
-##  Is it the End of the World?
+## Is it the End of the World?
 
 Not really, and quite often your multi-group models may fail **scalar invariance**.
 
