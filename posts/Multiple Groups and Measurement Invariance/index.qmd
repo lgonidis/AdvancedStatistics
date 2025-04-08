@@ -1,0 +1,252 @@
+---
+title: "Multiple Groups and Measurement Invariance"
+format: 
+  revealjs:
+    theme: league
+    transition: slide
+    background-transition: zoom
+    slide-number: c/t
+    show-slide-number: all
+    chalkboard: true
+    background-size: cover
+    smaller: true
+    echo: true
+    code-fold: true
+    code-summary: "Show the code"
+author: "Dr Lazaros Gonidis"
+date: "2025-04-4"
+image: "image1.jpg"
+---
+
+## Today's Aims
+
+Today we will talk about how we can apply SEM with multiple groups analysis. In essence we want to investigate whether there are groups that **behave** differently.
+
+In terms of coding, this is a rather simple task. However, there are some important questions we need to ask first before we can even carry out the group analysis.
+
+## In Terms of Lavaan I
+
+```{r}
+library(lavaan)
+library(semPlot)
+
+df <- data(HolzingerSwineford1939)
+
+HS.model <- ' visual  =~ x1 + x2 + x3 
+              textual =~ x4 + x5 + x6
+              speed   =~ x7 + x8 + x9 '
+
+fit <- cfa(HS.model, data = HolzingerSwineford1939, meanstructure = TRUE)
+
+summary(fit, fit.measures = TRUE, remove.unused = FALSE)
+
+```
+
+## In Terms of Lavaan II
+
+```{r}
+fit <- cfa(HS.model, data = HolzingerSwineford1939, group = "school", meanstructure = TRUE)
+
+summary(fit, fit.measures = TRUE, remove.unused = FALSE)
+```
+
+## Visualisation
+
+```{r}
+semPaths(fit)
+```
+
+## That Looks Quite Simple Then!
+
+[LET ME TELL YOU SOMETHING!!!](https://www.youtube.com/shorts/18OOnHDat4E "LET ME TELL YOU SOMETHING!!!")
+
+## So, First Thing First: Measurement Invariance
+
+Sure we want to compare groups. But how certain are we that our model ***works equally well for all groups*** (Does it measure equally what we expect it to measure?)
+
+"*whether or not, under different conditions of observing and studying phenomena, measurement operations yield measures of the same attribute*" ([Horn & Mcardle, 1992](https://www.tandfonline.com/doi/abs/10.1080/03610739208253916?casa_token=xjjlyuE5cNEAAAAA:cAjeJeQwflaXybazMKtHuWiGcj6rqIZV4A9Liw5yPVP9IyTY2SpSG8hIHuuHq0NBxFhGufalZqjg))
+
+In simpler terms, using the same items across different groups we will be measuring the same construct.
+
+## Types of Invariance Tests
+
+1.  **Configural Invariance**
+2.  **Metric Invariance (Weak)**
+3.  **Scalar Invariance (Strong)**
+4.  Factor Variance Invariance
+5.  Error Variance Invariance (Strick Invariance)
+
+## Configural Invariance (a.k.a Structural Equivalence)
+
+1.  The aim is to demonstrate that the model fits the data across all groups
+2.  We examine **Fit Indices** and **Chi-square** across all groups
+3.  Good model fit indicates configural invariance across groups
+
+## Code in lavaan as usual
+
+```{r}
+# configural invariance
+fit1 <- cfa(HS.model, data = HolzingerSwineford1939, group = "school", meanstructure = TRUE)
+
+summary(fit1, fit.measures = TRUE, remove.unused = FALSE)
+```
+
+## Metric (Weak) Invariance
+
+Are the factor loadings equivalent across all groups?
+
+## Code in lavaan, 
+
+```{r}
+# metric invariance
+fit2 <- cfa(HS.model, data = HolzingerSwineford1939, group = "school", meanstructure = TRUE, group.equal = "loadings")
+
+summary(fit2, fit.measures = TRUE, remove.unused = FALSE)
+```
+
+## We Can Compare These Two Models
+
+We are aiming for a non-significant Chi-square result, indicating that we can accept the **metric invariance model**.
+
+```{r}
+lavTestLRT(fit1, fit2)
+```
+
+## Scalar (Strong) Invariance
+
+Are the intercepts the same?
+
+## Code in Lavaan
+
+```{r}
+# scalar invariance
+fit3 <- cfa(HS.model, data = HolzingerSwineford1939, group = "school", meanstructure = TRUE, group.equal = c("intercepts","loadings"))
+
+summary(fit3, fit.measures = TRUE, remove.unused = FALSE)
+```
+
+## Compare all models
+
+Remember, we want non-significant Chi-square test in order to accept the latest model.
+
+Based on our output, we cannot accept the scalar invariance model, therefore we should not use this model to compare between schools.
+
+```{r}
+lavTestLRT(fit1, fit2, fit3)
+```
+
+## Why do I have this misfit?
+
+We can look into **implied** and **observed** statistics
+
+We can call both **implied** and **observed** per group but we can also **calculate the difference between implied and observed** for each group and explore.
+
+```{r}
+lavInspect(fit3, "mu")[[1]]
+lavInspect(fit3, "sampstat")[[1]]$mean
+```
+
+```{r}
+lavInspect(fit3, "mu")[[1]] - lavInspect(fit3, "sampstat")[[1]]$mean
+```
+
+## Let Us Focus on the Differences per Group
+
+```{r}
+# group 1
+lavInspect(fit3, "mu")[[1]] - lavInspect(fit3, "sampstat")[[1]]$mean
+```
+
+```{r}
+# group 2
+lavInspect(fit3, "mu")[[2]] - lavInspect(fit3, "sampstat")[[2]]$mean
+```
+
+##  Is it the End of the World?
+
+Not really, and quite often your multi-group models may fail **scalar invariance**.
+
+We can check for **partial invariance**. We do that based on the above difference between **implied** and **observed** means.
+
+```{r}
+# partial invariance
+#we free the items x3 and x7
+fit4 <- cfa(HS.model, data = HolzingerSwineford1939, group = "school", meanstructure = TRUE, group.equal = c("intercepts","loadings"),
+            group.partial = c("x3 ~ 1", "x7 ~ 1"))
+
+summary(fit4, fit.measures = TRUE, remove.unused = FALSE)
+```
+
+## We Compare the Models Again
+
+Based on our output, what are your conclusions?
+
+```{r}
+lavTestLRT(fit1, fit2, fit3, fit4)
+```
+
+## Factor Variance Invariance and Error Variance Invariance
+
+-   **Factor Variance Invariance**, constrained to be equal across groups:
+
+    -   Factor Loadings
+
+    -   Covariances
+
+    -   Variances
+
+-   **Error Variance Invariance**, constrained to be equal across groups:
+
+    -   Factor Loadings
+
+    -   Covariances
+
+    -   Variances
+
+    -   Error Terms
+
+## We Are Commonly Using
+
+-   Configural (Absolutely has to hold)
+
+-   Metric (Absolutely has to hold)
+
+-   Scalar (Ideally it should hold, if not we look into partial invariance)
+
+-   **We need all three above in order to compare groups and interpret differences!**
+
+## Additional Invariance Coding (Strict Invariance)
+
+```{r}
+# Residual Invariance
+fit5 <- cfa(HS.model, data = HolzingerSwineford1939, group = "school", meanstructure = TRUE, group.equal = c("intercepts","loadings", "residuals"),
+            group.partial = c("x3 ~ 1", "x7 ~ 1"))
+
+summary(fit5, fit.measures = TRUE, remove.unused = FALSE)
+```
+
+## Compare Models
+
+```{r}
+lavTestLRT(fit1, fit2, fit3, fit4, fit5)
+```
+
+## Some Additional group.equal arguments
+
+-   `intercepts`: the intercepts of the observed variables
+
+-   `means`: the intercepts/means of the latent variables
+
+-   `residuals`: the residual variances of the observed variables
+
+-   `residual.covariances`: the residual covariances of the observed variables
+
+-   `lv.variances`: the (residual) variances of the latent variables
+
+-   `lv.covariances`: the (residual) covariances of the latent variables
+
+-   `regressions`: all regression coefficients in the model
+
+## In Conclusion
+
+Make sure to read Principles and Practice of Structural Equation Modeling, Kline, pages 396-402.
